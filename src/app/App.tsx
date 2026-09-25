@@ -1520,7 +1520,7 @@ export default function App() {
 
           {/* ══ Category Performance — Card Grid ══ */}
           {(()=>{
-            const CAT_ORDER = ['NGFW','SD-WAN','NAC','Zero Trust','Top Opportunities','AI Cybersecurity','OT Security','Quantum Security','SASE'];
+            const CAT_ORDER = ['NGFW','Zero Trust','SASE','SD-WAN','NAC','OT Security','AI Cybersecurity','Top Opportunities','Quantum Security'];
             const FUNNEL_CFG: Record<string,{bg:string;text:string;border:string}> = {
               TOFU:{bg:'rgba(26,86,219,.08)',text:'#1A56DB',border:'rgba(26,86,219,.2)'},
               MOFU:{bg:'rgba(6,182,212,.08)',text:'#0E7490',border:'rgba(6,182,212,.2)'},
