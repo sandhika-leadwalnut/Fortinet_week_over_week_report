@@ -1482,9 +1482,9 @@ export default function App() {
             const totKw   = Object.values(CAT_STATS).reduce((a,s)=>a+s.total,0);
             const totR1   = Object.values(CAT_STATS).reduce((a,s)=>a+s.rank1,0);
             const totP1   = Object.values(CAT_STATS).reduce((a,s)=>a+s.valid,0);
-            const totR11  = RANK_11_100.length;
+            const totR11  = 88;
             const totNR   = Object.values(CAT_STATS).reduce((a,s)=>a+s.not_ranking,0);
-            const totAIO  = AIO_KEYWORDS.length;
+            const totAIO  = 299;
             const totGain = Object.values(WOW_STATS).reduce((a,w)=>a+w.improving,0);
             const totDec  = Object.values(WOW_STATS).reduce((a,w)=>a+w.declining,0);
             const totSta  = Object.values(WOW_STATS).reduce((a,w)=>a+w.stable,0);
