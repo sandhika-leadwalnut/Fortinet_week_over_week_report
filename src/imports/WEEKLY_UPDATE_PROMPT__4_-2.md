@@ -215,7 +215,6 @@ In `App.tsx`, find the `TRAFFIC_DATA` / weekly arrays object and update:
    - /blog GA: same
 3. Update the Traffic Overview date label badge (e.g. "Week of Sep 23, 2026")
 4. Update the "39 Weeks · Dec 31 → [date]" badge in the header
-5. **Complete Traffic Metrics — All Sources table:** the change column header must read `WoW Δ` with sub-label `[prev_date] → [current_date]` (e.g. `Sep 23 → Sep 30`). Never leave the previous sub-label (`Sep16→Sep23`). The WoW % / absolute values come from the Traffic CSV's last-week change columns.
 
 ### STEP 3 — Update Gain & Loss tab
 
@@ -242,16 +241,6 @@ Update the **report date** in all section headers:
 - Same as above — match by `keyword + category`, update `ranks`, `current_rank`, `delta`
 - Preserve all other fields
 
-#### De-duplication (applies to every By Category list)
-- Each category list in `CAT_KEYWORDS` and `NO_BACKLINK_KWS` must contain each keyword **once** (case-insensitive match on `keyword`; keep the first occurrence). The CSV repeats some keywords (e.g. `network security firewall`, `security firewall` in NGFW; `iot network security` in NAC; keywords shared between Top Opportunities and NGFW / SD-WAN / NAC in No Backlink). In `keywords.ts` the raw arrays are wrapped by `uniqByKeyword(...)` — keep that wrapper.
-- After de-duplication update the category dropdown counts (`NGFW (N keywords)`, `NAC (N keywords)`, `No Backlink KWs (N keywords)`, etc.) to the de-duplicated lengths. Rank-filter pill counts are computed automatically.
-
-#### Category Deep-Dive — Keyword Position Table headers (update every week)
-- `Δ WoW` sub-label → `WoW [prev_date] → [current_date]` (e.g. `WoW Sep 23 → Sep 30`)
-- `[N]-Week Trend` sub-label → `Dec → [current_date]` (e.g. `Dec → Sep 30`)
-- Prev / Latest column headers → `[prev_date]` / `[current_date]`
-- These labels appear in BOTH the Backlink/No-Backlink table and the 9-category table — update all occurrences (search for old dates such as `Sep16 vs Sep23`, `Dec → Sep 23`).
-
 ### STEP 5 — Update Keyword Ranking Health (KWH) tab
 
 Find `KWH_DATA` array in `App.tsx` (the 50-keyword trendline table):
@@ -272,13 +261,6 @@ Using 9_Category CSV:
 2. **AIO_BY_CAT** — update all 9 category AIO counts
 3. **Category stat object** (if present) — update rank1, page1, avg_rank, improving, declining, not_ranking per category
 4. **Section heading date** — update to `Source: Semrush · All metrics · [current_date] · WoW vs [prev_date]`
-5. **View lists (Rank 11–100, Not Ranking, AIO)** — `RANK_11_100`, `NOT_RANKING`, `AIO_KEYWORDS` must contain **no duplicate keywords**. Keep the raw arrays as `*_RAW` and expose the de-duplicated array through the `uniqKw(...)` helper (first occurrence wins, case-insensitive). The modal badge (`{RANK_11_100.length} Keywords`, `{AIO_KEYWORDS.length} Keywords`) and the "Scroll to view all N…" lines are computed from the de-duplicated length — do not hardcode them. Note: the KPI tiles show the tracked-row counts from the CSV (may be slightly higher than the unique lists); state this in the Summary.
-6. **Category Performance — Unified Overview (card grid)** — cards must be **ordered by status**, best to worst: `VERY GOOD` → `GOOD` → `NEEDS ATTENTION` → `LOW PERFORMANCE`. Do not hand-order `CAT_ORDER`; the code computes `perfOf(cat)` and sorts (`SORTED_CATS`) by status, then by Page 1 % descending within a status. Status rules (unchanged): 
-   - VERY GOOD: Page 1 % ≥ 90 AND avg rank ≤ 3.0
-   - GOOD: Page 1 % ≥ 85 AND avg rank ≤ 4.0
-   - NEEDS ATTENTION: Page 1 % ≥ 70
-   - LOW PERFORMANCE: otherwise
-   After updating `CAT_STATS`, confirm the resulting order in the Summary of Changes.
 
 ### STEP 7 — Update Top Risk tab
 
@@ -370,8 +352,7 @@ Totals row when prev_total = 0:  same rule
 - No chart/sparkline rendering logic — only update the data arrays
 - No changes to any tab not listed above
 - No new keywords added to KWH_DATA unless explicitly requested
-- No keywords removed from any array unless they are confirmed absent from the CSV — **exception:** duplicate keywords in the By Category lists and the Position Overview view lists (Rank 11–100, Not Ranking, AIO) are always removed (see Steps 4 and 6)
-- Category card order in Position Overview is the one allowed ordering change: sort by status (Step 6.6)
+- No keywords removed from any array unless they are confirmed absent from the CSV
 
 ---
 
@@ -392,12 +373,6 @@ After completing all updates, output a **Summary of Changes** in this exact form
 - [ ] Top Risk: All 5 sections recalculated. Total Decliners=[N], NR=[N].
 - [ ] Header badges: [N] at #1, 39 Weeks Tracked, Sep 30 2026.
 - [ ] Key Takeaways: All 6 cards + 3 Priorities rewritten with current week data.
-
-- [ ] Rank 11–100 / Not Ranking / AIO lists de-duplicated (report unique counts vs KPI counts)
-- [ ] By Category lists de-duplicated; dropdown counts updated
-- [ ] Complete Traffic Metrics table change column labelled `[prev] → [current]`
-- [ ] Deep-Dive table headers: `WoW [prev] → [current]` and `Dec → [current]`
-- [ ] Category Performance cards ordered VERY GOOD → GOOD → NEEDS ATTENTION → LOW PERFORMANCE
 
 ### ⚠️ Not Updated (reason)
 - [List anything skipped and why — e.g. "KWH keyword X not found in No_Backlink CSV — kept existing data"]
