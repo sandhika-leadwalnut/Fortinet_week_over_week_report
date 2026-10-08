@@ -6,12 +6,11 @@ import {
   Legend, Tooltip, Title, Filler
 } from 'chart.js';
 import '../styles/fortinet.css';
-<<<<<<< HEAD
+
 import { KeyInsights, TabHead, HomePage, type InsightItem } from './dashParts';
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
 import fortinetLogo from '../imports/WhatsApp_Image_2026-10-06_at_5.36.40_PM.jpeg';
-=======
->>>>>>> 3a4d74ef3abc53fc2e78c2f62336a5b1847e4611
+
 
 Chart.register(
   LineController, BarController, DoughnutController,
