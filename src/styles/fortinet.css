@@ -434,3 +434,15 @@ body{background:#F3F5FA;background-image:linear-gradient(rgba(15,23,42,.035) 1px
 .fn-wowstrip-v{font-family:var(--font-mono);font-size:34px;font-weight:800;line-height:1;}
 .fn-wowstrip-l{font-size:12px;font-weight:800;letter-spacing:.08em;color:#334155;margin-top:6px;}
 @media(max-width:700px){.fn-wowstrip{grid-template-columns:1fr 1fr;}}
+
+/* Keyword Performance tables: fixed centered columns (match header widths) */
+.fn-kwp .fn-kw-cat{width:92px;text-align:center;box-sizing:border-box;white-space:nowrap;padding-left:0;padding-right:0;}
+.fn-kwp .fn-kw-vol{width:48px;min-width:48px;text-align:center;flex-shrink:0;}
+.fn-kwp .fn-delta-up,.fn-kwp .fn-delta-down,.fn-kwp .fn-delta-flat{width:28px;text-align:center;flex-shrink:0;}
+
+/* Keyword Position Insight rows: fixed centered columns */
+.fn-posl > div > span:nth-child(2){width:92px;text-align:center;box-sizing:border-box;white-space:nowrap;padding-left:0;padding-right:0;flex-shrink:0;}
+.fn-posl > div > span:nth-child(3){width:48px;min-width:48px;text-align:center;flex-shrink:0;}
+.fn-posl > div > span:nth-child(4){width:84px;text-align:center;flex-shrink:0;}
+.fn-posl > div > span:nth-child(5){flex-shrink:0;}
+.fn-posl > div > span:nth-child(6){width:40px;text-align:center;flex-shrink:0;}
