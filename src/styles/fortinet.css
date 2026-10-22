@@ -446,3 +446,8 @@ body{background:#F3F5FA;background-image:linear-gradient(rgba(15,23,42,.035) 1px
 .fn-posl > div > span:nth-child(4){width:84px;text-align:center;flex-shrink:0;}
 .fn-posl > div > span:nth-child(5){flex-shrink:0;}
 .fn-posl > div > span:nth-child(6){width:40px;text-align:center;flex-shrink:0;}
+
+.fn-catchips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
+.fn-catchip{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--border);border-radius:999px;padding:2px 9px;font-size:10px;font-weight:700;font-family:var(--font-mono);cursor:pointer;transition:background .15s,color .15s,border-color .15s;line-height:1.6;}
+.fn-catchip b{font-weight:800;opacity:.85;}
+.fn-catchip:hover{border-color:var(--text3);}

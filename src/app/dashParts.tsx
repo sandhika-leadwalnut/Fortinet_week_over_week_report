@@ -1,7 +1,7 @@
 import { Home, ArrowRight, AlertTriangle, TrendingUp, TrendingDown, Info, CheckCircle2, Sparkles } from 'lucide-react';
 import type { ReactNode } from 'react';
 
-export const CURRENT_WEEK = 'Wk42';
+export const CURRENT_WEEK = 'Wk43';
 
 export type InsightTone = 'green' | 'red' | 'amber' | 'blue';
 export type InsightItem = { tone: InsightTone; title: string; body: ReactNode; icon?: 'warn' | 'up' | 'down' | 'info' | 'ok' };
@@ -20,7 +20,6 @@ export function KeyInsights({ items }: { items: InsightItem[] }) {
       <div className="fn-ki-head">
         <Sparkles size={16} strokeWidth={2.6} />
         <span className="fn-ki-title">Key Insights</span>
-        <span className="fn-ki-week">{CURRENT_WEEK} · Oct 14, 2026</span>
       </div>
       <div className="fn-ki-grid">
         {items.map((it, i) => {
@@ -90,7 +89,7 @@ export function HomePage({ onOpen }: { onOpen: (tab: string, cat?: string) => vo
         <div className="fn-toc-rule" />
         <p>Weekly SEO Performance · Select any section to open its slide</p>
         <div className="fn-toc-chips">
-          <span>660 Keywords</span><span>9 Categories</span><span>42 Weeks</span><span className="hot">{CURRENT_WEEK} · Oct 14, 2026</span>
+          <span>660 Keywords</span><span>9 Categories</span><span>43 Weeks</span><span className="hot">{CURRENT_WEEK} · Oct 21, 2026</span>
         </div>
       </div>
       <div className="fn-toc-grid">
