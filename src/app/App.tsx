@@ -7,6 +7,7 @@ import {
 } from 'chart.js';
 import '../styles/fortinet.css';
 import { KeyInsights, TabHead, HomePage, type InsightItem } from './dashParts';
+import NRModal from './NRModal';
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
 import fortinetLogo from '../imports/WhatsApp_Image_2026-10-06_at_5.36.40_PM.jpeg';
 
@@ -3987,55 +3988,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
       )}
 
       {/* ── Not Ranking Modal ── */}
-      {modalNR && (
-        <div onClick={()=>setModalNR(false)} style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.55)',zIndex:9000,display:'flex',alignItems:'center',justifyContent:'center',padding:24}}>
-          <div onClick={e=>e.stopPropagation()} style={{background:'var(--surface)',borderRadius:12,width:'100%',maxWidth:780,maxHeight:'82vh',display:'flex',flexDirection:'column',boxShadow:'0 24px 64px rgba(0,0,0,0.35)',border:'1px solid var(--border)'}}>
-            {/* header */}
-            <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'16px 20px',borderBottom:'1px solid var(--border)',flexShrink:0}}>
-              <div style={{display:'flex',alignItems:'center',gap:10}}>
-                <span style={{fontSize:15,fontWeight:700,color:'var(--text1)',fontFamily:"'Inter',sans-serif"}}>Not Ranking Keywords</span>
-                <span style={{background:'#F97316',color:'#fff',fontSize:11,fontWeight:700,borderRadius:20,padding:'2px 10px',fontFamily:"'DM Mono',monospace"}}>{NOT_RANKING.length} Keywords</span>
-              </div>
-              <div style={{display:'flex',alignItems:'center',gap:14}}>
-                <span style={{fontSize:10,color:'var(--text3)',fontFamily:"'DM Mono',monospace"}}>Source: Semrush</span>
-                <button onClick={()=>setModalNR(false)} style={{background:'none',border:'none',cursor:'pointer',color:'var(--text2)',fontSize:18,lineHeight:1,padding:2}}>✕</button>
-              </div>
-            </div>
-            {/* table */}
-            <div style={{overflowY:'auto',flex:1}}>
-              <table style={{width:'100%',borderCollapse:'collapse',fontSize:12}}>
-                <thead style={{position:'sticky',top:0,background:'var(--surface)',zIndex:1}}>
-                  <tr style={{borderBottom:'2px solid var(--border)'}}>
-                    <th style={{textAlign:'left',padding:'8px 20px',color:'var(--text3)',fontWeight:600,fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:'.06em'}}>KEYWORDS</th>
-                    <th style={{textAlign:'center',padding:'8px 10px',color:'var(--text3)',fontWeight:600,fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:'.06em'}}>FUNNEL</th>
-                    <th style={{textAlign:'right',padding:'8px 14px',color:'var(--text3)',fontWeight:600,fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:'.06em'}}>SV</th>
-                    <th style={{textAlign:'right',padding:'8px 20px 8px 10px',color:'var(--text3)',fontWeight:600,fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:'.06em'}}>POS PREV → CURR</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {NOT_RANKING.map((r,i)=>(
-                    <tr key={i} style={{borderBottom:'1px solid var(--border)',background:i%2===0?'transparent':'rgba(0,0,0,0.02)'}}>
-                      <td style={{padding:'7px 20px',color:'var(--text1)',fontWeight:500,fontFamily:"'Inter',sans-serif",fontSize:12}}>{r.kw}</td>
-                      <td style={{padding:'7px 10px',textAlign:'center'}}>
-                        <span style={{fontSize:9,fontWeight:700,borderRadius:4,padding:'2px 6px',background:r.funnel==='TOFU'?'rgba(26,86,219,.12)':r.funnel==='MOFU'?'rgba(5,150,105,.12)':'rgba(180,83,9,.12)',color:r.funnel==='TOFU'?'#1A56DB':r.funnel==='MOFU'?'#059669':'#B45309',fontFamily:"'DM Mono',monospace"}}>{r.funnel}</span>
-                      </td>
-                      <td style={{padding:'7px 14px',textAlign:'right',color:'var(--text2)',fontFamily:"'DM Mono',monospace",fontSize:11}}>{r.sv>0?r.sv.toLocaleString():'-'}</td>
-                      <td style={{padding:'7px 20px 7px 10px',textAlign:'right',fontFamily:"'DM Mono',monospace",fontSize:11,color:'var(--text2)',whiteSpace:'nowrap'}}>
-                        {r.prev==='-'?101:'#'+r.prev} <span style={{color:'var(--text3)'}}>→</span> <span style={{color:'#DC2626',fontWeight:700}}>101</span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {/* footer */}
-            <div style={{padding:'10px 20px',borderTop:'1px solid var(--border)',flexShrink:0,display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-              <span style={{fontSize:10,color:'var(--text3)',fontFamily:"'DM Mono',monospace"}}>Scroll to view all {NOT_RANKING.length} keywords</span>
-              <span style={{fontSize:10,color:'var(--text3)',fontFamily:"'DM Mono',monospace"}}>Click outside to close</span>
-            </div>
-          </div>
-        </div>
-      )}
+      {modalNR && <NRModal onClose={()=>setModalNR(false)} />}
 
       {/* ── AIO Keywords Modal ── */}
       {modalAIO && (
