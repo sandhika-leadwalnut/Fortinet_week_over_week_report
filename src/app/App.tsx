@@ -17,59 +17,59 @@ Chart.register(
 );
 
 // ═══════════════════ DATA ═══════════════════
-const WEEKS = ["Dec 31","Jan 07","Jan 14","Jan 21","Jan 28","Feb 04","Feb 11","Feb 18","Feb 25","Mar 04","Mar 11","Mar 18","Mar 25","Apr 01","Apr 08","Apr 15","Apr 22","Apr 29","May 06","May 13","May 20","May 27","Jun 03","Jun 10","Jun 17","Jun 24","Jul 01","Jul 08","Jul 15","Jul 22","Jul 29","Aug 05","Aug 12","Aug 19","Aug 26","Sep 02","Sep 09","Sep 16","Sep 23","Sep 30","Oct 07","Oct 14","Oct 21"];
+const WEEKS = ["Dec 31","Jan 07","Jan 14","Jan 21","Jan 28","Feb 04","Feb 11","Feb 18","Feb 25","Mar 04","Mar 11","Mar 18","Mar 25","Apr 01","Apr 08","Apr 15","Apr 22","Apr 29","May 06","May 13","May 20","May 27","Jun 03","Jun 10","Jun 17","Jun 24","Jul 01","Jul 08","Jul 15","Jul 22","Jul 29","Aug 05","Aug 12","Aug 19","Aug 26","Sep 02","Sep 09","Sep 16","Sep 23","Sep 30","Oct 07","Oct 14","Oct 21","Oct 28"];
 
 const CAT_STATS: Record<string, {total:number;valid:number;rank1:number;avg_rank:number;improving:number;declining:number;pct:number|string;tofu_mofu:number;bofu:number;not_ranking:number;tofu_r1:number;bofu_r1:number;isNew?:boolean}> = {
-  // Source: Semrush · Oct 21, 2026 · Page 1 & Position 1 · WoW = Oct 14→Oct 21
-  // valid = Page 1 (rank 1-10) | rank1 = Position 1 | improving/declining/not_ranking = Oct 14→Oct 21
-  "Top Opportunities":{total:49, valid:32, rank1:28, avg_rank:6.9, improving:11, declining:9, pct:65.3, tofu_mofu:48, bofu:1, not_ranking:6, tofu_r1:28, bofu_r1:0},
-  "NAC":             {total:80, valid:70, rank1:53, avg_rank:3.5, improving:6, declining:17, pct:87.5, tofu_mofu:72, bofu:8, not_ranking:5, tofu_r1:50, bofu_r1:3},
-  "NGFW":            {total:141, valid:132, rank1:100, avg_rank:3.3, improving:29, declining:27, pct:93.6, tofu_mofu:111, bofu:30, not_ranking:0, tofu_r1:80, bofu_r1:20},
-  "Zero Trust":      {total:20, valid:20, rank1:17, avg_rank:2, improving:4, declining:2, pct:100, tofu_mofu:19, bofu:1, not_ranking:0, tofu_r1:16, bofu_r1:1},
-  "SD-WAN":          {total:130, valid:97, rank1:49, avg_rank:7.5, improving:24, declining:43, pct:74.6, tofu_mofu:120, bofu:10, not_ranking:12, tofu_r1:48, bofu_r1:1},
-  "AI Cybersecurity":{total:136, valid:62, rank1:44, avg_rank:9.2, improving:23, declining:30, pct:45.6, tofu_mofu:112, bofu:24, not_ranking:48, tofu_r1:34, bofu_r1:10,isNew:true},
-  "OT Security":     {total:46, valid:34, rank1:26, avg_rank:7.9, improving:7, declining:8, pct:73.9, tofu_mofu:38, bofu:8, not_ranking:3, tofu_r1:23, bofu_r1:3,isNew:true},
-  "Quantum Security":{total:28, valid:16, rank1:15, avg_rank:6.2, improving:1, declining:6, pct:57.1, tofu_mofu:28, bofu:0, not_ranking:8, tofu_r1:15, bofu_r1:0,isNew:true},
-  "SASE":            {total:30, valid:28, rank1:25, avg_rank:1.9, improving:5, declining:3, pct:93.3, tofu_mofu:28, bofu:2, not_ranking:1, tofu_r1:25, bofu_r1:0,isNew:true}
+  // Source: Semrush · Oct 28, 2026 · Page 1 & Position 1 · WoW = Oct 21→Oct 28
+  // valid = Page 1 (rank 1-10) | rank1 = Position 1 | improving/declining/not_ranking = Oct 21→Oct 28
+  "Top Opportunities":{total:49, valid:31, rank1:27, avg_rank:7.1, improving:8, declining:11, pct:63.3, tofu_mofu:48, bofu:1, not_ranking:6, tofu_r1:26, bofu_r1:1},
+  "NAC":             {total:80, valid:67, rank1:53, avg_rank:3.8, improving:16, declining:14, pct:83.8, tofu_mofu:72, bofu:8, not_ranking:5, tofu_r1:49, bofu_r1:4},
+  "NGFW":            {total:141, valid:114, rank1:86, avg_rank:5.3, improving:16, declining:39, pct:80.9, tofu_mofu:111, bofu:30, not_ranking:4, tofu_r1:68, bofu_r1:18},
+  "Zero Trust":      {total:20, valid:19, rank1:14, avg_rank:3, improving:2, declining:4, pct:95.0, tofu_mofu:19, bofu:1, not_ranking:0, tofu_r1:13, bofu_r1:1},
+  "SD-WAN":          {total:130, valid:84, rank1:45, avg_rank:9.6, improving:34, declining:49, pct:64.6, tofu_mofu:120, bofu:10, not_ranking:10, tofu_r1:45, bofu_r1:0},
+  "AI Cybersecurity":{total:136, valid:54, rank1:42, avg_rank:11.1, improving:29, declining:31, pct:39.7, tofu_mofu:112, bofu:24, not_ranking:48, tofu_r1:33, bofu_r1:9,isNew:true},
+  "OT Security":     {total:46, valid:33, rank1:25, avg_rank:8.3, improving:12, declining:6, pct:71.7, tofu_mofu:38, bofu:8, not_ranking:1, tofu_r1:22, bofu_r1:3,isNew:true},
+  "Quantum Security":{total:28, valid:16, rank1:13, avg_rank:9.5, improving:4, declining:6, pct:57.1, tofu_mofu:28, bofu:0, not_ranking:7, tofu_r1:13, bofu_r1:0,isNew:true},
+  "SASE":            {total:30, valid:26, rank1:24, avg_rank:2.8, improving:2, declining:4, pct:86.7, tofu_mofu:28, bofu:2, not_ranking:1, tofu_r1:24, bofu_r1:0,isNew:true}
 };
 
 const WEEKLY_R1: Record<string, number[]> = {
-  // Source CSV · count of keywords at Rank #1 each week · Dec31→Oct14
-  "Top Opportunities":[21,18,20,22,20,16,22,23,27,26,26,18,19,30,28,35,32,28,31,32,29,24,27,22,27,23,23,22,24,19,20,16,19,21,22,13,18,20,18,16,22,24,28],
-  "NAC":              [48,36,46,49,38,43,44,48,48,50,50,40,47,51,48,54,52,53,51,58,52,41,53,47,59,57,46,46,44,41,33,33,39,35,43,43,37,40,43,49,48,60,53],
-  "NGFW":             [93,87,89,96,82,75,73,105,92,110,103,95,94,103,105,118,119,109,112,112,105,82,109,114,108,111,103,104,98,99,87,85,98,99,94,93,90,79,108,91,82,94,100],
-  "Zero Trust":       [13,13,14,14,14,10,9,16,17,13,16,15,13,14,17,16,13,15,16,17,14,12,13,16,12,14,19,16,15,16,17,17,16,12,16,15,14,16,18,11,15,14,17],
-  "SD-WAN":           [80,54,86,79,64,59,59,75,88,73,73,68,80,96,96,90,96,93,85,80,70,54,67,73,76,75,82,66,69,45,45,53,63,67,65,73,62,42,78,54,53,61,49],
-  "AI Cybersecurity": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,7,5,5,4,37,39,44,38,31,32,38,37,37,46,44],
-  "OT Security":      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,15,15,12,14,17,20,20,19,22,29,22,26,26,26],
-  "Quantum Security": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,14,16,13,14,15,17,14,14,12,16,15,15,12,17,15],
-  "SASE":             [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23,22,20,17,22,25,22,24,23,20,21,26,23,20,22,25]
+  // Source CSV · count of keywords at Rank #1 each week · Dec31→Oct21
+  "Top Opportunities":[21,18,20,22,20,16,22,23,27,26,26,18,19,30,28,35,32,28,31,32,29,24,27,22,27,23,23,22,24,19,20,16,19,21,22,13,18,20,18,16,22,24,28,27],
+  "NAC":              [48,36,46,49,38,43,44,48,48,50,50,40,47,51,48,54,52,53,51,58,52,41,53,47,59,57,46,46,44,41,33,33,39,35,43,43,37,40,43,49,48,60,53,53],
+  "NGFW":             [93,87,89,96,82,75,73,105,92,110,103,95,94,103,105,118,119,109,112,112,105,82,109,114,108,111,103,104,98,99,87,85,98,99,94,93,90,79,108,91,82,94,100,86],
+  "Zero Trust":       [13,13,14,14,14,10,9,16,17,13,16,15,13,14,17,16,13,15,16,17,14,12,13,16,12,14,19,16,15,16,17,17,16,12,16,15,14,16,18,11,15,14,17,14],
+  "SD-WAN":           [80,54,86,79,64,59,59,75,88,73,73,68,80,96,96,90,96,93,85,80,70,54,67,73,76,75,82,66,69,45,45,53,63,67,65,73,62,42,78,54,53,61,49,45],
+  "AI Cybersecurity": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,7,5,5,4,37,39,44,38,31,32,38,37,37,46,44,42],
+  "OT Security":      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,15,15,12,14,17,20,20,19,22,29,22,26,26,26,25],
+  "Quantum Security": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,14,16,13,14,15,17,14,14,12,16,15,15,12,17,15,13],
+  "SASE":             [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23,22,20,17,22,25,22,24,23,20,21,26,23,20,22,25,24]
 };
 
-// Weekly average base rank per category · all 43 weeks · Source CSV Oct 21 2026
+// Weekly average base rank per category · all 44 weeks · Source CSV Oct 28 2026
 const WEEKLY_AVG_RANK: Record<string, (number|null)[]> = {
-  "Top Opportunities":[7.49,8.19,7.02,8.11,7.81,7.76,6.11,6.36,5.23,4.76,4.98,6.6,4.72,5.0,4.79,4.96,5.54,7.06,5.68,5.69,5.13,5.98,5.76,6.31,4.65,7.5,9.22,8.64,9.25,9.47,8.4,8.18,7.39,7.82,8.73,8.09,9.95,9.17,9.35,9.6,6.88,7.33,6.91],
-  "NAC":              [3.37,5.46,3.97,4.62,5.76,5.97,3.36,3.57,4.57,3.71,4.72,6.53,3.27,3.41,2.84,4.03,4.26,2.87,3.08,3.03,2.53,2.72,2.41,3.05,2.87,2.43,4.07,3.43,3.66,3.68,3.68,3.82,3.72,3.56,3.36,3.49,4.49,3.48,4.79,2.52,5.08,2.35,3.47],
-  "NGFW":             [3.42,3.2,3.06,3.09,3.3,3.34,3.57,2.5,2.52,2.35,2.52,2.64,2.59,2.73,2.7,2.33,2.06,2.41,2.08,2.26,2.26,3.04,2.63,2.15,2.52,2.65,2.25,2.35,2.34,2.45,3.72,2.96,2.64,2.44,2.89,3.06,3.71,3.15,2.71,3.33,3.48,3.88,3.33],
-  "Zero Trust":       [6.8,3.75,3.5,3.0,3.6,3.37,5.95,2.85,2.75,4.8,3.2,3.4,3.3,3.75,2.65,1.95,3.32,2.45,4.15,2.1,2.95,4.05,3.85,2.75,5.4,3.0,1.35,2.35,2.8,2.05,1.8,1.95,2.0,4.1,1.85,3.0,2.75,1.7,1.8,5.45,6.3,3.25,2.05],
-  "SD-WAN":           [6.21,8.11,6.32,6.16,7.45,7.96,6.45,5.95,5.59,6.0,7.36,7.22,3.96,2.91,5.03,4.8,4.98,5.02,5.02,5.74,4.04,5.11,4.5,4.04,4.32,3.66,3.0,3.55,3.68,5.52,5.72,4.19,4.66,4.47,4.59,3.11,3.72,4.75,4.04,5.55,7.21,6.66,7.47],
-  "AI Cybersecurity": [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,6.8,2.9,7.78,8.56,7.22,10.43,11.21,9.85,8.93,8.74,8.65,9.7,8.35,7.48,8.4,9.25],
-  "OT Security":      [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1.0,7.86,8.63,7.36,5.82,6.18,7.24,6.6,8.07,6.7,7.98,7.43,8.02,7.09,7.91],
-  "Quantum Security": [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,10.48,7.33,4.95,7.32,7.67,5.76,4.25,5.95,6.33,7.14,5.68,4.91,5.64,7.59,7.0,6.15],
-  "SASE":             [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,2.72,1.86,3.29,3.68,2.97,1.9,2.18,2.23,2.03,2.46,2.66,1.97,1.82,3.0,2.61,1.9]
+  "Top Opportunities":[7.49,8.19,7.02,8.11,7.81,7.76,6.11,6.36,5.23,4.76,4.98,6.6,4.72,5.0,4.79,4.96,5.54,7.06,5.68,5.69,5.13,5.98,5.76,6.31,4.65,7.5,9.22,8.64,9.25,9.47,8.4,8.18,7.39,7.82,8.73,8.09,9.95,9.17,9.35,9.6,6.88,7.33,6.91,7.14],
+  "NAC":              [3.37,5.46,3.97,4.62,5.76,5.97,3.36,3.57,4.57,3.71,4.72,6.53,3.27,3.41,2.84,4.03,4.26,2.87,3.08,3.03,2.53,2.72,2.41,3.05,2.87,2.43,4.07,3.43,3.66,3.68,3.68,3.82,3.72,3.56,3.36,3.49,4.49,3.48,4.79,2.52,5.08,2.35,3.47,3.83],
+  "NGFW":             [3.42,3.2,3.06,3.09,3.3,3.34,3.57,2.5,2.52,2.35,2.52,2.64,2.59,2.73,2.7,2.33,2.06,2.41,2.08,2.26,2.26,3.04,2.63,2.15,2.52,2.65,2.25,2.35,2.34,2.45,3.72,2.96,2.64,2.44,2.89,3.06,3.71,3.15,2.71,3.33,3.48,3.88,3.33,5.26],
+  "Zero Trust":       [6.8,3.75,3.5,3.0,3.6,3.37,5.95,2.85,2.75,4.8,3.2,3.4,3.3,3.75,2.65,1.95,3.32,2.45,4.15,2.1,2.95,4.05,3.85,2.75,5.4,3.0,1.35,2.35,2.8,2.05,1.8,1.95,2.0,4.1,1.85,3.0,2.75,1.7,1.8,5.45,6.3,3.25,2.05,3.0],
+  "SD-WAN":           [6.21,8.11,6.32,6.16,7.45,7.96,6.45,5.95,5.59,6.0,7.36,7.22,3.96,2.91,5.03,4.8,4.98,5.02,5.02,5.74,4.04,5.11,4.5,4.04,4.32,3.66,3.0,3.55,3.68,5.52,5.72,4.19,4.66,4.47,4.59,3.11,3.72,4.75,4.04,5.55,7.21,6.66,7.47,9.57],
+  "AI Cybersecurity": [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,6.8,2.9,7.78,8.56,7.22,10.43,11.21,9.85,8.93,8.74,8.65,9.7,8.35,7.48,8.4,9.25,11.11],
+  "OT Security":      [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1.0,7.86,8.63,7.36,5.82,6.18,7.24,6.6,8.07,6.7,7.98,7.43,8.02,7.09,7.91,8.27],
+  "Quantum Security": [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,10.48,7.33,4.95,7.32,7.67,5.76,4.25,5.95,6.33,7.14,5.68,4.91,5.64,7.59,7.0,6.15,9.52],
+  "SASE":             [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,2.72,1.86,3.29,3.68,2.97,1.9,2.18,2.23,2.03,2.46,2.66,1.97,1.82,3.0,2.61,1.9,2.83]
 };
 
-// Page 1 (rank 1-10) count per week per category · Source CSV Oct 21 2026
+// Page 1 (rank 1-10) count per week per category · Source CSV Oct 28 2026
 const WEEKLY_PAGE1: Record<string, number[]> = {
-  "Top Opportunities":[37,36,39,36,35,35,39,37,40,38,41,40,41,41,42,38,37,34,35,39,37,34,35,32,35,35,30,31,31,35,35,31,35,32,31,30,27,30,32,26,29,31,32],
-  "NAC":              [72,74,72,71,70,70,72,73,71,73,72,70,75,74,73,68,67,75,71,73,73,72,71,70,71,72,70,71,69,70,72,70,70,71,71,71,69,71,67,73,62,72,70],
-  "NGFW":             [133,132,134,133,131,134,134,135,136,136,135,137,135,135,135,134,137,135,137,135,134,133,132,133,131,131,133,134,135,134,131,133,134,134,130,128,126,129,131,130,126,127,132],
-  "Zero Trust":       [16,17,18,20,18,19,16,19,19,17,17,18,19,18,19,19,17,20,18,20,20,19,18,19,16,18,20,19,19,20,19,19,20,18,19,18,19,19,20,17,18,19,20],
-  "SD-WAN":           [110,105,109,107,104,101,108,109,109,109,105,104,109,112,105,107,109,110,107,107,100,100,102,101,99,105,104,104,99,98,101,102,103,103,102,99,99,99,106,97,94,98,97],
-  "AI Cybersecurity": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,9,7,6,6,58,54,60,52,59,60,57,62,59,61,62],
-  "OT Security":      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,32,30,35,36,37,39,38,38,40,39,37,34,36,34],
-  "Quantum Security": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,16,17,14,16,17,17,16,16,16,18,16,18,13,17,16],
-  "SASE":             [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,27,27,27,27,28,28,29,28,27,27,29,27,29,27,28]
+  "Top Opportunities":[37,36,39,36,35,35,39,37,40,38,41,40,41,41,42,38,37,34,35,39,37,34,35,32,35,35,30,31,31,35,35,31,35,32,31,30,27,30,32,26,29,31,32,31],
+  "NAC":              [72,74,72,71,70,70,72,73,71,73,72,70,75,74,73,68,67,75,71,73,73,72,71,70,71,72,70,71,69,70,72,70,70,71,71,71,69,71,67,73,62,72,70,67],
+  "NGFW":             [133,132,134,133,131,134,134,135,136,136,135,137,135,135,135,134,137,135,137,135,134,133,132,133,131,131,133,134,135,134,131,133,134,134,130,128,126,129,131,130,126,127,132,114],
+  "Zero Trust":       [16,17,18,20,18,19,16,19,19,17,17,18,19,18,19,19,17,20,18,20,20,19,18,19,16,18,20,19,19,20,19,19,20,18,19,18,19,19,20,17,18,19,20,19],
+  "SD-WAN":           [110,105,109,107,104,101,108,109,109,109,105,104,109,112,105,107,109,110,107,107,100,100,102,101,99,105,104,104,99,98,101,102,103,103,102,99,99,99,106,97,94,98,97,84],
+  "AI Cybersecurity": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,9,7,6,6,58,54,60,52,59,60,57,62,59,61,62,54],
+  "OT Security":      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,32,30,35,36,37,39,38,38,40,39,37,34,36,34,33],
+  "Quantum Security": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,16,17,14,16,17,17,16,16,16,18,16,18,13,17,16,16],
+  "SASE":             [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,27,27,27,27,28,28,29,28,27,27,29,27,29,27,28,26]
 };
 
 import { KW, TOP_VOL, CAT_KEYWORDS, BACKLINK_KWS, NO_BACKLINK_KWS, RANK1_KEYWORDS, FunnelKW, TOP_TOFU_R1_KWS, TOP_BOFU_R1_KWS, solidR1, volatileKws } from './keywords';
@@ -79,70 +79,70 @@ import { KW, TOP_VOL, CAT_KEYWORDS, BACKLINK_KWS, NO_BACKLINK_KWS, RANK1_KEYWORD
 // bothNr = keywords where both weeks were NR
 type WowStat = {improving:number;declining:number;stable:number;net:number;bothNr:number;tracked:number;total:number};
 const WOW_STATS: Record<string, WowStat> = {
-  // Week-over-week stats · Oct 14→Oct 21, 2026 · source: 9_Category_With_AIO.csv
-  'Top Opportunities': {improving:11, declining:9, stable:24, bothNr:5,  net:2,  tracked:49,  total:49},
-  'NAC': {improving:6, declining:17, stable:52, bothNr:5,  net:-11,  tracked:80,  total:80},
-  'NGFW': {improving:29, declining:27, stable:85, bothNr:0,  net:2,  tracked:141,  total:141},
-  'Zero Trust': {improving:4, declining:2, stable:14, bothNr:0,  net:2,  tracked:20,  total:20},
-  'SD-WAN': {improving:24, declining:43, stable:52, bothNr:11,  net:-19,  tracked:130,  total:130},
-  'SASE': {improving:5, declining:3, stable:21, bothNr:1,  net:2,  tracked:30,  total:30},
-  'Quantum Security': {improving:1, declining:6, stable:15, bothNr:6,  net:-5,  tracked:28,  total:28},
-  'AI Cybersecurity': {improving:23, declining:30, stable:36, bothNr:47,  net:-7,  tracked:136,  total:136},
-  'OT Security': {improving:7, declining:8, stable:28, bothNr:3,  net:-1,  tracked:46,  total:46},
+  // Week-over-week stats · Oct 21→Oct 28, 2026 · source: 9_Category_With_AIO.csv
+  'Top Opportunities': {improving:8, declining:11, stable:26, bothNr:4,  net:-3,  tracked:49,  total:49},
+  'NAC': {improving:16, declining:14, stable:46, bothNr:4,  net:2,  tracked:80,  total:80},
+  'NGFW': {improving:16, declining:39, stable:86, bothNr:0,  net:-23,  tracked:141,  total:141},
+  'Zero Trust': {improving:2, declining:4, stable:14, bothNr:0,  net:-2,  tracked:20,  total:20},
+  'SD-WAN': {improving:34, declining:49, stable:41, bothNr:6,  net:-15,  tracked:130,  total:130},
+  'SASE': {improving:2, declining:4, stable:23, bothNr:1,  net:-2,  tracked:30,  total:30},
+  'Quantum Security': {improving:4, declining:6, stable:12, bothNr:6,  net:-2,  tracked:28,  total:28},
+  'AI Cybersecurity': {improving:29, declining:31, stable:36, bothNr:40,  net:-2,  tracked:136,  total:136},
+  'OT Security': {improving:12, declining:6, stable:27, bothNr:1,  net:6,  tracked:46,  total:46},
 };
 
-// Top movers per category — Oct 14 → Oct 21 2026
+// Top movers per category — Oct 21 → Oct 28 2026
 const WOW_MOVERS: Record<string, {gainers:{kw:string;vol:number;from:string;to:string;d:number}[];decliners:{kw:string;vol:number;from:string;to:string;d:number}[]}> = {
-  // Top movers per category — Oct 14 → Oct 21 2026 · source: 9_Category_With_AIO_Data.csv · top 3 by highest SV
+  // Top movers per category — Oct 21 → Oct 28 2026 · source: 9_Category_With_AIO_Data.csv · top 3 by highest SV
   'Top Opportunities': {
-    gainers:   [{kw:'proxy',vol:201000,from:'6',to:'3',d:3},{kw:'cybersecurity',vol:201000,from:'34',to:'1',d:33},{kw:'what is phishing',vol:74000,from:'8',to:'1',d:7}],
-    decliners: [{kw:'what is malware',vol:135000,from:'17',to:'24',d:-7},{kw:'iot',vol:27100,from:'29',to:'34',d:-5},{kw:'encryption',vol:22200,from:'15',to:'16',d:-1}],
+    gainers:   [{kw:'iot',vol:27100,from:'34',to:'31',d:3},{kw:'internet of things',vol:22200,from:'48',to:'25',d:23},{kw:'access control',vol:12100,from:'18',to:'1',d:17}],
+    decliners: [{kw:'vpn',vol:673000,from:'1',to:'15',d:-14},{kw:'proxy',vol:201000,from:'3',to:'5',d:-2},{kw:'what is phishing',vol:74000,from:'1',to:'8',d:-7}],
   },
   'NAC': {
-    gainers:   [{kw:'network access control solutions',vol:1000,from:'3',to:'1',d:2},{kw:'network access control list',vol:480,from:'3',to:'1',d:2},{kw:'access control list in networking',vol:140,from:'2',to:'1',d:1}],
-    decliners: [{kw:'access control',vol:12100,from:'1',to:'18',d:-17},{kw:'access control security',vol:1300,from:'1',to:'2',d:-1},{kw:'access control management',vol:720,from:'32',to:'49',d:-17}],
+    gainers:   [{kw:'access control',vol:12100,from:'18',to:'1',d:17},{kw:'access control management',vol:720,from:'49',to:'19',d:30},{kw:'access control services',vol:720,from:'23',to:'5',d:18}],
+    decliners: [{kw:'nac network',vol:1300,from:'1',to:'19',d:-18},{kw:'what is access control',vol:1000,from:'1',to:'21',d:-20},{kw:'bring your own device policy',vol:720,from:'1',to:'8',d:-7}],
   },
   'NGFW': {
-    gainers:   [{kw:'network firewall',vol:3600,from:'17',to:'7',d:10},{kw:'network security firewall',vol:2400,from:'3',to:'1',d:2},{kw:'network security firewall',vol:2400,from:'3',to:'1',d:2}],
-    decliners: [{kw:'waf meaning',vol:1000,from:'1',to:'4',d:-3},{kw:'layer 7 firewall',vol:390,from:'25',to:'41',d:-16},{kw:'stateless firewall',vol:320,from:'1',to:'2',d:-1}],
+    gainers:   [{kw:'network firewall',vol:3600,from:'7',to:'1',d:6},{kw:'waf meaning',vol:1000,from:'4',to:'1',d:3},{kw:'waf firewall',vol:480,from:'5',to:'1',d:4}],
+    decliners: [{kw:'hardware firewall',vol:4400,from:'1',to:'4',d:-3},{kw:'small business firewall',vol:720,from:'1',to:'6',d:-5},{kw:'types of firewall',vol:720,from:'1',to:'7',d:-6}],
   },
   'Zero Trust': {
-    gainers:   [{kw:'zero trust architecture',vol:6600,from:'17',to:'1',d:16},{kw:'ztna',vol:5400,from:'4',to:'1',d:3},{kw:'what is zero trust security',vol:1600,from:'7',to:'1',d:6}],
-    decliners: [{kw:'zero trust',vol:9900,from:'8',to:'10',d:-2},{kw:'ztna security',vol:260,from:'1',to:'6',d:-5}],
+    gainers:   [{kw:'zero trust',vol:9900,from:'10',to:'9',d:1},{kw:'ztna security',vol:260,from:'6',to:'1',d:5}],
+    decliners: [{kw:'zero trust architecture',vol:6600,from:'1',to:'22',d:-21},{kw:'zero trust edge',vol:260,from:'1',to:'3',d:-2},{kw:'VPN to ZTNA',vol:30,from:'1',to:'2',d:-1}],
   },
   'SD-WAN': {
-    gainers:   [{kw:'wan definition',vol:6600,from:'15',to:'1',d:14},{kw:'what is sd-wan',vol:2400,from:'3',to:'1',d:2},{kw:'sd wan explained',vol:720,from:'4',to:'1',d:3}],
-    decliners: [{kw:'what is sd wan',vol:1900,from:'1',to:'30',d:-29},{kw:'software defined wan',vol:1600,from:'1',to:'3',d:-2},{kw:'sd wan managed services',vol:880,from:'30',to:'34',d:-4}],
+    gainers:   [{kw:'what is sd wan',vol:1900,from:'30',to:'1',d:29},{kw:'software defined wan',vol:1600,from:'3',to:'1',d:2},{kw:'sd wan meaning',vol:1300,from:'3',to:'1',d:2}],
+    decliners: [{kw:'what is wan',vol:2900,from:'1',to:'4',d:-3},{kw:'managed sd wan',vol:1000,from:'4',to:'20',d:-16},{kw:'sd wan explained',vol:720,from:'1',to:'21',d:-20}],
   },
   'SASE': {
-    gainers:   [{kw:'Sase',vol:14800,from:'18',to:'1',d:17},{kw:'Sase Providers',vol:480,from:'9',to:'1',d:8},{kw:'Sase Vendor',vol:320,from:'6',to:'1',d:5}],
-    decliners: [{kw:'Sase Services',vol:390,from:'1',to:'2',d:-1},{kw:'Single Vendor Sase',vol:170,from:'3',to:'4',d:-1},{kw:'Ai Powered Sase',vol:30,from:'7',to:'14',d:-7}],
+    gainers:   [{kw:'Sase Services',vol:390,from:'2',to:'1',d:1},{kw:'Ai Powered Sase',vol:30,from:'14',to:'12',d:2}],
+    decliners: [{kw:'Sse',vol:14800,from:'10',to:'12',d:-2},{kw:'Sase Providers',vol:480,from:'1',to:'21',d:-20},{kw:'Single Vendor Sase',vol:170,from:'4',to:'6',d:-2}],
   },
   'Quantum Security': {
-    gainers:   [{kw:'Cryptographic Agility',vol:140,from:'30',to:'1',d:29}],
-    decliners: [{kw:'quantum cryptography',vol:18100,from:'25',to:'39',d:-14},{kw:'quantum readiness',vol:110,from:'1',to:'21',d:-20},{kw:'Crypto-Agility',vol:70,from:'16',to:'17',d:-1}],
+    gainers:   [{kw:'quantum cryptography',vol:18100,from:'39',to:'33',d:6},{kw:'what is QKD',vol:40,from:'7',to:'6',d:1}],
+    decliners: [{kw:'PQC',vol:1900,from:'24',to:'26',d:-2},{kw:'quantum computing security',vol:170,from:'1',to:'5',d:-4},{kw:'quantum readiness',vol:110,from:'21',to:'43',d:-22}],
   },
   'AI Cybersecurity': {
-    gainers:   [{kw:'ai cybersecurity tools',vol:2400,from:'9',to:'1',d:8},{kw:'aiops tools',vol:1900,from:'16',to:'15',d:1},{kw:'ai security solutions',vol:1600,from:'9',to:'1',d:8}],
-    decliners: [{kw:'AI security',vol:6600,from:'1',to:'22',d:-21},{kw:'aiops',vol:5400,from:'11',to:'14',d:-3},{kw:'deepfake ai',vol:5400,from:'1',to:'4',d:-3}],
+    gainers:   [{kw:'AI security',vol:6600,from:'22',to:'9',d:13},{kw:'deepfake ai',vol:5400,from:'4',to:'1',d:3},{kw:'list of ai cybersecurity tools',vol:2400,from:'47',to:'21',d:26}],
+    decliners: [{kw:'aiops',vol:5400,from:'14',to:'25',d:-11},{kw:'what are ai data centers',vol:1000,from:'1',to:'22',d:-21},{kw:'deepfakes meaning',vol:1000,from:'1',to:'23',d:-22}],
   },
   'OT Security': {
-    gainers:   [{kw:'ot security companies',vol:210,from:'28',to:'17',d:11},{kw:'operational technology definition',vol:140,from:'4',to:'1',d:3},{kw:'ot security company',vol:140,from:'6',to:'5',d:1}],
-    decliners: [{kw:'ot security tools',vol:170,from:'1',to:'5',d:-4},{kw:'ics/ot',vol:140,from:'2',to:'35',d:-33},{kw:'ot vulnerabilities',vol:140,from:'12',to:'15',d:-3}],
+    gainers:   [{kw:'ot security tools',vol:170,from:'5',to:'1',d:4},{kw:'ics/ot',vol:140,from:'35',to:'14',d:21},{kw:'ot security company',vol:140,from:'5',to:'4',d:1}],
+    decliners: [{kw:'ot network security',vol:390,from:'1',to:'5',d:-4},{kw:'ot security companies',vol:210,from:'17',to:'19',d:-2},{kw:'ot vulnerabilities',vol:140,from:'15',to:'90',d:-75}],
   },
 };
 
-// WoW distribution buckets · Oct 14→Oct 21 · ↑20+,↑10-20,↑5-10,↑1-5,Stable,↓1-5,↓5-10,↓10-20,↓20+
+// WoW distribution buckets · Oct 21→Oct 28 · ↑20+,↑10-20,↑5-10,↑1-5,Stable,↓1-5,↓5-10,↓10-20,↓20+
 // Computed from 9_Category_With_AIO.csv (keywords with both weeks ranked)
-const WOW_DIST = [12,18,18,50,327,79,20,31,10];
+const WOW_DIST = [15,20,13,54,311,47,27,46,24];
 
-// All keywords flattened with WoW delta for the full keyword risk table · Oct 14→Oct 21
+// All keywords flattened with WoW delta for the full keyword risk table · Oct 21→Oct 28
 const ALL_KW_WOW = (()=>{
   const rows: {keyword:string;category:string;vol:number;aug12:number|null;aug19:number|null;delta:number|null}[] = [];
   for(const [cat,kws] of Object.entries(CAT_KEYWORDS)){
     for(const kw of kws){
-      const aug12=kw.ranks[41]??null;  // Oct 14 rank
-      const aug19=kw.ranks[42]??null;  // Oct 21 rank
+      const aug12=kw.ranks[42]??null;  // Oct 21 rank
+      const aug19=kw.ranks[43]??null;  // Oct 28 rank
       const delta=(aug12!=null&&aug19!=null)?aug19-aug12:null;
       rows.push({keyword:kw.keyword,category:cat,vol:kw.vol_jan26,aug12,aug19,delta});
     }
@@ -157,321 +157,553 @@ const ALL_KW_WOW = (()=>{
 })();
 
 const WOW_MOVERS_FUNNEL: Record<string,{TOFU:{kw:string,vol:number,from:number,to:number,d:number}[],MOFU:{kw:string,vol:number,from:number,to:number,d:number}[],BOFU:{kw:string,vol:number,from:number,to:number,d:number}[]}> = {
-  // Oct 14 → Oct 21 2026 · Source: 9_Category_With_AIO_Data.csv · top 3 by highest SV
+  // Oct 21 → Oct 28 2026 · Source: 9_Category_With_AIO_Data.csv · top 3 by highest SV
   'Top Opportunities': {
-    TOFU: [{kw:"malware definition",vol:8100,from:0,to:18,d:99},{kw:"cybersecurity",vol:201000,from:34,to:1,d:33},{kw:"sase",vol:14800,from:18,to:1,d:17},{kw:"network firewall",vol:3600,from:17,to:7,d:10},{kw:"what is phishing",vol:74000,from:8,to:1,d:7},{kw:"ransomware",vol:33100,from:6,to:1,d:5},{kw:"ips",vol:49500,from:21,to:17,d:4},{kw:"proxy server",vol:33100,from:5,to:1,d:4},{kw:"proxy",vol:201000,from:6,to:3,d:3},{kw:"what is a proxy server",vol:18100,from:3,to:1,d:2},{kw:"encryption definition",vol:6600,from:3,to:1,d:2},{kw:"vpn",vol:673000,from:1,to:1,d:0},{kw:"zero day",vol:368000,from:0,to:0,d:0},{kw:"what is a firewall",vol:135000,from:1,to:1,d:0},{kw:"phishing",vol:49500,from:0,to:0,d:0},{kw:"malware",vol:40500,from:15,to:15,d:0},{kw:"ddos",vol:33100,from:1,to:1,d:0},{kw:"iam",vol:33100,from:1,to:1,d:0},{kw:"wan",vol:33100,from:1,to:1,d:0},{kw:"firewall",vol:27100,from:1,to:1,d:0},{kw:"phishing definition",vol:27100,from:26,to:26,d:0},{kw:"ddos attack",vol:18100,from:1,to:1,d:0},{kw:"multi factor authentication",vol:14800,from:0,to:0,d:0},{kw:"single sign on",vol:12100,from:1,to:1,d:0},{kw:"two factor authentication",vol:12100,from:13,to:13,d:0},{kw:"oauth",vol:12100,from:1,to:1,d:0},{kw:"phishing email",vol:9900,from:0,to:0,d:0},{kw:"qos",vol:9900,from:1,to:1,d:0},{kw:"byod",vol:9900,from:1,to:1,d:0},{kw:"ddos meaning",vol:8100,from:1,to:1,d:0},{kw:"sd wan",vol:6600,from:1,to:1,d:0},{kw:"sd-wan",vol:6600,from:1,to:1,d:0},{kw:"sdwan",vol:6600,from:1,to:1,d:0},{kw:"firewalls",vol:5400,from:1,to:1,d:0},{kw:"what is ips",vol:3600,from:1,to:1,d:0},{kw:"what is ddos",vol:3600,from:1,to:1,d:0},{kw:"802.1 x",vol:1000,from:1,to:1,d:0},{kw:"network firewalls",vol:720,from:1,to:1,d:0},{kw:"ethernet switching",vol:260,from:1,to:1,d:0},{kw:"access control",vol:12100,from:1,to:18,d:-17},{kw:"internet of things",vol:22200,from:37,to:48,d:-11},{kw:"what is malware",vol:135000,from:17,to:24,d:-7},{kw:"how does vpn work",vol:4400,from:3,to:9,d:-6},{kw:"iot",vol:27100,from:29,to:34,d:-5},{kw:"saml",vol:18100,from:15,to:18,d:-3},{kw:"what is a proxy",vol:12100,from:1,to:3,d:-2},{kw:"encryption",vol:22200,from:15,to:16,d:-1}],
+    TOFU: [{kw:"phishing",vol:49500,from:0,to:26,d:99},{kw:"internet of things",vol:22200,from:48,to:25,d:23},{kw:"access control",vol:12100,from:18,to:1,d:17},{kw:"how does vpn work",vol:4400,from:9,to:1,d:8},{kw:"network firewall",vol:3600,from:7,to:1,d:6},{kw:"iot",vol:27100,from:34,to:31,d:3},{kw:"malware definition",vol:8100,from:18,to:15,d:3},{kw:"zero day",vol:368000,from:0,to:0,d:0},{kw:"cybersecurity",vol:201000,from:1,to:1,d:0},{kw:"what is a firewall",vol:135000,from:1,to:1,d:0},{kw:"malware",vol:40500,from:15,to:15,d:0},{kw:"ddos",vol:33100,from:1,to:1,d:0},{kw:"iam",vol:33100,from:1,to:1,d:0},{kw:"wan",vol:33100,from:1,to:1,d:0},{kw:"ransomware",vol:33100,from:1,to:1,d:0},{kw:"proxy server",vol:33100,from:1,to:1,d:0},{kw:"firewall",vol:27100,from:1,to:1,d:0},{kw:"encryption",vol:22200,from:16,to:16,d:0},{kw:"ddos attack",vol:18100,from:1,to:1,d:0},{kw:"what is a proxy server",vol:18100,from:1,to:1,d:0},{kw:"sase",vol:14800,from:1,to:1,d:0},{kw:"multi factor authentication",vol:14800,from:0,to:0,d:0},{kw:"oauth",vol:12100,from:1,to:1,d:0},{kw:"what is a proxy",vol:12100,from:3,to:3,d:0},{kw:"phishing email",vol:9900,from:0,to:0,d:0},{kw:"qos",vol:9900,from:1,to:1,d:0},{kw:"byod",vol:9900,from:1,to:1,d:0},{kw:"ddos meaning",vol:8100,from:1,to:1,d:0},{kw:"sd wan",vol:6600,from:1,to:1,d:0},{kw:"sd-wan",vol:6600,from:1,to:1,d:0},{kw:"sdwan",vol:6600,from:1,to:1,d:0},{kw:"encryption definition",vol:6600,from:1,to:1,d:0},{kw:"firewalls",vol:5400,from:1,to:1,d:0},{kw:"what is ddos",vol:3600,from:1,to:1,d:0},{kw:"802.1 x",vol:1000,from:1,to:1,d:0},{kw:"network firewalls",vol:720,from:1,to:1,d:0},{kw:"what is malware",vol:135000,from:24,to:0,d:-99},{kw:"saml",vol:18100,from:18,to:0,d:-99},{kw:"single sign on",vol:12100,from:1,to:20,d:-19},{kw:"ethernet switching",vol:260,from:1,to:20,d:-19},{kw:"vpn",vol:673000,from:1,to:15,d:-14},{kw:"phishing definition",vol:27100,from:26,to:39,d:-13},{kw:"what is phishing",vol:74000,from:1,to:8,d:-7},{kw:"what is ips",vol:3600,from:1,to:7,d:-6},{kw:"ips",vol:49500,from:17,to:21,d:-4},{kw:"proxy",vol:201000,from:3,to:5,d:-2},{kw:"two factor authentication",vol:12100,from:13,to:14,d:-1}],
     MOFU: [{kw:"vpn service",vol:9900,from:0,to:0,d:0}],
-    BOFU: [{kw:"ethernet switch",vol:14800,from:1,to:0,d:-99}],
+    BOFU: [{kw:"ethernet switch",vol:14800,from:0,to:1,d:99}],
   },
   'NAC': {
-    TOFU: [{kw:"types of access control list",vol:50,from:36,to:9,d:27},{kw:"network access control solutions",vol:1000,from:3,to:1,d:2},{kw:"network access control list",vol:480,from:3,to:1,d:2},{kw:"nac computer",vol:20,from:3,to:1,d:2},{kw:"access control list in networking",vol:140,from:2,to:1,d:1},{kw:"byod",vol:9900,from:1,to:1,d:0},{kw:"iot security",vol:3600,from:1,to:1,d:0},{kw:"identity access management",vol:2900,from:0,to:0,d:0},{kw:"network access control",vol:2900,from:1,to:1,d:0},{kw:"bring your own device",vol:2400,from:0,to:0,d:0},{kw:"what is iam",vol:1900,from:1,to:1,d:0},{kw:"iam identity access management",vol:1900,from:1,to:1,d:0},{kw:"nac network",vol:1300,from:1,to:1,d:0},{kw:"what is access control",vol:1000,from:1,to:1,d:0},{kw:"iot device security",vol:1000,from:1,to:1,d:0},{kw:"internet of things security",vol:880,from:1,to:1,d:0},{kw:"what is iot security",vol:880,from:1,to:1,d:0},{kw:"access control lists",vol:720,from:1,to:1,d:0},{kw:"acl network",vol:720,from:1,to:1,d:0},{kw:"bring your own device policy",vol:720,from:1,to:1,d:0},{kw:"identity and access management system",vol:720,from:1,to:1,d:0},{kw:"what is identity and access management",vol:590,from:7,to:7,d:0},{kw:"what is network access control",vol:390,from:1,to:1,d:0},{kw:"nac cyber security",vol:390,from:1,to:1,d:0},{kw:"what is nac in networking",vol:390,from:1,to:1,d:0},{kw:"iot network security",vol:320,from:1,to:1,d:0},{kw:"iot network security",vol:320,from:1,to:1,d:0},{kw:"access control methods",vol:260,from:1,to:1,d:0},{kw:"access control meaning",vol:260,from:1,to:1,d:0},{kw:"what is an acl networking",vol:210,from:2,to:2,d:0},{kw:"acls networking",vol:210,from:1,to:1,d:0},{kw:"network access control system",vol:210,from:1,to:1,d:0},{kw:"nac network access",vol:210,from:1,to:1,d:0},{kw:"how to secure iot devices",vol:170,from:5,to:5,d:0},{kw:"nac network security",vol:140,from:1,to:1,d:0},{kw:"acl firewall",vol:110,from:1,to:1,d:0},{kw:"nac network access control",vol:110,from:1,to:1,d:0},{kw:"nac it",vol:110,from:1,to:1,d:0},{kw:"nac technology",vol:110,from:1,to:1,d:0},{kw:"acls security",vol:110,from:1,to:1,d:0},{kw:"access control in network security",vol:90,from:1,to:1,d:0},{kw:"security for iot devices",vol:70,from:1,to:1,d:0},{kw:"network access control device",vol:50,from:1,to:1,d:0},{kw:"what is iam security",vol:50,from:1,to:1,d:0},{kw:"network access control benefits",vol:50,from:1,to:1,d:0},{kw:"cyber security in iot devices",vol:50,from:1,to:1,d:0},{kw:"network access control policy",vol:40,from:1,to:1,d:0},{kw:"what is nac security",vol:30,from:1,to:1,d:0},{kw:"security on iot devices",vol:30,from:1,to:1,d:0},{kw:"cyber security iot devices",vol:30,from:1,to:1,d:0},{kw:"network access control methods",vol:20,from:1,to:1,d:0},{kw:"network access control technologies",vol:20,from:1,to:1,d:0},{kw:"nac computer security",vol:20,from:1,to:1,d:0},{kw:"how to secure iot network",vol:20,from:1,to:1,d:0},{kw:"acl access control lists",vol:10,from:1,to:1,d:0},{kw:"access control services",vol:720,from:1,to:23,d:-22},{kw:"access control",vol:12100,from:1,to:18,d:-17},{kw:"access control management",vol:720,from:32,to:49,d:-17},{kw:"access control list example",vol:140,from:8,to:25,d:-17},{kw:"networking acl",vol:90,from:2,to:19,d:-17},{kw:"network access control software",vol:320,from:1,to:6,d:-5},{kw:"access control definition",vol:320,from:1,to:4,d:-3},{kw:"access control examples",vol:110,from:1,to:4,d:-3},{kw:"benefits of access control list",vol:40,from:1,to:4,d:-3},{kw:"nac security",vol:210,from:1,to:3,d:-2},{kw:"nac tools",vol:50,from:1,to:3,d:-2},{kw:"nac server",vol:20,from:1,to:3,d:-2},{kw:"access control security",vol:1300,from:1,to:2,d:-1},{kw:"iam definition",vol:260,from:1,to:2,d:-1},{kw:"nac security solution",vol:30,from:2,to:3,d:-1},{kw:"access control methods in computer networks",vol:20,from:4,to:5,d:-1}],
-    MOFU: [{kw:"access control technologies",vol:880,from:0,to:1,d:99}],
-    BOFU: [{kw:"access control solutions",vol:1900,from:0,to:0,d:0},{kw:"iot security solutions",vol:1000,from:1,to:1,d:0},{kw:"access control devices",vol:590,from:0,to:0,d:0},{kw:"iot firewall",vol:70,from:5,to:5,d:0},{kw:"network access control products",vol:40,from:1,to:1,d:0},{kw:"nac service",vol:40,from:0,to:0,d:0},{kw:"nac network access control products",vol:20,from:1,to:1,d:0},{kw:"nac solutions",vol:390,from:1,to:6,d:-5}],
+    TOFU: [{kw:"identity access management",vol:2900,from:0,to:35,d:99},{kw:"access control management",vol:720,from:49,to:19,d:30},{kw:"access control list example",vol:140,from:25,to:1,d:24},{kw:"access control services",vol:720,from:23,to:5,d:18},{kw:"access control",vol:12100,from:18,to:1,d:17},{kw:"networking acl",vol:90,from:19,to:2,d:17},{kw:"what is identity and access management",vol:590,from:7,to:1,d:6},{kw:"network access control software",vol:320,from:6,to:1,d:5},{kw:"access control definition",vol:320,from:4,to:1,d:3},{kw:"access control examples",vol:110,from:4,to:1,d:3},{kw:"nac security",vol:210,from:3,to:1,d:2},{kw:"nac tools",vol:50,from:3,to:1,d:2},{kw:"nac server",vol:20,from:3,to:1,d:2},{kw:"iam definition",vol:260,from:2,to:1,d:1},{kw:"nac security solution",vol:30,from:3,to:2,d:1},{kw:"byod",vol:9900,from:1,to:1,d:0},{kw:"iot security",vol:3600,from:1,to:1,d:0},{kw:"network access control",vol:2900,from:1,to:1,d:0},{kw:"bring your own device",vol:2400,from:0,to:0,d:0},{kw:"what is iam",vol:1900,from:1,to:1,d:0},{kw:"access control security",vol:1300,from:2,to:2,d:0},{kw:"iot device security",vol:1000,from:1,to:1,d:0},{kw:"network access control solutions",vol:1000,from:1,to:1,d:0},{kw:"internet of things security",vol:880,from:1,to:1,d:0},{kw:"what is iot security",vol:880,from:1,to:1,d:0},{kw:"access control lists",vol:720,from:1,to:1,d:0},{kw:"acl network",vol:720,from:1,to:1,d:0},{kw:"identity and access management system",vol:720,from:1,to:1,d:0},{kw:"network access control list",vol:480,from:1,to:1,d:0},{kw:"what is network access control",vol:390,from:1,to:1,d:0},{kw:"nac cyber security",vol:390,from:1,to:1,d:0},{kw:"what is nac in networking",vol:390,from:1,to:1,d:0},{kw:"iot network security",vol:320,from:1,to:1,d:0},{kw:"iot network security",vol:320,from:1,to:1,d:0},{kw:"access control methods",vol:260,from:1,to:1,d:0},{kw:"access control meaning",vol:260,from:1,to:1,d:0},{kw:"what is an acl networking",vol:210,from:2,to:2,d:0},{kw:"nac network access",vol:210,from:1,to:1,d:0},{kw:"access control list in networking",vol:140,from:1,to:1,d:0},{kw:"nac network security",vol:140,from:1,to:1,d:0},{kw:"acl firewall",vol:110,from:1,to:1,d:0},{kw:"nac network access control",vol:110,from:1,to:1,d:0},{kw:"nac it",vol:110,from:1,to:1,d:0},{kw:"nac technology",vol:110,from:1,to:1,d:0},{kw:"acls security",vol:110,from:1,to:1,d:0},{kw:"security for iot devices",vol:70,from:1,to:1,d:0},{kw:"what is iam security",vol:50,from:1,to:1,d:0},{kw:"network access control benefits",vol:50,from:1,to:1,d:0},{kw:"cyber security in iot devices",vol:50,from:1,to:1,d:0},{kw:"what is nac security",vol:30,from:1,to:1,d:0},{kw:"security on iot devices",vol:30,from:1,to:1,d:0},{kw:"cyber security iot devices",vol:30,from:1,to:1,d:0},{kw:"nac computer",vol:20,from:1,to:1,d:0},{kw:"network access control methods",vol:20,from:1,to:1,d:0},{kw:"access control methods in computer networks",vol:20,from:5,to:5,d:0},{kw:"nac computer security",vol:20,from:1,to:1,d:0},{kw:"acl access control lists",vol:10,from:1,to:1,d:0},{kw:"iam identity access management",vol:1900,from:1,to:0,d:-99},{kw:"benefits of access control list",vol:40,from:4,to:34,d:-30},{kw:"access control in network security",vol:90,from:1,to:23,d:-22},{kw:"what is access control",vol:1000,from:1,to:21,d:-20},{kw:"nac network",vol:1300,from:1,to:19,d:-18},{kw:"how to secure iot devices",vol:170,from:5,to:19,d:-14},{kw:"bring your own device policy",vol:720,from:1,to:8,d:-7},{kw:"acls networking",vol:210,from:1,to:5,d:-4},{kw:"types of access control list",vol:50,from:9,to:13,d:-4},{kw:"network access control device",vol:50,from:1,to:4,d:-3},{kw:"network access control system",vol:210,from:1,to:3,d:-2},{kw:"network access control technologies",vol:20,from:1,to:3,d:-2},{kw:"how to secure iot network",vol:20,from:1,to:3,d:-2},{kw:"network access control policy",vol:40,from:1,to:2,d:-1}],
+    MOFU: [{kw:"access control technologies",vol:880,from:1,to:1,d:0}],
+    BOFU: [{kw:"nac solutions",vol:390,from:6,to:1,d:5},{kw:"access control solutions",vol:1900,from:0,to:0,d:0},{kw:"iot security solutions",vol:1000,from:1,to:1,d:0},{kw:"access control devices",vol:590,from:0,to:0,d:0},{kw:"iot firewall",vol:70,from:5,to:5,d:0},{kw:"network access control products",vol:40,from:1,to:1,d:0},{kw:"nac service",vol:40,from:0,to:0,d:0},{kw:"nac network access control products",vol:20,from:1,to:1,d:0}],
   },
   'NGFW': {
-    TOFU: [{kw:"what is next generation firewall",vol:170,from:21,to:1,d:20},{kw:"what is the next generation firewall",vol:30,from:21,to:1,d:20},{kw:"stateless vs stateful firewall",vol:720,from:20,to:1,d:19},{kw:"network firewall",vol:3600,from:17,to:7,d:10},{kw:"waf security",vol:1300,from:9,to:1,d:8},{kw:"difference between next generation firewall and standard firewall",vol:30,from:9,to:1,d:8},{kw:"ngfw definition",vol:40,from:8,to:1,d:7},{kw:"next generation firewall meaning",vol:30,from:7,to:1,d:6},{kw:"next generation firewall vs waf",vol:70,from:5,to:1,d:4},{kw:"what is next generation firewall ngfw",vol:30,from:5,to:1,d:4},{kw:"how to setup a firewall",vol:140,from:4,to:1,d:3},{kw:"network security firewall",vol:2400,from:3,to:1,d:2},{kw:"network security firewall",vol:2400,from:3,to:1,d:2},{kw:"stateful inspection firewall",vol:1000,from:3,to:1,d:2},{kw:"secure web gateway vs next generation firewall",vol:30,from:23,to:21,d:2},{kw:"firewall settings",vol:1900,from:4,to:3,d:1},{kw:"stateful vs stateless firewall",vol:1000,from:2,to:1,d:1},{kw:"ngfw layer 7 firewall",vol:30,from:5,to:4,d:1},{kw:"what is a firewall",vol:135000,from:1,to:1,d:0},{kw:"firewall",vol:27100,from:1,to:1,d:0},{kw:"web application firewall",vol:9900,from:8,to:8,d:0},{kw:"firewalls",vol:5400,from:1,to:1,d:0},{kw:"firewall configuration",vol:5400,from:1,to:1,d:0},{kw:"network firewall security",vol:4400,from:1,to:1,d:0},{kw:"hardware firewall",vol:4400,from:1,to:1,d:0},{kw:"what does a firewall do",vol:1600,from:1,to:1,d:0},{kw:"stateful firewall",vol:1300,from:1,to:1,d:0},{kw:"what is waf",vol:1300,from:1,to:1,d:0},{kw:"firewall as a service",vol:1000,from:1,to:1,d:0},{kw:"network firewalls",vol:720,from:1,to:1,d:0},{kw:"types of firewall",vol:720,from:1,to:1,d:0},{kw:"how does a firewall work",vol:590,from:1,to:1,d:0},{kw:"utm firewall",vol:590,from:1,to:1,d:0},{kw:"proxy firewall",vol:590,from:1,to:1,d:0},{kw:"stateful firewall vs stateless firewall",vol:590,from:1,to:1,d:0},{kw:"waf firewall",vol:480,from:5,to:5,d:0},{kw:"firewalls explained",vol:480,from:1,to:1,d:0},{kw:"security firewall",vol:390,from:1,to:1,d:0},{kw:"security firewall",vol:390,from:1,to:1,d:0},{kw:"network based firewall",vol:390,from:1,to:1,d:0},{kw:"next generation firewall ngfw",vol:390,from:1,to:1,d:0},{kw:"what is a network firewall",vol:320,from:1,to:1,d:0},{kw:"waf vs firewall",vol:320,from:1,to:1,d:0},{kw:"what is firewall in networking",vol:260,from:1,to:1,d:0},{kw:"physical firewall",vol:260,from:1,to:1,d:0},{kw:"how firewall works",vol:210,from:1,to:1,d:0},{kw:"perimeter firewall",vol:210,from:1,to:1,d:0},{kw:"hardware vs software firewall",vol:170,from:1,to:1,d:0},{kw:"firewall setup",vol:170,from:2,to:2,d:0},{kw:"hardware firewall vs software firewall",vol:140,from:1,to:1,d:0},{kw:"proxy server firewall",vol:140,from:1,to:1,d:0},{kw:"benefits of firewall",vol:140,from:1,to:1,d:0},{kw:"utm vs firewall",vol:110,from:1,to:1,d:0},{kw:"how firewalls work",vol:90,from:1,to:1,d:0},{kw:"firewall vs waf",vol:90,from:1,to:1,d:0},{kw:"next generation firewall vs utm",vol:90,from:1,to:1,d:0},{kw:"software firewall vs hardware firewall",vol:70,from:1,to:1,d:0},{kw:"distributed firewall",vol:70,from:1,to:1,d:0},{kw:"what is proxy firewall",vol:70,from:1,to:1,d:0},{kw:"what are software firewalls",vol:70,from:1,to:1,d:0},{kw:"what is utm firewall",vol:50,from:1,to:1,d:0},{kw:"firewall vs utm",vol:50,from:1,to:1,d:0},{kw:"border firewall",vol:50,from:1,to:1,d:0},{kw:"benefits of firewall security",vol:50,from:1,to:1,d:0},{kw:"firewall defined",vol:40,from:1,to:1,d:0},{kw:"configuration of firewall",vol:40,from:1,to:1,d:0},{kw:"what is next generation firewalls",vol:40,from:1,to:1,d:0},{kw:"how network firewall works",vol:40,from:1,to:1,d:0},{kw:"application firewall and network firewall",vol:40,from:1,to:1,d:0},{kw:"application proxy firewall",vol:30,from:1,to:1,d:0},{kw:"ngfw networking",vol:30,from:1,to:1,d:0},{kw:"working of firewall",vol:30,from:1,to:1,d:0},{kw:"how hardware firewall works",vol:30,from:1,to:1,d:0},{kw:"firewall utm ngfw",vol:30,from:1,to:1,d:0},{kw:"transparent firewalls",vol:20,from:1,to:1,d:0},{kw:"layer 2 firewall",vol:20,from:1,to:1,d:0},{kw:"network firewall definition",vol:20,from:1,to:1,d:0},{kw:"how firewall works in network",vol:20,from:1,to:1,d:0},{kw:"difference between application level firewall and network level firewall",vol:20,from:1,to:1,d:0},{kw:"next generation firewalls ngfw",vol:20,from:1,to:1,d:0},{kw:"layer 7 firewall",vol:390,from:25,to:41,d:-16},{kw:"ngfw network",vol:30,from:7,to:12,d:-5},{kw:"waf meaning",vol:1000,from:1,to:4,d:-3},{kw:"enterprise security firewall",vol:50,from:1,to:3,d:-2},{kw:"stateless firewall",vol:320,from:1,to:2,d:-1},{kw:"what is a stateful firewall",vol:260,from:1,to:2,d:-1},{kw:"firewall as a service providers",vol:210,from:1,to:2,d:-1},{kw:"cloud firewall service",vol:210,from:1,to:2,d:-1},{kw:"how network firewall is different from application firewall",vol:40,from:1,to:2,d:-1},{kw:"ngfw vs ips",vol:30,from:1,to:2,d:-1},{kw:"advantages of hardware firewall",vol:30,from:1,to:2,d:-1},{kw:"5th generation firewall",vol:30,from:5,to:6,d:-1},{kw:"transparent mode firewall",vol:20,from:1,to:2,d:-1},{kw:"firewall transparent mode",vol:20,from:1,to:2,d:-1}],
-    MOFU: [{kw:"ngfw magic quadrant",vol:20,from:19,to:2,d:17},{kw:"next generation firewall features list",vol:30,from:6,to:1,d:5},{kw:"ngfw firewall features",vol:20,from:6,to:1,d:5},{kw:"features of next generation firewall",vol:70,from:4,to:1,d:3},{kw:"next generation firewall security",vol:40,from:4,to:1,d:3},{kw:"enterprise firewall magic quadrant",vol:30,from:2,to:1,d:1},{kw:"next gen firewall magic quadrant",vol:40,from:1,to:1,d:0},{kw:"advantages to next generation firewalls",vol:30,from:8,to:8,d:0},{kw:"next generation enterprise firewall",vol:30,from:1,to:1,d:0},{kw:"what is enterprise firewall",vol:30,from:8,to:26,d:-18},{kw:"next generation firewall benefits",vol:50,from:1,to:5,d:-4},{kw:"ngfw tools",vol:20,from:2,to:4,d:-2},{kw:"next gen firewall services",vol:70,from:3,to:4,d:-1},{kw:"ngfw throughput",vol:30,from:1,to:2,d:-1},{kw:"next generation firewall software",vol:30,from:3,to:4,d:-1},{kw:"advantages to next generation firewall",vol:30,from:7,to:8,d:-1},{kw:"branch office firewall",vol:20,from:3,to:4,d:-1}],
-    BOFU: [{kw:"nexgen firewall",vol:30,from:0,to:1,d:99},{kw:"low cost firewall",vol:20,from:20,to:3,d:17},{kw:"next generation firewall",vol:2400,from:4,to:1,d:3},{kw:"enterprise grade firewall",vol:30,from:16,to:15,d:1},{kw:"affordable firewall",vol:20,from:7,to:6,d:1},{kw:"ngfw",vol:4400,from:1,to:1,d:0},{kw:"next gen firewall",vol:2400,from:1,to:1,d:0},{kw:"small business firewall",vol:720,from:1,to:1,d:0},{kw:"firewall next generation",vol:720,from:1,to:1,d:0},{kw:"business firewall",vol:320,from:1,to:1,d:0},{kw:"enterprise firewall",vol:320,from:11,to:11,d:0},{kw:"firewall price",vol:170,from:1,to:1,d:0},{kw:"firewall cost",vol:90,from:1,to:1,d:0},{kw:"network firewall price",vol:90,from:1,to:1,d:0},{kw:"next generation firewall appliance",vol:90,from:1,to:1,d:0},{kw:"network firewall security price",vol:70,from:1,to:1,d:0},{kw:"network firewall cost",vol:70,from:2,to:2,d:0},{kw:"firewall security price",vol:30,from:1,to:1,d:0},{kw:"firewall price comparison",vol:30,from:1,to:1,d:0},{kw:"ngfw products",vol:30,from:1,to:1,d:0},{kw:"firewall security price in usa",vol:20,from:1,to:1,d:0},{kw:"how much is a network firewall",vol:20,from:1,to:1,d:0},{kw:"add a next generation firewall",vol:20,from:1,to:1,d:0},{kw:"price of hardware firewall",vol:20,from:1,to:1,d:0},{kw:"physical firewall prices",vol:10,from:1,to:1,d:0},{kw:"cheap firewall",vol:20,from:13,to:29,d:-16},{kw:"layer 3 firewall",vol:70,from:52,to:62,d:-10},{kw:"enterprise firewall router",vol:40,from:28,to:33,d:-5},{kw:"business firewall solutions",vol:50,from:1,to:4,d:-3},{kw:"next generation application firewall",vol:30,from:1,to:4,d:-3}],
+    TOFU: [{kw:"layer 7 firewall",vol:390,from:41,to:17,d:24},{kw:"network firewall",vol:3600,from:7,to:1,d:6},{kw:"waf firewall",vol:480,from:5,to:1,d:4},{kw:"waf meaning",vol:1000,from:4,to:1,d:3},{kw:"what is a stateful firewall",vol:260,from:2,to:1,d:1},{kw:"firewall as a service providers",vol:210,from:2,to:1,d:1},{kw:"cloud firewall service",vol:210,from:2,to:1,d:1},{kw:"enterprise security firewall",vol:50,from:3,to:2,d:1},{kw:"what is a firewall",vol:135000,from:1,to:1,d:0},{kw:"firewall",vol:27100,from:1,to:1,d:0},{kw:"web application firewall",vol:9900,from:8,to:8,d:0},{kw:"firewalls",vol:5400,from:1,to:1,d:0},{kw:"firewall configuration",vol:5400,from:1,to:1,d:0},{kw:"network firewall security",vol:4400,from:1,to:1,d:0},{kw:"network security firewall",vol:2400,from:1,to:1,d:0},{kw:"network security firewall",vol:2400,from:1,to:1,d:0},{kw:"firewall settings",vol:1900,from:3,to:3,d:0},{kw:"what does a firewall do",vol:1600,from:1,to:1,d:0},{kw:"stateful firewall",vol:1300,from:1,to:1,d:0},{kw:"what is waf",vol:1300,from:1,to:1,d:0},{kw:"waf security",vol:1300,from:1,to:1,d:0},{kw:"stateful vs stateless firewall",vol:1000,from:1,to:1,d:0},{kw:"stateful inspection firewall",vol:1000,from:1,to:1,d:0},{kw:"firewall as a service",vol:1000,from:1,to:1,d:0},{kw:"network firewalls",vol:720,from:1,to:1,d:0},{kw:"how does a firewall work",vol:590,from:1,to:1,d:0},{kw:"utm firewall",vol:590,from:1,to:1,d:0},{kw:"proxy firewall",vol:590,from:1,to:1,d:0},{kw:"firewalls explained",vol:480,from:1,to:1,d:0},{kw:"security firewall",vol:390,from:1,to:1,d:0},{kw:"security firewall",vol:390,from:1,to:1,d:0},{kw:"network based firewall",vol:390,from:1,to:1,d:0},{kw:"next generation firewall ngfw",vol:390,from:1,to:1,d:0},{kw:"what is a network firewall",vol:320,from:1,to:1,d:0},{kw:"waf vs firewall",vol:320,from:1,to:1,d:0},{kw:"what is firewall in networking",vol:260,from:1,to:1,d:0},{kw:"physical firewall",vol:260,from:1,to:1,d:0},{kw:"how firewall works",vol:210,from:1,to:1,d:0},{kw:"perimeter firewall",vol:210,from:1,to:1,d:0},{kw:"hardware vs software firewall",vol:170,from:1,to:1,d:0},{kw:"firewall setup",vol:170,from:2,to:2,d:0},{kw:"hardware firewall vs software firewall",vol:140,from:1,to:1,d:0},{kw:"proxy server firewall",vol:140,from:1,to:1,d:0},{kw:"benefits of firewall",vol:140,from:1,to:1,d:0},{kw:"utm vs firewall",vol:110,from:1,to:1,d:0},{kw:"how firewalls work",vol:90,from:1,to:1,d:0},{kw:"firewall vs waf",vol:90,from:1,to:1,d:0},{kw:"next generation firewall vs utm",vol:90,from:1,to:1,d:0},{kw:"software firewall vs hardware firewall",vol:70,from:1,to:1,d:0},{kw:"distributed firewall",vol:70,from:1,to:1,d:0},{kw:"what is proxy firewall",vol:70,from:1,to:1,d:0},{kw:"what are software firewalls",vol:70,from:1,to:1,d:0},{kw:"next generation firewall vs waf",vol:70,from:1,to:1,d:0},{kw:"what is utm firewall",vol:50,from:1,to:1,d:0},{kw:"firewall vs utm",vol:50,from:1,to:1,d:0},{kw:"border firewall",vol:50,from:1,to:1,d:0},{kw:"benefits of firewall security",vol:50,from:1,to:1,d:0},{kw:"firewall defined",vol:40,from:1,to:1,d:0},{kw:"configuration of firewall",vol:40,from:1,to:1,d:0},{kw:"how network firewall works",vol:40,from:1,to:1,d:0},{kw:"application proxy firewall",vol:30,from:1,to:1,d:0},{kw:"working of firewall",vol:30,from:1,to:1,d:0},{kw:"how hardware firewall works",vol:30,from:1,to:1,d:0},{kw:"ngfw vs ips",vol:30,from:2,to:2,d:0},{kw:"difference between next generation firewall and standard firewall",vol:30,from:1,to:1,d:0},{kw:"transparent firewalls",vol:20,from:1,to:1,d:0},{kw:"layer 2 firewall",vol:20,from:1,to:1,d:0},{kw:"network firewall definition",vol:20,from:1,to:1,d:0},{kw:"how firewall works in network",vol:20,from:1,to:1,d:0},{kw:"transparent mode firewall",vol:20,from:2,to:2,d:0},{kw:"firewall transparent mode",vol:20,from:2,to:2,d:0},{kw:"difference between application level firewall and network level firewall",vol:20,from:1,to:1,d:0},{kw:"next generation firewalls ngfw",vol:20,from:1,to:1,d:0},{kw:"how to setup a firewall",vol:140,from:1,to:0,d:-99},{kw:"5th generation firewall",vol:30,from:6,to:0,d:-99},{kw:"what is next generation firewalls",vol:40,from:1,to:21,d:-20},{kw:"ngfw definition",vol:40,from:1,to:21,d:-20},{kw:"what is the next generation firewall",vol:30,from:1,to:21,d:-20},{kw:"next generation firewall meaning",vol:30,from:1,to:21,d:-20},{kw:"application firewall and network firewall",vol:40,from:1,to:20,d:-19},{kw:"ngfw layer 7 firewall",vol:30,from:4,to:23,d:-19},{kw:"stateless firewall",vol:320,from:2,to:20,d:-18},{kw:"how network firewall is different from application firewall",vol:40,from:2,to:20,d:-18},{kw:"ngfw network",vol:30,from:12,to:23,d:-11},{kw:"what is next generation firewall",vol:170,from:1,to:9,d:-8},{kw:"advantages of hardware firewall",vol:30,from:2,to:10,d:-8},{kw:"ngfw networking",vol:30,from:1,to:8,d:-7},{kw:"types of firewall",vol:720,from:1,to:7,d:-6},{kw:"what is next generation firewall ngfw",vol:30,from:1,to:7,d:-6},{kw:"hardware firewall",vol:4400,from:1,to:4,d:-3},{kw:"secure web gateway vs next generation firewall",vol:30,from:21,to:24,d:-3},{kw:"stateless vs stateful firewall",vol:720,from:1,to:2,d:-1},{kw:"stateful firewall vs stateless firewall",vol:590,from:1,to:2,d:-1},{kw:"firewall utm ngfw",vol:30,from:1,to:2,d:-1}],
+    MOFU: [{kw:"what is enterprise firewall",vol:30,from:26,to:8,d:18},{kw:"advantages to next generation firewalls",vol:30,from:8,to:4,d:4},{kw:"advantages to next generation firewall",vol:30,from:8,to:4,d:4},{kw:"ngfw tools",vol:20,from:4,to:1,d:3},{kw:"next generation firewall software",vol:30,from:4,to:3,d:1},{kw:"next generation firewall security",vol:40,from:1,to:1,d:0},{kw:"next generation enterprise firewall",vol:30,from:1,to:1,d:0},{kw:"next gen firewall services",vol:70,from:4,to:47,d:-43},{kw:"ngfw firewall features",vol:20,from:1,to:24,d:-23},{kw:"ngfw magic quadrant",vol:20,from:2,to:19,d:-17},{kw:"next generation firewall benefits",vol:50,from:5,to:21,d:-16},{kw:"features of next generation firewall",vol:70,from:1,to:15,d:-14},{kw:"next generation firewall features list",vol:30,from:1,to:15,d:-14},{kw:"enterprise firewall magic quadrant",vol:30,from:1,to:9,d:-8},{kw:"next gen firewall magic quadrant",vol:40,from:1,to:5,d:-4},{kw:"branch office firewall",vol:20,from:4,to:8,d:-4},{kw:"ngfw throughput",vol:30,from:2,to:5,d:-3}],
+    BOFU: [{kw:"enterprise firewall",vol:320,from:11,to:1,d:10},{kw:"enterprise grade firewall",vol:30,from:15,to:11,d:4},{kw:"enterprise firewall router",vol:40,from:33,to:30,d:3},{kw:"ngfw",vol:4400,from:1,to:1,d:0},{kw:"next generation firewall",vol:2400,from:1,to:1,d:0},{kw:"next gen firewall",vol:2400,from:1,to:1,d:0},{kw:"firewall next generation",vol:720,from:1,to:1,d:0},{kw:"business firewall",vol:320,from:1,to:1,d:0},{kw:"firewall price",vol:170,from:1,to:1,d:0},{kw:"firewall cost",vol:90,from:1,to:1,d:0},{kw:"network firewall price",vol:90,from:1,to:1,d:0},{kw:"next generation firewall appliance",vol:90,from:1,to:1,d:0},{kw:"network firewall security price",vol:70,from:1,to:1,d:0},{kw:"network firewall cost",vol:70,from:2,to:2,d:0},{kw:"firewall security price",vol:30,from:1,to:1,d:0},{kw:"nexgen firewall",vol:30,from:1,to:1,d:0},{kw:"ngfw products",vol:30,from:1,to:1,d:0},{kw:"firewall security price in usa",vol:20,from:1,to:1,d:0},{kw:"low cost firewall",vol:20,from:3,to:3,d:0},{kw:"add a next generation firewall",vol:20,from:1,to:1,d:0},{kw:"price of hardware firewall",vol:20,from:1,to:1,d:0},{kw:"physical firewall prices",vol:10,from:1,to:1,d:0},{kw:"layer 3 firewall",vol:70,from:62,to:0,d:-99},{kw:"cheap firewall",vol:20,from:29,to:0,d:-99},{kw:"firewall price comparison",vol:30,from:1,to:21,d:-20},{kw:"how much is a network firewall",vol:20,from:1,to:21,d:-20},{kw:"business firewall solutions",vol:50,from:4,to:22,d:-18},{kw:"affordable firewall",vol:20,from:6,to:24,d:-18},{kw:"small business firewall",vol:720,from:1,to:6,d:-5},{kw:"next generation application firewall",vol:30,from:4,to:5,d:-1}],
   },
   'Zero Trust': {
-    TOFU: [{kw:"zero trust architecture",vol:6600,from:17,to:1,d:16},{kw:"what is zero trust security",vol:1600,from:7,to:1,d:6},{kw:"zero trust edge",vol:260,from:7,to:1,d:6},{kw:"zero trust security",vol:5400,from:1,to:1,d:0},{kw:"zero trust network access",vol:2900,from:1,to:1,d:0},{kw:"what is zero trust",vol:2400,from:8,to:8,d:0},{kw:"zero trust network",vol:1900,from:1,to:1,d:0},{kw:"zero trust model",vol:1300,from:1,to:1,d:0},{kw:"zero trust security model",vol:1300,from:1,to:1,d:0},{kw:"what is zero trust architecture",vol:1300,from:1,to:1,d:0},{kw:"zero trust access",vol:720,from:1,to:1,d:0},{kw:"what is zero trust network access",vol:720,from:1,to:1,d:0},{kw:"zero trust networking",vol:590,from:1,to:1,d:0},{kw:"VPN vs ZTNA",vol:140,from:1,to:1,d:0},{kw:"what is zero trust networking",vol:70,from:1,to:1,d:0},{kw:"VPN to ZTNA",vol:30,from:1,to:1,d:0},{kw:"ztna security",vol:260,from:1,to:6,d:-5},{kw:"zero trust",vol:9900,from:8,to:10,d:-2}],
-    MOFU: [{kw:"How to migrate from VPN to ZTNA",vol:30,from:1,to:1,d:0}],
-    BOFU: [{kw:"ztna",vol:5400,from:4,to:1,d:3}],
+    TOFU: [{kw:"ztna security",vol:260,from:6,to:1,d:5},{kw:"zero trust",vol:9900,from:10,to:9,d:1},{kw:"zero trust security",vol:5400,from:1,to:1,d:0},{kw:"zero trust network access",vol:2900,from:1,to:1,d:0},{kw:"what is zero trust",vol:2400,from:8,to:8,d:0},{kw:"zero trust network",vol:1900,from:1,to:1,d:0},{kw:"what is zero trust security",vol:1600,from:1,to:1,d:0},{kw:"zero trust model",vol:1300,from:1,to:1,d:0},{kw:"zero trust security model",vol:1300,from:1,to:1,d:0},{kw:"what is zero trust architecture",vol:1300,from:1,to:1,d:0},{kw:"zero trust access",vol:720,from:1,to:1,d:0},{kw:"what is zero trust network access",vol:720,from:1,to:1,d:0},{kw:"zero trust networking",vol:590,from:1,to:1,d:0},{kw:"VPN vs ZTNA",vol:140,from:1,to:1,d:0},{kw:"what is zero trust networking",vol:70,from:1,to:1,d:0},{kw:"zero trust architecture",vol:6600,from:1,to:22,d:-21},{kw:"zero trust edge",vol:260,from:1,to:3,d:-2},{kw:"VPN to ZTNA",vol:30,from:1,to:2,d:-1}],
+    MOFU: [{kw:"How to migrate from VPN to ZTNA",vol:30,from:1,to:2,d:-1}],
+    BOFU: [{kw:"ztna",vol:5400,from:1,to:1,d:0}],
   },
   'SD-WAN': {
-    TOFU: [{kw:"wan providers",vol:110,from:0,to:32,d:99},{kw:"sd wan concept",vol:30,from:20,to:1,d:19},{kw:"sd wan device",vol:210,from:21,to:4,d:17},{kw:"sd wan over mpls",vol:170,from:21,to:4,d:17},{kw:"wan definition",vol:6600,from:15,to:1,d:14},{kw:"sd wan brands",vol:30,from:23,to:15,d:8},{kw:"sd wan overview",vol:70,from:5,to:1,d:4},{kw:"sd wan explained",vol:720,from:4,to:1,d:3},{kw:"define sd wan",vol:70,from:4,to:1,d:3},{kw:"sd wan vs firewall",vol:30,from:4,to:1,d:3},{kw:"what is sd-wan",vol:2400,from:3,to:1,d:2},{kw:"sd wan definition",vol:390,from:3,to:1,d:2},{kw:"what does sd wan mean",vol:50,from:3,to:1,d:2},{kw:"whats sd wan",vol:30,from:3,to:1,d:2},{kw:"sd wan appliance",vol:210,from:11,to:10,d:1},{kw:"sd wan cost savings",vol:70,from:3,to:2,d:1},{kw:"difference between wan and sd wan",vol:30,from:8,to:7,d:1},{kw:"wan",vol:33100,from:1,to:1,d:0},{kw:"sd wan",vol:6600,from:1,to:1,d:0},{kw:"sd-wan",vol:6600,from:1,to:1,d:0},{kw:"sdwan",vol:6600,from:1,to:1,d:0},{kw:"wide area network",vol:2900,from:1,to:1,d:0},{kw:"what is wan",vol:2900,from:1,to:1,d:0},{kw:"sd wan solutions",vol:1600,from:1,to:1,d:0},{kw:"sd wan meaning",vol:1300,from:3,to:3,d:0},{kw:"managed sd wan",vol:1000,from:4,to:4,d:0},{kw:"sd wan vs mpls",vol:880,from:1,to:1,d:0},{kw:"sd wan benefits",vol:480,from:1,to:1,d:0},{kw:"managed sd wan solutions",vol:480,from:0,to:0,d:0},{kw:"sd wan technology",vol:390,from:1,to:1,d:0},{kw:"benefits of sd wan",vol:260,from:1,to:1,d:0},{kw:"wan aggregation",vol:260,from:1,to:1,d:0},{kw:"sd wan router",vol:260,from:0,to:0,d:0},{kw:"software defined wide area network",vol:260,from:1,to:1,d:0},{kw:"sdn wan",vol:260,from:1,to:1,d:0},{kw:"sd wan cost",vol:210,from:1,to:1,d:0},{kw:"managed service sd wan",vol:210,from:0,to:0,d:0},{kw:"sd wan pricing",vol:170,from:1,to:1,d:0},{kw:"what is managed sd wan",vol:140,from:1,to:1,d:0},{kw:"what is wan aggregation",vol:110,from:1,to:1,d:0},{kw:"sd wan security features",vol:110,from:5,to:5,d:0},{kw:"mpls to sd wan",vol:90,from:1,to:1,d:0},{kw:"sd wan with mpls",vol:90,from:1,to:1,d:0},{kw:"diy vs managed sd wan",vol:70,from:2,to:2,d:0},{kw:"sd wan appliances",vol:50,from:0,to:0,d:0},{kw:"definition sd wan",vol:50,from:3,to:3,d:0},{kw:"sd wan security concerns",vol:50,from:1,to:1,d:0},{kw:"diy sd wan",vol:50,from:1,to:1,d:0},{kw:"difference between sdn and sd wan",vol:50,from:1,to:1,d:0},{kw:"why is sd wan important",vol:50,from:1,to:1,d:0},{kw:"sd wan security issues",vol:40,from:4,to:4,d:0},{kw:"sd wan vs. mpls",vol:30,from:1,to:1,d:0},{kw:"sd wan what is it",vol:30,from:3,to:3,d:0},{kw:"sd wan price comparison",vol:30,from:9,to:9,d:0},{kw:"why use sd wan",vol:30,from:1,to:1,d:0},{kw:"sdn wan vs mpls",vol:30,from:1,to:1,d:0},{kw:"sd wan vs vpls",vol:30,from:3,to:3,d:0},{kw:"sd wan aggregation",vol:30,from:1,to:1,d:0},{kw:"what is sd wan and how does it work",vol:30,from:1,to:1,d:0},{kw:"difference between sd wan and wan",vol:30,from:6,to:6,d:0},{kw:"wan sdn",vol:20,from:2,to:2,d:0},{kw:"sd wan cost calculator",vol:20,from:3,to:3,d:0},{kw:"sdn sd wan",vol:20,from:1,to:1,d:0},{kw:"sdn wan solutions",vol:20,from:1,to:1,d:0},{kw:"sd-wan aggregation",vol:20,from:1,to:1,d:0},{kw:"sd wan features comparison",vol:20,from:5,to:5,d:0},{kw:"sd wan software",vol:140,from:1,to:0,d:-99},{kw:"what is sd wan",vol:1900,from:1,to:30,d:-29},{kw:"sd wan lte",vol:70,from:13,to:32,d:-19},{kw:"wan sd wan",vol:40,from:2,to:18,d:-16},{kw:"sd wan ready",vol:20,from:1,to:17,d:-16},{kw:"sd wan lan",vol:30,from:14,to:28,d:-14},{kw:"sd wan providers",vol:590,from:26,to:37,d:-11},{kw:"wan cost",vol:50,from:13,to:24,d:-11},{kw:"sd wan comparison",vol:110,from:1,to:9,d:-8},{kw:"sd wan as a service pricing",vol:30,from:1,to:6,d:-5},{kw:"sd wan managed services",vol:880,from:30,to:34,d:-4},{kw:"sd wan explanation",vol:110,from:1,to:5,d:-4},{kw:"sd wan requirements",vol:90,from:1,to:5,d:-4},{kw:"wan security issues",vol:90,from:1,to:5,d:-4},{kw:"sd wan for enterprise",vol:50,from:1,to:5,d:-4},{kw:"sdwan explained",vol:40,from:1,to:4,d:-3},{kw:"sd wan replace mpls",vol:40,from:1,to:4,d:-3},{kw:"sd wan software defined wan",vol:20,from:1,to:4,d:-3},{kw:"software defined wan",vol:1600,from:1,to:3,d:-2},{kw:"sd wan pricing model",vol:40,from:1,to:3,d:-2},{kw:"sd wan capabilities",vol:40,from:1,to:3,d:-2},{kw:"sd wan software defined wide area network",vol:30,from:1,to:3,d:-2},{kw:"sd wan access",vol:30,from:8,to:10,d:-2},{kw:"sd wan data center",vol:30,from:10,to:12,d:-2},{kw:"sdn in the wan",vol:140,from:2,to:3,d:-1},{kw:"is sd wan better than mpls",vol:90,from:3,to:4,d:-1},{kw:"sd wan vs mpls cost comparison",vol:90,from:2,to:3,d:-1},{kw:"mpls vs hybrid wan",vol:40,from:1,to:2,d:-1},{kw:"sd wan connectivity",vol:30,from:1,to:2,d:-1},{kw:"what is the difference between wan and mpls",vol:30,from:1,to:2,d:-1},{kw:"sd wan price list",vol:20,from:9,to:10,d:-1},{kw:"sd wan enterprise edition",vol:20,from:1,to:2,d:-1}],
-    MOFU: [{kw:"sd wan leaders",vol:90,from:0,to:1,d:99},{kw:"fully managed sd wan",vol:320,from:101,to:26,d:75},{kw:"cloud managed sd wan",vol:110,from:60,to:26,d:34},{kw:"best sd wan vendors",vol:90,from:29,to:17,d:12},{kw:"sd wan fec",vol:20,from:9,to:1,d:8},{kw:"sd wan application performance",vol:70,from:7,to:4,d:3},{kw:"sd wan security",vol:720,from:1,to:1,d:0},{kw:"sd wan vendors",vol:390,from:0,to:0,d:0},{kw:"sd wan advantages",vol:210,from:1,to:1,d:0},{kw:"advantages of sd wan",vol:70,from:1,to:1,d:0},{kw:"wan security measures",vol:70,from:6,to:6,d:0},{kw:"sd wan visibility",vol:70,from:0,to:0,d:0},{kw:"leading sd wan vendors",vol:50,from:0,to:0,d:0},{kw:"sd wan bandwidth",vol:40,from:1,to:1,d:0},{kw:"sd wan security measures",vol:10,from:6,to:6,d:0},{kw:"business sd wan",vol:140,from:9,to:47,d:-38},{kw:"cloud sd wan",vol:140,from:1,to:22,d:-21},{kw:"best sd wan providers",vol:90,from:40,to:53,d:-13},{kw:"sd wan automation",vol:70,from:42,to:52,d:-10},{kw:"sd wan solutions with dynamic routing",vol:30,from:1,to:5,d:-4},{kw:"sd wan security measure",vol:20,from:1,to:5,d:-4},{kw:"wan security risks",vol:70,from:1,to:4,d:-3}],
-    BOFU: [{kw:"small business wan",vol:30,from:20,to:1,d:19},{kw:"sd wan for small business",vol:170,from:2,to:2,d:0},{kw:"top sd wan providers",vol:110,from:0,to:0,d:0},{kw:"sd wan vendors comparison",vol:90,from:0,to:0,d:0},{kw:"top sd wan vendors",vol:70,from:0,to:0,d:0},{kw:"sd wan hardware vendors",vol:30,from:0,to:0,d:0},{kw:"best sd wan",vol:90,from:37,to:62,d:-25},{kw:"sd wan and cloud",vol:20,from:1,to:20,d:-19},{kw:"sd wan companies",vol:210,from:12,to:17,d:-5},{kw:"sd wan multi cloud",vol:30,from:3,to:4,d:-1}],
+    TOFU: [{kw:"managed service sd wan",vol:210,from:0,to:2,d:99},{kw:"sd wan software",vol:140,from:0,to:21,d:99},{kw:"sd wan appliances",vol:50,from:0,to:36,d:99},{kw:"what is sd wan",vol:1900,from:30,to:1,d:29},{kw:"sd wan managed services",vol:880,from:34,to:7,d:27},{kw:"sd wan lte",vol:70,from:32,to:5,d:27},{kw:"sd wan providers",vol:590,from:37,to:16,d:21},{kw:"sd wan brands",vol:30,from:15,to:2,d:13},{kw:"wan cost",vol:50,from:24,to:13,d:11},{kw:"sd wan lan",vol:30,from:28,to:23,d:5},{kw:"sd wan explanation",vol:110,from:5,to:1,d:4},{kw:"sd wan device",vol:210,from:4,to:1,d:3},{kw:"sdwan explained",vol:40,from:4,to:1,d:3},{kw:"sd wan replace mpls",vol:40,from:4,to:1,d:3},{kw:"sd wan software defined wan",vol:20,from:4,to:1,d:3},{kw:"software defined wan",vol:1600,from:3,to:1,d:2},{kw:"sd wan meaning",vol:1300,from:3,to:1,d:2},{kw:"definition sd wan",vol:50,from:3,to:1,d:2},{kw:"sd wan for enterprise",vol:50,from:5,to:3,d:2},{kw:"sd wan pricing model",vol:40,from:3,to:1,d:2},{kw:"sd wan what is it",vol:30,from:3,to:1,d:2},{kw:"sd wan software defined wide area network",vol:30,from:3,to:1,d:2},{kw:"sd wan as a service pricing",vol:30,from:6,to:4,d:2},{kw:"sd wan appliance",vol:210,from:10,to:9,d:1},{kw:"wan",vol:33100,from:1,to:1,d:0},{kw:"sd wan",vol:6600,from:1,to:1,d:0},{kw:"sd-wan",vol:6600,from:1,to:1,d:0},{kw:"sdwan",vol:6600,from:1,to:1,d:0},{kw:"wan definition",vol:6600,from:1,to:1,d:0},{kw:"wide area network",vol:2900,from:1,to:1,d:0},{kw:"what is sd-wan",vol:2400,from:1,to:1,d:0},{kw:"sd wan solutions",vol:1600,from:1,to:1,d:0},{kw:"sd wan vs mpls",vol:880,from:1,to:1,d:0},{kw:"sd wan benefits",vol:480,from:1,to:1,d:0},{kw:"managed sd wan solutions",vol:480,from:0,to:0,d:0},{kw:"sd wan definition",vol:390,from:1,to:1,d:0},{kw:"sd wan technology",vol:390,from:1,to:1,d:0},{kw:"benefits of sd wan",vol:260,from:1,to:1,d:0},{kw:"wan aggregation",vol:260,from:1,to:1,d:0},{kw:"sd wan router",vol:260,from:0,to:0,d:0},{kw:"software defined wide area network",vol:260,from:1,to:1,d:0},{kw:"sdn wan",vol:260,from:1,to:1,d:0},{kw:"what is wan aggregation",vol:110,from:1,to:1,d:0},{kw:"sd wan comparison",vol:110,from:9,to:9,d:0},{kw:"mpls to sd wan",vol:90,from:1,to:1,d:0},{kw:"wan security issues",vol:90,from:5,to:5,d:0},{kw:"sd wan with mpls",vol:90,from:1,to:1,d:0},{kw:"sd wan overview",vol:70,from:1,to:1,d:0},{kw:"sd wan security concerns",vol:50,from:1,to:1,d:0},{kw:"what does sd wan mean",vol:50,from:1,to:1,d:0},{kw:"diy sd wan",vol:50,from:1,to:1,d:0},{kw:"difference between sdn and sd wan",vol:50,from:1,to:1,d:0},{kw:"sd wan capabilities",vol:40,from:3,to:3,d:0},{kw:"wan sd wan",vol:40,from:18,to:18,d:0},{kw:"mpls vs hybrid wan",vol:40,from:2,to:2,d:0},{kw:"sd wan vs. mpls",vol:30,from:1,to:1,d:0},{kw:"sdn wan vs mpls",vol:30,from:1,to:1,d:0},{kw:"sd wan vs vpls",vol:30,from:3,to:3,d:0},{kw:"difference between sd wan and wan",vol:30,from:6,to:6,d:0},{kw:"sdn wan solutions",vol:20,from:1,to:1,d:0},{kw:"sd wan enterprise edition",vol:20,from:2,to:2,d:0},{kw:"sd wan explained",vol:720,from:1,to:21,d:-20},{kw:"sdn in the wan",vol:140,from:3,to:22,d:-19},{kw:"sd wan requirements",vol:90,from:5,to:24,d:-19},{kw:"define sd wan",vol:70,from:1,to:20,d:-19},{kw:"sd wan security features",vol:110,from:5,to:22,d:-17},{kw:"is sd wan better than mpls",vol:90,from:4,to:21,d:-17},{kw:"sd wan vs mpls cost comparison",vol:90,from:3,to:20,d:-17},{kw:"managed sd wan",vol:1000,from:4,to:20,d:-16},{kw:"sd wan access",vol:30,from:10,to:26,d:-16},{kw:"sd wan aggregation",vol:30,from:1,to:17,d:-16},{kw:"sd wan price list",vol:20,from:10,to:26,d:-16},{kw:"diy vs managed sd wan",vol:70,from:2,to:17,d:-15},{kw:"why use sd wan",vol:30,from:1,to:16,d:-15},{kw:"difference between wan and sd wan",vol:30,from:7,to:21,d:-14},{kw:"sd wan connectivity",vol:30,from:2,to:15,d:-13},{kw:"sd wan price comparison",vol:30,from:9,to:22,d:-13},{kw:"sd wan ready",vol:20,from:17,to:30,d:-13},{kw:"sd-wan aggregation",vol:20,from:1,to:14,d:-13},{kw:"sd wan data center",vol:30,from:12,to:23,d:-11},{kw:"sd wan cost calculator",vol:20,from:3,to:14,d:-11},{kw:"wan providers",vol:110,from:32,to:40,d:-8},{kw:"sd wan vs firewall",vol:30,from:1,to:8,d:-7},{kw:"sd wan pricing",vol:170,from:1,to:6,d:-5},{kw:"sd wan over mpls",vol:170,from:4,to:9,d:-5},{kw:"sd wan features comparison",vol:20,from:5,to:10,d:-5},{kw:"sd wan cost savings",vol:70,from:2,to:6,d:-4},{kw:"why is sd wan important",vol:50,from:1,to:5,d:-4},{kw:"what is wan",vol:2900,from:1,to:4,d:-3},{kw:"what is sd wan and how does it work",vol:30,from:1,to:4,d:-3},{kw:"sd wan cost",vol:210,from:1,to:3,d:-2},{kw:"whats sd wan",vol:30,from:1,to:3,d:-2},{kw:"sdn sd wan",vol:20,from:1,to:3,d:-2},{kw:"what is managed sd wan",vol:140,from:1,to:2,d:-1},{kw:"sd wan security issues",vol:40,from:4,to:5,d:-1},{kw:"sd wan concept",vol:30,from:1,to:2,d:-1},{kw:"what is the difference between wan and mpls",vol:30,from:2,to:3,d:-1},{kw:"wan sdn",vol:20,from:2,to:3,d:-1}],
+    MOFU: [{kw:"sd wan vendors",vol:390,from:0,to:14,d:99},{kw:"sd wan visibility",vol:70,from:0,to:64,d:99},{kw:"business sd wan",vol:140,from:47,to:24,d:23},{kw:"cloud sd wan",vol:140,from:22,to:4,d:18},{kw:"sd wan automation",vol:70,from:52,to:35,d:17},{kw:"sd wan security measures",vol:10,from:6,to:1,d:5},{kw:"sd wan solutions with dynamic routing",vol:30,from:5,to:1,d:4},{kw:"sd wan security measure",vol:20,from:5,to:4,d:1},{kw:"sd wan security",vol:720,from:1,to:1,d:0},{kw:"sd wan advantages",vol:210,from:1,to:1,d:0},{kw:"advantages of sd wan",vol:70,from:1,to:1,d:0},{kw:"sd wan application performance",vol:70,from:4,to:4,d:0},{kw:"leading sd wan vendors",vol:50,from:0,to:0,d:0},{kw:"sd wan bandwidth",vol:40,from:1,to:1,d:0},{kw:"fully managed sd wan",vol:320,from:26,to:0,d:-99},{kw:"best sd wan providers",vol:90,from:53,to:0,d:-99},{kw:"best sd wan vendors",vol:90,from:17,to:0,d:-99},{kw:"cloud managed sd wan",vol:110,from:26,to:92,d:-66},{kw:"sd wan fec",vol:20,from:1,to:9,d:-8},{kw:"sd wan leaders",vol:90,from:1,to:6,d:-5},{kw:"wan security risks",vol:70,from:4,to:7,d:-3},{kw:"wan security measures",vol:70,from:6,to:7,d:-1}],
+    BOFU: [{kw:"sd wan vendors comparison",vol:90,from:0,to:44,d:99},{kw:"sd wan and cloud",vol:20,from:20,to:7,d:13},{kw:"sd wan for small business",vol:170,from:2,to:2,d:0},{kw:"top sd wan providers",vol:110,from:0,to:0,d:0},{kw:"top sd wan vendors",vol:70,from:0,to:0,d:0},{kw:"sd wan hardware vendors",vol:30,from:0,to:0,d:0},{kw:"best sd wan",vol:90,from:62,to:0,d:-99},{kw:"small business wan",vol:30,from:1,to:21,d:-20},{kw:"sd wan multi cloud",vol:30,from:4,to:21,d:-17},{kw:"sd wan companies",vol:210,from:17,to:23,d:-6}],
   },
   'AI Cybersecurity': {
-    TOFU: [{kw:"what is an ai data center",vol:2400,from:0,to:1,d:99},{kw:"what is aiops",vol:1900,from:0,to:22,d:99},{kw:"what are ai data centers",vol:1000,from:0,to:1,d:99},{kw:"ai red teaming",vol:880,from:0,to:1,d:99},{kw:"artificial intelligence data center",vol:480,from:39,to:1,d:38},{kw:"deepfake ai examples",vol:0,from:27,to:7,d:20},{kw:"ai security examples",vol:40,from:19,to:1,d:18},{kw:"what does deepfake mean",vol:720,from:10,to:1,d:9},{kw:"what is deepfake ai",vol:70,from:4,to:1,d:3},{kw:"ai cybersecurity threats",vol:480,from:14,to:12,d:2},{kw:"what is ai adoption",vol:90,from:2,to:1,d:1},{kw:"AI in cybersecurity",vol:22200,from:1,to:1,d:0},{kw:"ai governance",vol:8100,from:0,to:0,d:0},{kw:"ai cybersecurity",vol:4400,from:1,to:1,d:0},{kw:"frontier ai",vol:3600,from:0,to:0,d:0},{kw:"ai governance framework",vol:2900,from:0,to:0,d:0},{kw:"ai adoption",vol:2400,from:1,to:1,d:0},{kw:"ai deepfakes",vol:2400,from:1,to:1,d:0},{kw:"ai cybersecurity risks",vol:1600,from:0,to:0,d:0},{kw:"agentic ai security",vol:1000,from:0,to:0,d:0},{kw:"cybersecurity and ai",vol:1000,from:1,to:1,d:0},{kw:"deepfakes meaning",vol:1000,from:1,to:1,d:0},{kw:"how can generative ai be used in cybersecurity",vol:880,from:1,to:1,d:0},{kw:"Generative ai security",vol:720,from:1,to:1,d:0},{kw:"ai security definition",vol:720,from:1,to:1,d:0},{kw:"how do deepfakes work",vol:720,from:15,to:15,d:0},{kw:"ai prompt injection",vol:590,from:1,to:1,d:0},{kw:"Artificial intelligence in cybersecurity",vol:390,from:1,to:1,d:0},{kw:"role of ai in cybersecurity",vol:260,from:1,to:1,d:0},{kw:"ai adoption by industry",vol:260,from:0,to:0,d:0},{kw:"ai adoption statistics",vol:260,from:0,to:0,d:0},{kw:"aiops definition",vol:140,from:0,to:0,d:0},{kw:"artificial intelligence risk management",vol:140,from:0,to:0,d:0},{kw:"ai adoption rate",vol:140,from:0,to:0,d:0},{kw:"risks of ai in cybersecurity",vol:110,from:0,to:0,d:0},{kw:"what does aiops stand for",vol:50,from:0,to:0,d:0},{kw:"what is ai risk management",vol:50,from:0,to:0,d:0},{kw:"what is ai in cybersecurity",vol:20,from:1,to:1,d:0},{kw:"how ai security works",vol:0,from:1,to:1,d:0},{kw:"what industries benefit most from ai adoption",vol:0,from:0,to:0,d:0},{kw:"what frameworks guide successful ai adoption",vol:0,from:0,to:0,d:0},{kw:"ai data center",vol:5400,from:1,to:0,d:-99},{kw:"aiops meaning",vol:140,from:1,to:28,d:-27},{kw:"AI security",vol:6600,from:1,to:22,d:-21},{kw:"ai security threats",vol:320,from:1,to:19,d:-18},{kw:"what are aiops",vol:50,from:1,to:15,d:-14},{kw:"ai security risk",vol:320,from:1,to:5,d:-4},{kw:"aiops",vol:5400,from:11,to:14,d:-3},{kw:"deepfake ai",vol:5400,from:1,to:4,d:-3},{kw:"what is ai security",vol:720,from:1,to:4,d:-3},{kw:"ai cybersecurity incidents",vol:140,from:1,to:2,d:-1}],
-    MOFU: [{kw:"artificial intelligence for it operations",vol:390,from:0,to:1,d:99},{kw:"benefits of ai data center",vol:40,from:18,to:1,d:17},{kw:"generative ai adoption",vol:210,from:23,to:12,d:11},{kw:"ai adoption strategy",vol:480,from:4,to:1,d:3},{kw:"preparing for ai adoption",vol:210,from:6,to:3,d:3},{kw:"artificial intelligence security",vol:720,from:7,to:6,d:1},{kw:"ai security use case",vol:0,from:19,to:18,d:1},{kw:"ai in risk management",vol:3600,from:0,to:0,d:0},{kw:"ai risk management",vol:3600,from:0,to:0,d:0},{kw:"ai risk management framework",vol:1300,from:0,to:0,d:0},{kw:"ai risk assessment",vol:1300,from:0,to:0,d:0},{kw:"ai for cybersecurity",vol:880,from:1,to:1,d:0},{kw:"ai operations",vol:880,from:0,to:0,d:0},{kw:"enterprise ai adoption",vol:720,from:0,to:0,d:0},{kw:"ai adoption challenges",vol:720,from:0,to:0,d:0},{kw:"generative ai in cybersecurity",vol:480,from:14,to:14,d:0},{kw:"ai siem",vol:390,from:0,to:0,d:0},{kw:"ai security best practices",vol:390,from:0,to:0,d:0},{kw:"artificial intelligence risk management framework",vol:320,from:0,to:0,d:0},{kw:"ai and risk management",vol:260,from:0,to:0,d:0},{kw:"ai for risk management",vol:260,from:0,to:0,d:0},{kw:"ai powered cybersecurity",vol:210,from:1,to:1,d:0},{kw:"generative ai for cybersecurity",vol:170,from:0,to:0,d:0},{kw:"strategic ai adoption",vol:170,from:1,to:1,d:0},{kw:"ai adoption in healthcare",vol:170,from:0,to:0,d:0},{kw:"ai secops",vol:110,from:7,to:7,d:0},{kw:"enterprise aiops",vol:110,from:1,to:1,d:0},{kw:"ai based security system",vol:90,from:0,to:0,d:0},{kw:"aiops capabilities",vol:90,from:0,to:0,d:0},{kw:"ai model risk management",vol:90,from:0,to:0,d:0},{kw:"deepfake attacks",vol:90,from:5,to:5,d:0},{kw:"enterprise ai adoption trends",vol:90,from:0,to:0,d:0},{kw:"ai impact on data centers",vol:70,from:0,to:0,d:0},{kw:"aiops trends",vol:70,from:0,to:0,d:0},{kw:"aiops network",vol:70,from:11,to:11,d:0},{kw:"adoption of ai for cybersecurity",vol:70,from:1,to:1,d:0},{kw:"ai adoption in financial services",vol:70,from:0,to:0,d:0},{kw:"ai automation in cybersecurity",vol:50,from:1,to:1,d:0},{kw:"enterprise ai adoption challenges",vol:50,from:0,to:0,d:0},{kw:"ai security challenges",vol:40,from:1,to:1,d:0},{kw:"ai and machine learning for risk management",vol:40,from:0,to:0,d:0},{kw:"ai data center trends",vol:30,from:0,to:0,d:0},{kw:"ai security benefits",vol:20,from:1,to:1,d:0},{kw:"ai security for enterprise",vol:20,from:0,to:0,d:0},{kw:"deepfake ai technology",vol:20,from:4,to:4,d:0},{kw:"ai cybersecurity applications",vol:0,from:1,to:1,d:0},{kw:"data center challenges in ai",vol:0,from:0,to:0,d:0},{kw:"deepfake ai best practices",vol:0,from:0,to:0,d:0},{kw:"deepfake ai challenges",vol:0,from:0,to:0,d:0},{kw:"ai driven security",vol:210,from:1,to:17,d:-16},{kw:"ai security frameworks",vol:140,from:21,to:34,d:-13},{kw:"ai data center architecture",vol:110,from:34,to:45,d:-11},{kw:"aiops monitoring",vol:140,from:56,to:65,d:-9},{kw:"ai adoption framework",vol:1000,from:19,to:24,d:-5},{kw:"ai based security",vol:70,from:1,to:6,d:-5},{kw:"ai security systems",vol:390,from:1,to:5,d:-4},{kw:"aiops framework",vol:90,from:17,to:21,d:-4},{kw:"ai powered security",vol:110,from:1,to:3,d:-2},{kw:"ai security monitoring",vol:260,from:8,to:9,d:-1},{kw:"aiops networking",vol:50,from:6,to:7,d:-1},{kw:"deepfake ai risks",vol:0,from:3,to:4,d:-1}],
-    BOFU: [{kw:"ai security software",vol:590,from:0,to:13,d:99},{kw:"which are the top ai security companies",vol:0,from:23,to:1,d:22},{kw:"ai cybersecurity tools",vol:2400,from:9,to:1,d:8},{kw:"ai security solutions",vol:1600,from:9,to:1,d:8},{kw:"aiops tools",vol:1900,from:16,to:15,d:1},{kw:"aiops platforms",vol:1300,from:0,to:0,d:0},{kw:"ai cybersecurity solutions",vol:880,from:1,to:1,d:0},{kw:"ai security companies",vol:720,from:1,to:1,d:0},{kw:"ai cybersecurity certification",vol:590,from:0,to:0,d:0},{kw:"ai cybersecurity software",vol:210,from:1,to:1,d:0},{kw:"best ai security companies",vol:20,from:1,to:1,d:0},{kw:"ai security providers",vol:20,from:1,to:1,d:0},{kw:"gen ai security solutions",vol:0,from:0,to:0,d:0},{kw:"ai security vendor",vol:0,from:1,to:1,d:0},{kw:"what companies provide ai security platforms",vol:0,from:1,to:1,d:0},{kw:"gen ai security platform",vol:0,from:0,to:0,d:0},{kw:"list of ai cybersecurity tools",vol:2400,from:30,to:47,d:-17},{kw:"ai cybersecurity providers",vol:10,from:8,to:25,d:-17},{kw:"ai cyber security companies",vol:170,from:1,to:17,d:-16},{kw:"ai security services",vol:90,from:1,to:10,d:-9},{kw:"aiops vendors",vol:210,from:60,to:68,d:-8},{kw:"top ai cybersecurity vendors",vol:10,from:1,to:7,d:-6},{kw:"ai security platfrom",vol:0,from:50,to:54,d:-4},{kw:"aiops software",vol:590,from:23,to:25,d:-2}],
+    TOFU: [{kw:"ai data center",vol:5400,from:0,to:18,d:99},{kw:"ai cybersecurity risks",vol:1600,from:0,to:27,d:99},{kw:"artificial intelligence risk management",vol:140,from:0,to:56,d:99},{kw:"risks of ai in cybersecurity",vol:110,from:0,to:25,d:99},{kw:"what does aiops stand for",vol:50,from:0,to:38,d:99},{kw:"what is aiops",vol:1900,from:22,to:1,d:21},{kw:"ai security threats",vol:320,from:19,to:1,d:18},{kw:"AI security",vol:6600,from:22,to:9,d:13},{kw:"aiops meaning",vol:140,from:28,to:15,d:13},{kw:"ai security risk",vol:320,from:5,to:1,d:4},{kw:"deepfake ai",vol:5400,from:4,to:1,d:3},{kw:"what is ai security",vol:720,from:4,to:1,d:3},{kw:"deepfake ai examples",vol:0,from:7,to:5,d:2},{kw:"AI in cybersecurity",vol:22200,from:1,to:1,d:0},{kw:"ai governance",vol:8100,from:0,to:0,d:0},{kw:"ai cybersecurity",vol:4400,from:1,to:1,d:0},{kw:"frontier ai",vol:3600,from:0,to:0,d:0},{kw:"ai governance framework",vol:2900,from:0,to:0,d:0},{kw:"ai adoption",vol:2400,from:1,to:1,d:0},{kw:"what is an ai data center",vol:2400,from:1,to:1,d:0},{kw:"ai deepfakes",vol:2400,from:1,to:1,d:0},{kw:"agentic ai security",vol:1000,from:0,to:0,d:0},{kw:"cybersecurity and ai",vol:1000,from:1,to:1,d:0},{kw:"ai red teaming",vol:880,from:1,to:1,d:0},{kw:"ai security definition",vol:720,from:1,to:1,d:0},{kw:"ai cybersecurity threats",vol:480,from:12,to:12,d:0},{kw:"Artificial intelligence in cybersecurity",vol:390,from:1,to:1,d:0},{kw:"role of ai in cybersecurity",vol:260,from:1,to:1,d:0},{kw:"ai adoption by industry",vol:260,from:0,to:0,d:0},{kw:"ai adoption statistics",vol:260,from:0,to:0,d:0},{kw:"aiops definition",vol:140,from:0,to:0,d:0},{kw:"ai adoption rate",vol:140,from:0,to:0,d:0},{kw:"what is ai adoption",vol:90,from:1,to:1,d:0},{kw:"what is deepfake ai",vol:70,from:1,to:1,d:0},{kw:"what is ai risk management",vol:50,from:0,to:0,d:0},{kw:"ai security examples",vol:40,from:1,to:1,d:0},{kw:"what is ai in cybersecurity",vol:20,from:1,to:1,d:0},{kw:"what industries benefit most from ai adoption",vol:0,from:0,to:0,d:0},{kw:"what frameworks guide successful ai adoption",vol:0,from:0,to:0,d:0},{kw:"ai prompt injection",vol:590,from:1,to:0,d:-99},{kw:"Generative ai security",vol:720,from:1,to:37,d:-36},{kw:"artificial intelligence data center",vol:480,from:1,to:32,d:-31},{kw:"deepfakes meaning",vol:1000,from:1,to:23,d:-22},{kw:"what are ai data centers",vol:1000,from:1,to:22,d:-21},{kw:"how do deepfakes work",vol:720,from:15,to:32,d:-17},{kw:"what does deepfake mean",vol:720,from:1,to:18,d:-17},{kw:"ai cybersecurity incidents",vol:140,from:2,to:18,d:-16},{kw:"what are aiops",vol:50,from:15,to:31,d:-16},{kw:"aiops",vol:5400,from:14,to:25,d:-11},{kw:"how ai security works",vol:0,from:1,to:10,d:-9},{kw:"how can generative ai be used in cybersecurity",vol:880,from:1,to:7,d:-6}],
+    MOFU: [{kw:"generative ai for cybersecurity",vol:170,from:0,to:37,d:99},{kw:"ai based security system",vol:90,from:0,to:1,d:99},{kw:"aiops capabilities",vol:90,from:0,to:40,d:99},{kw:"ai data center architecture",vol:110,from:45,to:16,d:29},{kw:"aiops monitoring",vol:140,from:65,to:40,d:25},{kw:"generative ai adoption",vol:210,from:12,to:2,d:10},{kw:"ai adoption framework",vol:1000,from:24,to:18,d:6},{kw:"ai secops",vol:110,from:7,to:1,d:6},{kw:"ai based security",vol:70,from:6,to:1,d:5},{kw:"deepfake attacks",vol:90,from:5,to:1,d:4},{kw:"deepfake ai technology",vol:20,from:4,to:1,d:3},{kw:"aiops network",vol:70,from:11,to:10,d:1},{kw:"aiops networking",vol:50,from:7,to:6,d:1},{kw:"ai in risk management",vol:3600,from:0,to:0,d:0},{kw:"ai risk management",vol:3600,from:0,to:0,d:0},{kw:"ai risk management framework",vol:1300,from:0,to:0,d:0},{kw:"ai risk assessment",vol:1300,from:0,to:0,d:0},{kw:"ai for cybersecurity",vol:880,from:1,to:1,d:0},{kw:"ai operations",vol:880,from:0,to:0,d:0},{kw:"enterprise ai adoption",vol:720,from:0,to:0,d:0},{kw:"ai adoption challenges",vol:720,from:0,to:0,d:0},{kw:"generative ai in cybersecurity",vol:480,from:14,to:14,d:0},{kw:"ai adoption strategy",vol:480,from:1,to:1,d:0},{kw:"ai siem",vol:390,from:0,to:0,d:0},{kw:"ai security best practices",vol:390,from:0,to:0,d:0},{kw:"artificial intelligence for it operations",vol:390,from:1,to:1,d:0},{kw:"artificial intelligence risk management framework",vol:320,from:0,to:0,d:0},{kw:"ai and risk management",vol:260,from:0,to:0,d:0},{kw:"ai for risk management",vol:260,from:0,to:0,d:0},{kw:"ai powered cybersecurity",vol:210,from:1,to:1,d:0},{kw:"strategic ai adoption",vol:170,from:1,to:1,d:0},{kw:"ai adoption in healthcare",vol:170,from:0,to:0,d:0},{kw:"ai powered security",vol:110,from:3,to:3,d:0},{kw:"ai model risk management",vol:90,from:0,to:0,d:0},{kw:"enterprise ai adoption trends",vol:90,from:0,to:0,d:0},{kw:"ai impact on data centers",vol:70,from:0,to:0,d:0},{kw:"aiops trends",vol:70,from:0,to:0,d:0},{kw:"adoption of ai for cybersecurity",vol:70,from:1,to:1,d:0},{kw:"ai adoption in financial services",vol:70,from:0,to:0,d:0},{kw:"ai automation in cybersecurity",vol:50,from:1,to:1,d:0},{kw:"enterprise ai adoption challenges",vol:50,from:0,to:0,d:0},{kw:"ai and machine learning for risk management",vol:40,from:0,to:0,d:0},{kw:"ai data center trends",vol:30,from:0,to:0,d:0},{kw:"ai security benefits",vol:20,from:1,to:1,d:0},{kw:"ai security for enterprise",vol:20,from:0,to:0,d:0},{kw:"ai security use case",vol:0,from:18,to:18,d:0},{kw:"ai cybersecurity applications",vol:0,from:1,to:1,d:0},{kw:"data center challenges in ai",vol:0,from:0,to:0,d:0},{kw:"deepfake ai best practices",vol:0,from:0,to:0,d:0},{kw:"deepfake ai challenges",vol:0,from:0,to:0,d:0},{kw:"deepfake ai risks",vol:0,from:4,to:4,d:0},{kw:"ai security frameworks",vol:140,from:34,to:0,d:-99},{kw:"enterprise aiops",vol:110,from:1,to:0,d:-99},{kw:"ai security challenges",vol:40,from:1,to:0,d:-99},{kw:"preparing for ai adoption",vol:210,from:3,to:22,d:-19},{kw:"benefits of ai data center",vol:40,from:1,to:16,d:-15},{kw:"ai security monitoring",vol:260,from:9,to:22,d:-13},{kw:"ai driven security",vol:210,from:17,to:23,d:-6},{kw:"aiops framework",vol:90,from:21,to:25,d:-4},{kw:"artificial intelligence security",vol:720,from:6,to:7,d:-1},{kw:"ai security systems",vol:390,from:5,to:6,d:-1}],
+    BOFU: [{kw:"list of ai cybersecurity tools",vol:2400,from:47,to:21,d:26},{kw:"ai security platfrom",vol:0,from:54,to:36,d:18},{kw:"ai cyber security companies",vol:170,from:17,to:1,d:16},{kw:"ai cybersecurity tools",vol:2400,from:1,to:1,d:0},{kw:"ai security solutions",vol:1600,from:1,to:1,d:0},{kw:"aiops platforms",vol:1300,from:0,to:0,d:0},{kw:"ai cybersecurity solutions",vol:880,from:1,to:1,d:0},{kw:"ai cybersecurity certification",vol:590,from:0,to:0,d:0},{kw:"ai cybersecurity software",vol:210,from:1,to:1,d:0},{kw:"ai security providers",vol:20,from:1,to:1,d:0},{kw:"gen ai security solutions",vol:0,from:0,to:0,d:0},{kw:"ai security vendor",vol:0,from:1,to:1,d:0},{kw:"which are the top ai security companies",vol:0,from:1,to:1,d:0},{kw:"what companies provide ai security platforms",vol:0,from:1,to:1,d:0},{kw:"gen ai security platform",vol:0,from:0,to:0,d:0},{kw:"aiops tools",vol:1900,from:15,to:0,d:-99},{kw:"ai security companies",vol:720,from:1,to:0,d:-99},{kw:"aiops software",vol:590,from:25,to:0,d:-99},{kw:"aiops vendors",vol:210,from:68,to:0,d:-99},{kw:"ai security software",vol:590,from:13,to:25,d:-12},{kw:"ai cybersecurity providers",vol:10,from:25,to:33,d:-8},{kw:"top ai cybersecurity vendors",vol:10,from:7,to:14,d:-7},{kw:"best ai security companies",vol:20,from:1,to:7,d:-6},{kw:"ai security services",vol:90,from:10,to:11,d:-1}],
   },
   'OT Security': {
-    TOFU: [{kw:"iot security",vol:5400,from:1,to:1,d:0},{kw:"ot cybersecurity",vol:1600,from:1,to:1,d:0},{kw:"operational technology cyber security",vol:390,from:1,to:1,d:0},{kw:"ot security standards",vol:90,from:4,to:4,d:0},{kw:"ot security framework",vol:70,from:1,to:1,d:0},{kw:"securing ot networks",vol:70,from:1,to:1,d:0},{kw:"manufacturing ot security",vol:50,from:3,to:3,d:0},{kw:"cyber security for operational technology",vol:40,from:1,to:1,d:0},{kw:"ics/ot",vol:140,from:2,to:35,d:-33},{kw:"iot and ot security",vol:40,from:1,to:31,d:-30},{kw:"ot security monitoring",vol:110,from:8,to:24,d:-16},{kw:"iot/ot security",vol:70,from:1,to:12,d:-11},{kw:"ot security tools",vol:170,from:1,to:5,d:-4},{kw:"ot vulnerabilities",vol:140,from:12,to:15,d:-3}],
-    MOFU: [{kw:"ot cyber security framework",vol:70,from:36,to:3,d:33},{kw:"operational technology definition",vol:140,from:4,to:1,d:3},{kw:"what does ot stand for in cyber security",vol:40,from:2,to:1,d:1},{kw:"ot security",vol:3600,from:1,to:1,d:0},{kw:"what is ot security",vol:1000,from:1,to:1,d:0},{kw:"operational technology security",vol:1000,from:1,to:1,d:0},{kw:"what is operational technology",vol:720,from:1,to:1,d:0},{kw:"ot technology",vol:480,from:1,to:1,d:0},{kw:"ot network security",vol:390,from:1,to:1,d:0},{kw:"ot security meaning",vol:390,from:1,to:1,d:0},{kw:"ot environment",vol:390,from:1,to:1,d:0},{kw:"ot devices",vol:390,from:1,to:1,d:0},{kw:"what is ot cybersecurity",vol:140,from:1,to:1,d:0},{kw:"ot infrastructure",vol:140,from:1,to:1,d:0},{kw:"what is ot in cybersecurity",vol:90,from:1,to:1,d:0},{kw:"ot networking",vol:90,from:1,to:1,d:0},{kw:"industrial ot cybersecurity",vol:70,from:0,to:0,d:0},{kw:"operational technology examples",vol:70,from:1,to:1,d:0},{kw:"ot security architecture",vol:50,from:2,to:2,d:0},{kw:"operational technology networks",vol:50,from:4,to:4,d:0},{kw:"operational technology network",vol:40,from:4,to:4,d:0},{kw:"ot it security",vol:30,from:1,to:1,d:0},{kw:"ot/ics cybersecurity",vol:70,from:95,to:108,d:-13},{kw:"ot network architecture",vol:90,from:19,to:24,d:-5}],
-    BOFU: [{kw:"ot security assessment",vol:90,from:31,to:1,d:30},{kw:"ot security companies",vol:210,from:28,to:17,d:11},{kw:"ot security company",vol:140,from:6,to:5,d:1},{kw:"ot cybersecurity vendors",vol:90,from:19,to:18,d:1},{kw:"ot security solutions",vol:480,from:1,to:1,d:0},{kw:"best ot security for critical infrastructure",vol:140,from:1,to:1,d:0},{kw:"ot cyber security companies",vol:140,from:0,to:0,d:0},{kw:"best ot security companies",vol:70,from:0,to:0,d:0}],
+    TOFU: [{kw:"ics/ot",vol:140,from:35,to:14,d:21},{kw:"iot and ot security",vol:40,from:31,to:15,d:16},{kw:"iot/ot security",vol:70,from:12,to:1,d:11},{kw:"ot security monitoring",vol:110,from:24,to:14,d:10},{kw:"ot security tools",vol:170,from:5,to:1,d:4},{kw:"ot security standards",vol:90,from:4,to:2,d:2},{kw:"iot security",vol:5400,from:1,to:1,d:0},{kw:"ot cybersecurity",vol:1600,from:1,to:1,d:0},{kw:"operational technology cyber security",vol:390,from:1,to:1,d:0},{kw:"securing ot networks",vol:70,from:1,to:1,d:0},{kw:"manufacturing ot security",vol:50,from:3,to:3,d:0},{kw:"cyber security for operational technology",vol:40,from:1,to:1,d:0},{kw:"ot vulnerabilities",vol:140,from:15,to:90,d:-75},{kw:"ot security framework",vol:70,from:1,to:10,d:-9}],
+    MOFU: [{kw:"industrial ot cybersecurity",vol:70,from:0,to:49,d:99},{kw:"ot/ics cybersecurity",vol:70,from:108,to:15,d:93},{kw:"ot network architecture",vol:90,from:24,to:23,d:1},{kw:"operational technology networks",vol:50,from:4,to:3,d:1},{kw:"ot security",vol:3600,from:1,to:1,d:0},{kw:"what is ot security",vol:1000,from:1,to:1,d:0},{kw:"operational technology security",vol:1000,from:1,to:1,d:0},{kw:"what is operational technology",vol:720,from:1,to:1,d:0},{kw:"ot technology",vol:480,from:1,to:1,d:0},{kw:"ot security meaning",vol:390,from:1,to:1,d:0},{kw:"ot environment",vol:390,from:1,to:1,d:0},{kw:"ot devices",vol:390,from:1,to:1,d:0},{kw:"what is ot cybersecurity",vol:140,from:1,to:1,d:0},{kw:"operational technology definition",vol:140,from:1,to:1,d:0},{kw:"ot infrastructure",vol:140,from:1,to:1,d:0},{kw:"what is ot in cybersecurity",vol:90,from:1,to:1,d:0},{kw:"ot networking",vol:90,from:1,to:1,d:0},{kw:"operational technology examples",vol:70,from:1,to:1,d:0},{kw:"ot security architecture",vol:50,from:2,to:2,d:0},{kw:"what does ot stand for in cyber security",vol:40,from:1,to:1,d:0},{kw:"operational technology network",vol:40,from:4,to:4,d:0},{kw:"ot cyber security framework",vol:70,from:3,to:24,d:-21},{kw:"ot it security",vol:30,from:1,to:21,d:-20},{kw:"ot network security",vol:390,from:1,to:5,d:-4}],
+    BOFU: [{kw:"ot cyber security companies",vol:140,from:0,to:12,d:99},{kw:"ot security company",vol:140,from:5,to:4,d:1},{kw:"ot security solutions",vol:480,from:1,to:1,d:0},{kw:"best ot security for critical infrastructure",vol:140,from:1,to:1,d:0},{kw:"ot security assessment",vol:90,from:1,to:1,d:0},{kw:"ot cybersecurity vendors",vol:90,from:18,to:18,d:0},{kw:"best ot security companies",vol:70,from:0,to:0,d:0},{kw:"ot security companies",vol:210,from:17,to:19,d:-2}],
   },
   'Quantum Security': {
-    TOFU: [{kw:"Cryptographic Agility",vol:140,from:30,to:1,d:29},{kw:"quantum computing",vol:74000,from:0,to:0,d:0},{kw:"post-quantum cryptography",vol:8100,from:1,to:1,d:0},{kw:"quantum encryption",vol:2900,from:1,to:1,d:0},{kw:"PQC",vol:1900,from:24,to:24,d:0},{kw:"quantum key distribution",vol:1000,from:1,to:1,d:0},{kw:"HNDL",vol:1000,from:0,to:0,d:0},{kw:"quantum security",vol:880,from:1,to:1,d:0},{kw:"QKD",vol:880,from:1,to:1,d:0},{kw:"q-day",vol:720,from:1,to:1,d:0},{kw:"quantum day",vol:480,from:0,to:0,d:0},{kw:"quantum safe encryption",vol:390,from:1,to:1,d:0},{kw:"harvest now decrypt later",vol:210,from:0,to:0,d:0},{kw:"quantum computing security",vol:170,from:1,to:1,d:0},{kw:"NIST PQC standards",vol:70,from:0,to:0,d:0},{kw:"quantum security solutions",vol:40,from:1,to:1,d:0},{kw:"what is q-day",vol:30,from:1,to:1,d:0},{kw:"Shor's and Grover's Algorithms",vol:20,from:1,to:1,d:0},{kw:"what is HNDL",vol:20,from:0,to:0,d:0},{kw:"Quantum-Safe Security",vol:10,from:1,to:1,d:0},{kw:"what is quatum security",vol:0,from:1,to:1,d:0},{kw:"what is PQC",vol:170,from:1,to:0,d:-99},{kw:"post quantum readiness",vol:20,from:42,to:0,d:-99},{kw:"quantum readiness",vol:110,from:1,to:21,d:-20},{kw:"quantum cryptography",vol:18100,from:25,to:39,d:-14},{kw:"what is QKD",vol:40,from:1,to:7,d:-6},{kw:"Crypto-Agility",vol:70,from:16,to:17,d:-1}],
+    TOFU: [{kw:"what is PQC",vol:170,from:0,to:1,d:99},{kw:"post quantum readiness",vol:20,from:0,to:45,d:99},{kw:"quantum cryptography",vol:18100,from:39,to:33,d:6},{kw:"what is QKD",vol:40,from:7,to:6,d:1},{kw:"quantum computing",vol:74000,from:0,to:0,d:0},{kw:"post-quantum cryptography",vol:8100,from:1,to:1,d:0},{kw:"quantum encryption",vol:2900,from:1,to:1,d:0},{kw:"quantum key distribution",vol:1000,from:1,to:1,d:0},{kw:"HNDL",vol:1000,from:0,to:0,d:0},{kw:"quantum security",vol:880,from:1,to:1,d:0},{kw:"QKD",vol:880,from:1,to:1,d:0},{kw:"q-day",vol:720,from:1,to:1,d:0},{kw:"quantum day",vol:480,from:0,to:0,d:0},{kw:"quantum safe encryption",vol:390,from:1,to:1,d:0},{kw:"harvest now decrypt later",vol:210,from:0,to:0,d:0},{kw:"NIST PQC standards",vol:70,from:0,to:0,d:0},{kw:"what is q-day",vol:30,from:1,to:1,d:0},{kw:"Shor's and Grover's Algorithms",vol:20,from:1,to:1,d:0},{kw:"what is HNDL",vol:20,from:0,to:0,d:0},{kw:"Quantum-Safe Security",vol:10,from:1,to:1,d:0},{kw:"what is quatum security",vol:0,from:1,to:1,d:0},{kw:"Cryptographic Agility",vol:140,from:1,to:0,d:-99},{kw:"quantum readiness",vol:110,from:21,to:43,d:-22},{kw:"Crypto-Agility",vol:70,from:17,to:25,d:-8},{kw:"quantum computing security",vol:170,from:1,to:5,d:-4},{kw:"quantum security solutions",vol:40,from:1,to:4,d:-3},{kw:"PQC",vol:1900,from:24,to:26,d:-2}],
     MOFU: [{kw:"Quantum-Risk Assessment",vol:20,from:1,to:1,d:0}],
     BOFU: [],
   },
   'SASE': {
-    TOFU: [{kw:"Sse",vol:14800,from:0,to:10,d:99},{kw:"Sase",vol:14800,from:18,to:1,d:17},{kw:"Sase Providers",vol:480,from:9,to:1,d:8},{kw:"Sase Vendor",vol:320,from:6,to:1,d:5},{kw:"Sase Meaning",vol:4400,from:1,to:1,d:0},{kw:"What Is Sase",vol:3600,from:1,to:1,d:0},{kw:"Secure Access Service Edge",vol:2900,from:1,to:1,d:0},{kw:"What Is Sse",vol:1900,from:0,to:0,d:0},{kw:"Sase Solutions",vol:1900,from:1,to:1,d:0},{kw:"Security Service Edge",vol:1600,from:1,to:1,d:0},{kw:"Sase Architecture",vol:1300,from:1,to:1,d:0},{kw:"Sase Definition",vol:1000,from:1,to:1,d:0},{kw:"Sase Vs Sse",vol:1000,from:1,to:1,d:0},{kw:"Sase Benefits",vol:720,from:1,to:1,d:0},{kw:"Secure Access Service Edge SASE",vol:480,from:1,to:1,d:0},{kw:"Sase Platform",vol:480,from:1,to:1,d:0},{kw:"Sase Vs Casb",vol:390,from:1,to:1,d:0},{kw:"Sase Network",vol:320,from:1,to:1,d:0},{kw:"Sase Provider",vol:320,from:1,to:1,d:0},{kw:"Sase Network Security",vol:260,from:1,to:1,d:0},{kw:"Sase Vs Ztna",vol:170,from:1,to:1,d:0},{kw:"Sase Vs Vpn",vol:170,from:1,to:1,d:0},{kw:"Sd-Wan Vs Sase",vol:90,from:1,to:1,d:0},{kw:"How Does Sase Work",vol:50,from:1,to:1,d:0},{kw:"Sase Service Provider",vol:30,from:1,to:1,d:0},{kw:"Sase Services",vol:390,from:1,to:2,d:-1}],
-    MOFU: [{kw:"Ai Sase",vol:40,from:8,to:1,d:7},{kw:"Sovereign Sase",vol:40,from:1,to:1,d:0}],
-    BOFU: [{kw:"Ai Powered Sase",vol:30,from:7,to:14,d:-7},{kw:"Single Vendor Sase",vol:170,from:3,to:4,d:-1}],
+    TOFU: [{kw:"Sase Services",vol:390,from:2,to:1,d:1},{kw:"Sase",vol:14800,from:1,to:1,d:0},{kw:"Sase Meaning",vol:4400,from:1,to:1,d:0},{kw:"What Is Sase",vol:3600,from:1,to:1,d:0},{kw:"Secure Access Service Edge",vol:2900,from:1,to:1,d:0},{kw:"What Is Sse",vol:1900,from:0,to:0,d:0},{kw:"Sase Solutions",vol:1900,from:1,to:1,d:0},{kw:"Security Service Edge",vol:1600,from:1,to:1,d:0},{kw:"Sase Architecture",vol:1300,from:1,to:1,d:0},{kw:"Sase Definition",vol:1000,from:1,to:1,d:0},{kw:"Sase Vs Sse",vol:1000,from:1,to:1,d:0},{kw:"Sase Benefits",vol:720,from:1,to:1,d:0},{kw:"Secure Access Service Edge SASE",vol:480,from:1,to:1,d:0},{kw:"Sase Platform",vol:480,from:1,to:1,d:0},{kw:"Sase Vs Casb",vol:390,from:1,to:1,d:0},{kw:"Sase Network",vol:320,from:1,to:1,d:0},{kw:"Sase Provider",vol:320,from:1,to:1,d:0},{kw:"Sase Vendor",vol:320,from:1,to:1,d:0},{kw:"Sase Network Security",vol:260,from:1,to:1,d:0},{kw:"Sase Vs Ztna",vol:170,from:1,to:1,d:0},{kw:"Sase Vs Vpn",vol:170,from:1,to:1,d:0},{kw:"Sd-Wan Vs Sase",vol:90,from:1,to:1,d:0},{kw:"How Does Sase Work",vol:50,from:1,to:1,d:0},{kw:"Sase Providers",vol:480,from:1,to:21,d:-20},{kw:"Sase Service Provider",vol:30,from:1,to:7,d:-6},{kw:"Sse",vol:14800,from:10,to:12,d:-2}],
+    MOFU: [{kw:"Ai Sase",vol:40,from:1,to:1,d:0},{kw:"Sovereign Sase",vol:40,from:1,to:1,d:0}],
+    BOFU: [{kw:"Ai Powered Sase",vol:30,from:14,to:12,d:2},{kw:"Single Vendor Sase",vol:170,from:4,to:6,d:-2}],
   },
 };
 
 
 
-const GL_PERIOD_PREV = 'Oct 04–Oct 10', GL_PERIOD_CUR = 'Oct 11–Oct 17';
-const GL_SECTIONS: {title:string;icon:string;col:string;wowPct:string;wowAbs:string;items:{label:string;href:string|null;prev:string;curr:string;chg:string;pct:string}[];total:{prev:string;curr:string;chg:string;pct:string}}[] = [
+const GL_PERIOD_PREV = 'Oct 11–Oct 17', GL_PERIOD_CUR = 'Oct 18–Oct 24';
+const GL_SECTIONS: {title:string;icon:string;col:string;wowPct:string;wowAbs:string;items:{label:string;href:string|null;prev:string;curr:string;chg:string;pct:string}[];total:{prev:string;curr:string;chg:string;pct:string};intlFor?:string}[] = 
+[
  {
-  "title": "Branded Traffic (GSC) — Top Declining URLs",
+  "title": "Branded Traffic (GSC) — Top Gaining URLs",
   "icon": "🔍",
   "col": "URL",
-  "wowPct": "-4.42%",
-  "wowAbs": "-5,459",
+  "wowPct": "+23.42%",
+  "wowAbs": "+27,659",
   "items": [
    {
-    "label": "fortinet.com/support/product-downloads",
-    "href": "https://www.fortinet.com/support/product-downloads",
-    "prev": "37,361",
-    "curr": "36,550",
-    "chg": "-811",
-    "pct": "-2.2%"
-   },
-   {
-    "label": "fortinet.com/blog/psirt-blogs/analysis-of-reported-credential-compromise-of-fortigate-devices",
-    "href": "https://www.fortinet.com/blog/psirt-blogs/analysis-of-reported-credential-compromise-of-fortigate-devices",
-    "prev": "532",
-    "curr": "231",
-    "chg": "-301",
-    "pct": "-56.6%"
+    "label": "fortinet.com/blog/ciso-collective/fortinet-releases-security-hardening-release-for-multiple-products",
+    "href": "https://www.fortinet.com/blog/ciso-collective/fortinet-releases-security-hardening-release-for-multiple-products",
+    "prev": "0",
+    "curr": "8,647",
+    "chg": "+8,647",
+    "pct": "+864700%"
    },
    {
     "label": "fortinet.com",
     "href": "https://www.fortinet.com/",
-    "prev": "7,400",
-    "curr": "7,131",
-    "chg": "-269",
-    "pct": "-3.6%"
+    "prev": "7,131",
+    "curr": "9,207",
+    "chg": "+2,076",
+    "pct": "+29.1%"
+   },
+   {
+    "label": "fortinet.com/support/product-downloads",
+    "href": "https://www.fortinet.com/support/product-downloads",
+    "prev": "36,550",
+    "curr": "38,055",
+    "chg": "+1,505",
+    "pct": "+4.1%"
    }
   ],
   "total": {
-   "prev": "45,293",
-   "curr": "43,912",
-   "chg": "-1,381",
-   "pct": "-3.0%"
+   "prev": "43,681",
+   "curr": "55,909",
+   "chg": "+12,228",
+   "pct": "+28.0%"
   }
  },
  {
-  "title": "Branded Traffic (GSC) — Top Declining Keywords",
+  "title": "International Markets — Top Gaining URLs",
+  "icon": "🌍",
+  "col": "URL",
+  "wowPct": "+51.7%",
+  "wowAbs": "+5,066",
+  "items": [
+   {
+    "label": "fortinet.com/jp/blog/ciso-collective/fortinet-releases-security-hardening-release-for-multiple-products",
+    "href": "https://www.fortinet.com/jp/blog/ciso-collective/fortinet-releases-security-hardening-release-for-multiple-products",
+    "prev": "0",
+    "curr": "2,987",
+    "chg": "+2,987",
+    "pct": "+298700%"
+   },
+   {
+    "label": "fortinet.com/lat/support/product-downloads",
+    "href": "https://www.fortinet.com/lat/support/product-downloads",
+    "prev": "9,808",
+    "curr": "11,887",
+    "chg": "+2,079",
+    "pct": "+21.2%"
+   }
+  ],
+  "total": {
+   "prev": "9,808",
+   "curr": "14,874",
+   "chg": "+5,066",
+   "pct": "+51.7%"
+  },
+  "intlFor": "Branded Traffic (GSC) — Top Gaining URLs"
+ },
+ {
+  "title": "Branded Traffic (GSC) — Top Gaining Keywords",
   "icon": "🔑",
   "col": "Keyword",
-  "wowPct": "-4.42%",
-  "wowAbs": "-5,459",
+  "wowPct": "+23.42%",
+  "wowAbs": "+27,659",
   "items": [
    {
     "label": "fortinet",
     "href": null,
-    "prev": "9,833",
-    "curr": "9,389",
-    "chg": "-444",
-    "pct": "-4.5%"
+    "prev": "9,389",
+    "curr": "13,715",
+    "chg": "+4,326",
+    "pct": "+46.1%"
    },
    {
-    "label": "fortibleed",
+    "label": "fortinet vulnerability",
     "href": null,
-    "prev": "410",
-    "curr": "166",
-    "chg": "-244",
-    "pct": "-59.5%"
+    "prev": "19",
+    "curr": "1,479",
+    "chg": "+1,460",
+    "pct": "+7684.2%"
    },
    {
-    "label": "fortimail",
+    "label": "fortigate",
     "href": null,
-    "prev": "322",
-    "curr": "208",
-    "chg": "-114",
-    "pct": "-35.4%"
+    "prev": "1,651",
+    "curr": "2,581",
+    "chg": "+930",
+    "pct": "+56.3%"
    }
   ],
   "total": {
-   "prev": "10,565",
-   "curr": "9,763",
-   "chg": "-802",
-   "pct": "-7.6%"
+   "prev": "11,059",
+   "curr": "17,775",
+   "chg": "+6,716",
+   "pct": "+60.7%"
   }
  },
  {
-  "title": "International Markets — Top Declining URLs",
-  "icon": "🌍",
-  "col": "URL",
-  "wowPct": "-13.7%",
-  "wowAbs": "-2,159",
-  "items": [
-   {
-    "label": "fortinet.com/lat/support/product-downloads",
-    "href": "https://www.fortinet.com/lat/support/product-downloads",
-    "prev": "11,161",
-    "curr": "9,808",
-    "chg": "-1,353",
-    "pct": "-12.1%"
-   },
-   {
-    "label": "fortinet.com/br/support/product-downloads",
-    "href": "https://www.fortinet.com/br/support/product-downloads",
-    "prev": "4,616",
-    "curr": "3,810",
-    "chg": "-806",
-    "pct": "-17.5%"
-   }
-  ],
-  "total": {
-   "prev": "15,777",
-   "curr": "13,618",
-   "chg": "-2,159",
-   "pct": "-13.7%"
-  }
- },
- {
-  "title": "International Markets — Top Declining Keywords",
+  "title": "International Markets — Top Gaining Keywords",
   "icon": "🌐",
   "col": "Keyword",
-  "wowPct": "-3.7%",
-  "wowAbs": "-1,335",
+  "wowPct": "+9.1%",
+  "wowAbs": "+2,420",
   "items": [
-   {
-    "label": "forticlient",
-    "href": null,
-    "prev": "12,709",
-    "curr": "12,205",
-    "chg": "-504",
-    "pct": "-4.0%"
-   },
    {
     "label": "forticlient vpn",
     "href": null,
-    "prev": "14,741",
-    "curr": "14,306",
-    "chg": "-435",
-    "pct": "-3.0%"
+    "prev": "14,306",
+    "curr": "15,802",
+    "chg": "+1,496",
+    "pct": "+10.5%"
    },
    {
-    "label": "forticlient vpn download",
+    "label": "forticlient",
     "href": null,
-    "prev": "8,990",
-    "curr": "8,594",
-    "chg": "-396",
-    "pct": "-4.4%"
+    "prev": "12,205",
+    "curr": "13,129",
+    "chg": "+924",
+    "pct": "+7.6%"
    }
   ],
   "total": {
-   "prev": "36,440",
-   "curr": "35,105",
-   "chg": "-1,335",
-   "pct": "-3.7%"
+   "prev": "26,511",
+   "curr": "28,931",
+   "chg": "+2,420",
+   "pct": "+9.1%"
+  },
+  "intlFor": "Branded Traffic (GSC) — Top Gaining Keywords"
+ },
+ {
+  "title": "/cyberglossary (GA) — Top Gaining URLs",
+  "icon": "📚",
+  "col": "URL",
+  "wowPct": "+3.59%",
+  "wowAbs": "+1,223",
+  "items": [
+   {
+    "label": "fortinet.com/resources/cyberglossary/recent-cyber-attacks",
+    "href": "https://www.fortinet.com/resources/cyberglossary/recent-cyber-attacks",
+    "prev": "553",
+    "curr": "968",
+    "chg": "+415",
+    "pct": "+75.0%"
+   },
+   {
+    "label": "fortinet.com/resources/cyberglossary/what-is-hacking",
+    "href": "https://www.fortinet.com/resources/cyberglossary/what-is-hacking",
+    "prev": "1,327",
+    "curr": "1,406",
+    "chg": "+79",
+    "pct": "+6.0%"
+   },
+   {
+    "label": "fortinet.com/resources/cyberglossary/proxy-server",
+    "href": "https://www.fortinet.com/resources/cyberglossary/proxy-server",
+    "prev": "1,824",
+    "curr": "1,899",
+    "chg": "+75",
+    "pct": "+4.1%"
+   }
+  ],
+  "total": {
+   "prev": "3,704",
+   "curr": "4,273",
+   "chg": "+569",
+   "pct": "+15.4%"
   }
  },
  {
-  "title": "/blog (GA) — Top Declining URLs",
-  "icon": "📝",
+  "title": "International Markets · /cyberglossary — Top Gaining URLs",
+  "icon": "🌍",
   "col": "URL",
-  "wowPct": "-15.93%",
-  "wowAbs": "-426",
+  "wowPct": "+292.2%",
+  "wowAbs": "+526",
   "items": [
    {
-    "label": "fortinet.com/blog/psirt-blogs/analysis-of-reported-credential-compromise-of-fortigate-devices",
-    "href": "https://www.fortinet.com/blog/psirt-blogs/analysis-of-reported-credential-compromise-of-fortigate-devices",
-    "prev": "433",
-    "curr": "212",
-    "chg": "-221",
-    "pct": "-51.0%"
+    "label": "fortinet.com/jp/resources/cyberglossary/vulnerability-disclosure",
+    "href": "https://www.fortinet.com/jp/resources/cyberglossary/vulnerability-disclosure",
+    "prev": "39",
+    "curr": "274",
+    "chg": "+235",
+    "pct": "+602.6%"
    },
    {
-    "label": "fortinet.com/blog/threat-research/clingstun-linux-backdoor-abuses-public-stun-infrastructure",
-    "href": "https://www.fortinet.com/blog/threat-research/clingstun-linux-backdoor-abuses-public-stun-infrastructure",
-    "prev": "135",
-    "curr": "34",
-    "chg": "-101",
-    "pct": "-74.8%"
+    "label": "fortinet.com/jp/resources/cyberglossary/what-is-globalip",
+    "href": "https://www.fortinet.com/jp/resources/cyberglossary/what-is-globalip",
+    "prev": "117",
+    "curr": "266",
+    "chg": "+149",
+    "pct": "+127.4%"
    },
    {
-    "label": "fortinet.com/blog/business-and-technology/fortinet-named-a-leader-in-gartner-magic-quadrant-for-sd-wan-for-fifth-year",
-    "href": "https://www.fortinet.com/blog/business-and-technology/fortinet-named-a-leader-in-gartner-magic-quadrant-for-sd-wan-for-fifth-year",
-    "prev": "35",
-    "curr": "21",
-    "chg": "-14",
-    "pct": "-40.0%"
+    "label": "fortinet.com/jp/resources/cyberglossary/remote-code-execution",
+    "href": "https://www.fortinet.com/jp/resources/cyberglossary/remote-code-execution",
+    "prev": "24",
+    "curr": "166",
+    "chg": "+142",
+    "pct": "+591.7%"
    }
   ],
   "total": {
-   "prev": "603",
-   "curr": "267",
-   "chg": "-336",
-   "pct": "-55.7%"
+   "prev": "180",
+   "curr": "706",
+   "chg": "+526",
+   "pct": "+292.2%"
+  },
+  "intlFor": "/cyberglossary (GA) — Top Gaining URLs"
+ },
+ {
+  "title": "/blog (GA) — Top Gaining URLs",
+  "icon": "📝",
+  "col": "URL",
+  "wowPct": "+720.37%",
+  "wowAbs": "+16,194",
+  "items": [
+   {
+    "label": "fortinet.com/blog/ciso-collective/fortinet-releases-security-hardening-release-for-multiple-products",
+    "href": "https://www.fortinet.com/blog/ciso-collective/fortinet-releases-security-hardening-release-for-multiple-products",
+    "prev": "0",
+    "curr": "11,958",
+    "chg": "+11,958",
+    "pct": "+1195800%"
+   },
+   {
+    "label": "fortinet.com/blog/ciso-collective/update-on-fortinet-use-of-frontier-ai",
+    "href": "https://www.fortinet.com/blog/ciso-collective/update-on-fortinet-use-of-frontier-ai",
+    "prev": "29",
+    "curr": "903",
+    "chg": "+874",
+    "pct": "+13500%"
+   },
+   {
+    "label": "fortinet.com/blog",
+    "href": "https://www.fortinet.com/blog",
+    "prev": "80",
+    "curr": "741",
+    "chg": "+661",
+    "pct": "+33.0%"
+   }
+  ],
+  "total": {
+   "prev": "109",
+   "curr": "13,602",
+   "chg": "+13,493",
+   "pct": "+12378.9%"
   }
+ },
+ {
+  "title": "/products (GA) — Top Gaining URLs",
+  "icon": "📦",
+  "col": "URL",
+  "wowPct": "+18.54%",
+  "wowAbs": "+2,555",
+  "items": [
+   {
+    "label": "fortinet.com/products/next-generation-firewall",
+    "href": "https://www.fortinet.com/products/next-generation-firewall",
+    "prev": "1,994",
+    "curr": "2,241",
+    "chg": "+247",
+    "pct": "+12.4%"
+   },
+   {
+    "label": "fortinet.com/products/fortigate/fortios",
+    "href": "https://www.fortinet.com/products/fortigate/fortios",
+    "prev": "160",
+    "curr": "300",
+    "chg": "+140",
+    "pct": "+87.5%"
+   },
+   {
+    "label": "fortinet.com/products/endpoint-security/forticlient",
+    "href": "https://www.fortinet.com/products/endpoint-security/forticlient",
+    "prev": "1,766",
+    "curr": "1,850",
+    "chg": "+84",
+    "pct": "+4.8%"
+   }
+  ],
+  "total": {
+   "prev": "3,920",
+   "curr": "4,391",
+   "chg": "+471",
+   "pct": "+12.0%"
+  }
+ },
+ {
+  "title": "International Markets · /products — Top Gaining URLs",
+  "icon": "🌍",
+  "col": "URL",
+  "wowPct": "+97.7%",
+  "wowAbs": "+1,069",
+  "items": [
+   {
+    "label": "fortinet.com/jp/products/next-generation-firewall",
+    "href": "https://www.fortinet.com/jp/products/next-generation-firewall",
+    "prev": "801",
+    "curr": "1,494",
+    "chg": "+693",
+    "pct": "+86.5%"
+   },
+   {
+    "label": "fortinet.com/jp/products/fortigate/fortios",
+    "href": "https://www.fortinet.com/jp/products/fortigate/fortios",
+    "prev": "103",
+    "curr": "294",
+    "chg": "+191",
+    "pct": "+185.4%"
+   },
+   {
+    "label": "fortinet.com/jp/products",
+    "href": "https://www.fortinet.com/jp/products",
+    "prev": "190",
+    "curr": "375",
+    "chg": "+185",
+    "pct": "+97.4%"
+   }
+  ],
+  "total": {
+   "prev": "1,094",
+   "curr": "2,163",
+   "chg": "+1,069",
+   "pct": "+97.7%"
+  },
+  "intlFor": "/products (GA) — Top Gaining URLs"
+ },
+ {
+  "title": "/about-us (GA) — Top Gaining URLs",
+  "icon": "🏢",
+  "col": "URL",
+  "wowPct": "+24.38%",
+  "wowAbs": "+1,075",
+  "items": [
+   {
+    "label": "fortinet.com/corporate/about-us/newsroom",
+    "href": "https://www.fortinet.com/corporate/about-us/newsroom",
+    "prev": "48",
+    "curr": "147",
+    "chg": "+99",
+    "pct": "+206.3%"
+   },
+   {
+    "label": "fortinet.com/corporate/about-us/contact-us",
+    "href": "https://www.fortinet.com/corporate/about-us/contact-us",
+    "prev": "516",
+    "curr": "578",
+    "chg": "+62",
+    "pct": "+12.0%"
+   },
+   {
+    "label": "fortinet.com/corporate/about-us/newsroom/press-releases",
+    "href": "https://www.fortinet.com/corporate/about-us/newsroom/press-releases",
+    "prev": "29",
+    "curr": "77",
+    "chg": "+48",
+    "pct": "+165.5%"
+   }
+  ],
+  "total": {
+   "prev": "593",
+   "curr": "802",
+   "chg": "+209",
+   "pct": "+35.2%"
+  }
+ },
+ {
+  "title": "International Markets · /about-us — Top Gaining URLs",
+  "icon": "🌍",
+  "col": "URL",
+  "wowPct": "+133.7%",
+  "wowAbs": "+587",
+  "items": [
+   {
+    "label": "fortinet.com/jp/corporate/about-us/company",
+    "href": "https://www.fortinet.com/jp/corporate/about-us/company",
+    "prev": "297",
+    "curr": "681",
+    "chg": "+384",
+    "pct": "+129.3%"
+   },
+   {
+    "label": "fortinet.com/jp/corporate/about-us/about-us",
+    "href": "https://www.fortinet.com/jp/corporate/about-us/about-us",
+    "prev": "125",
+    "curr": "257",
+    "chg": "+132",
+    "pct": "+105.6%"
+   },
+   {
+    "label": "fortinet.com/jp/corporate/about-us/newsroom/press-releases",
+    "href": "https://www.fortinet.com/jp/corporate/about-us/newsroom/press-releases",
+    "prev": "17",
+    "curr": "88",
+    "chg": "+71",
+    "pct": "+417.6%"
+   }
+  ],
+  "total": {
+   "prev": "439",
+   "curr": "1,026",
+   "chg": "+587",
+   "pct": "+133.7%"
+  },
+  "intlFor": "/about-us (GA) — Top Gaining URLs"
  },
  {
   "title": "Direct (Relevant traffic) — Top Gaining URLs",
   "icon": "🧭",
   "col": "URL",
-  "wowPct": "+6.58%",
-  "wowAbs": "+5,540",
+  "wowPct": "+45.24%",
+  "wowAbs": "+40,587",
   "items": [
    {
-    "label": "fortinet.com/training/cybersecurity-professionals",
-    "href": "https://www.fortinet.com/training/cybersecurity-professionals",
-    "prev": "635",
-    "curr": "1,706",
-    "chg": "+1,071",
-    "pct": "+168.7%"
+    "label": "fortinet.com/blog/ciso-collective/fortinet-releases-security-hardening-release-for-multiple-products",
+    "href": "https://www.fortinet.com/blog/ciso-collective/fortinet-releases-security-hardening-release-for-multiple-products",
+    "prev": "0",
+    "curr": "38,906",
+    "chg": "+38,906",
+    "pct": "+3890600%"
    },
    {
-    "label": "fortinet.com/library/soc-dgt/global-threat-landscape-report",
-    "href": "https://www.fortinet.com/library/soc-dgt/global-threat-landscape-report",
-    "prev": "148",
-    "curr": "780",
-    "chg": "+632",
-    "pct": "+427.0%"
+    "label": "fortinet.com/blog",
+    "href": "https://www.fortinet.com/blog",
+    "prev": "294",
+    "curr": "1,109",
+    "chg": "+815",
+    "pct": "+277.2%"
    },
    {
-    "label": "fortinet.com/support/product-downloads",
-    "href": "https://www.fortinet.com/support/product-downloads",
-    "prev": "14,088",
-    "curr": "14,511",
-    "chg": "+423",
-    "pct": "+3.0%"
+    "label": "fortinet.com/support/contact",
+    "href": "https://www.fortinet.com/support/contact",
+    "prev": "2,194",
+    "curr": "2,766",
+    "chg": "+572",
+    "pct": "+26.1%"
    }
   ],
   "total": {
-   "prev": "14,871",
-   "curr": "16,997",
-   "chg": "+2,126",
-   "pct": "+14.3%"
+   "prev": "2,488",
+   "curr": "42,781",
+   "chg": "+40,293",
+   "pct": "+1619.5%"
   }
  },
  {
-  "title": "Referrals (GA) — Top Declining URLs",
+  "title": "Referrals (GA) — Top Gaining URLs",
   "icon": "🔗",
   "col": "URL",
-  "wowPct": "-35.47%",
-  "wowAbs": "-6,496",
+  "wowPct": "+107.41%",
+  "wowAbs": "+12,692",
   "items": [
    {
-    "label": "fortinet.com/library/gtm/sase",
-    "href": "https://www.fortinet.com/library/gtm/sase",
-    "prev": "3,049",
-    "curr": "428",
-    "chg": "-2,621",
-    "pct": "-86.0%"
+    "label": "fortinet.com/blog/ciso-collective/fortinet-releases-security-hardening-release-for-multiple-products",
+    "href": "https://www.fortinet.com/blog/ciso-collective/fortinet-releases-security-hardening-release-for-multiple-products",
+    "prev": "0",
+    "curr": "9,638",
+    "chg": "+9,638",
+    "pct": "+963800%"
    },
    {
-    "label": "fortinet.com/library/gtm/secops",
-    "href": "https://www.fortinet.com/library/gtm/secops",
-    "prev": "1,592",
-    "curr": "376",
-    "chg": "-1,216",
-    "pct": "-76.4%"
+    "label": "fortinet.com/blog/ciso-collective/update-on-fortinet-use-of-frontier-ai",
+    "href": "https://www.fortinet.com/blog/ciso-collective/update-on-fortinet-use-of-frontier-ai",
+    "prev": "13",
+    "curr": "440",
+    "chg": "+427",
+    "pct": "+3284.6%"
    },
    {
-    "label": "fortinet.com/library/gtm/secure-network",
-    "href": "https://www.fortinet.com/library/gtm/secure-network",
-    "prev": "1,321",
-    "curr": "259",
-    "chg": "-1,062",
-    "pct": "-80.4%"
+    "label": "fortinet.com",
+    "href": "https://www.fortinet.com/",
+    "prev": "1,121",
+    "curr": "1,477",
+    "chg": "+356",
+    "pct": "+31.8%"
    }
   ],
   "total": {
-   "prev": "5,962",
-   "curr": "1,063",
-   "chg": "-4,899",
-   "pct": "-82.2%"
+   "prev": "1,134",
+   "curr": "11,555",
+   "chg": "+10,421",
+   "pct": "+919.0%"
   }
  }
 ];
@@ -502,7 +734,7 @@ const GlCard = ({s,extra}:{s:typeof GL_SECTIONS[number];extra?:typeof GL_SECTION
         </div>
       ))}
       <div style={{display:'grid',gridTemplateColumns:grid,gap:8,padding:'9px 12px',borderTop:'2px solid var(--border)',marginTop:4,alignItems:'center'}}>
-        <span style={{fontSize:11,fontWeight:800,color:'var(--text3)',textTransform:'uppercase',letterSpacing:'.05em'}}>Top 3 Total</span>
+        <span style={{fontSize:11,fontWeight:800,color:'var(--text3)',textTransform:'uppercase',letterSpacing:'.05em'}}>Top {sec.items.length} Total</span>
         <span style={{fontSize:13,fontWeight:900,color:'var(--text)',textAlign:'right',...mono}}>{sec.total.prev}</span>
         <span style={{fontSize:13,fontWeight:900,color:'var(--text)',textAlign:'right',...mono}}>{sec.total.curr}</span>
         <span style={{fontSize:13,fontWeight:900,color:col(sec.total.chg),textAlign:'right',...mono}}>{sec.total.chg}</span>
@@ -698,585 +930,611 @@ function catColor(cat: string): string {
 
 
 // ═══════════════════ TRAFFIC DATA (GSC + GA) ═════════════════════════════
-// Source: GSC and Google Analytics · WW · Weekly (Sun–Sat) · Dec 31, 2025 → Oct 21, 2026
-const TRAFFIC_WEEKS = ["Dec 31","Jan 7","Jan 14","Jan 21","Jan 28","Feb 4","Feb 11","Feb 18","Feb 25","Mar 4","Mar 11","Mar 18","Mar 25","Apr 1","Apr 8","Apr 15","Apr 22","Apr 29","May 6","May 13","May 20","May 27","Jun 3","Jun 10","Jun 17","Jun 24","Jul 1","Jul 8","Jul 15","Jul 22","Jul 29","Aug 5","Aug 12","Aug 19","Aug 26","Sep 2","Sep 9","Sep 16","Sep 23","Sep 30","Oct 7","Oct 14","Oct 21"];
+// Source: GSC and Google Analytics · WW · Weekly (Sun–Sat) · Dec 31, 2025 → Oct 28, 2026
+const TRAFFIC_WEEKS = ["Dec 31","Jan 7","Jan 14","Jan 21","Jan 28","Feb 4","Feb 11","Feb 18","Feb 25","Mar 4","Mar 11","Mar 18","Mar 25","Apr 1","Apr 8","Apr 15","Apr 22","Apr 29","May 6","May 13","May 20","May 27","Jun 3","Jun 10","Jun 17","Jun 24","Jul 1","Jul 8","Jul 15","Jul 22","Jul 29","Aug 5","Aug 12","Aug 19","Aug 26","Sep 2","Sep 9","Sep 16","Sep 23","Sep 30","Oct 7","Oct 14","Oct 21","Oct 28"];
 
 const TRAFFIC_DATA = {
-  allOrganic:    [210631,176959,316108,334632,364458,378345,381452,378974,338014,369274,368718,375747,347444,356155,315669,340454,360656,356914,313707,337993,339539,337851,299861,312500,323536,320217,316566,292047,295550,296426,286447,282713,275762,248282,266180,261225,270161,279346,285662,283336,284951,279517,267163],
-  branded:       [94649,78586,142605,149523,157485,166374,166231,164636,144463,156891,160076,161115,147779,149305,134728,143435,150963,150830,131068,143951,144878,144807,124964,135587,141935,144808,146688,136851,136376,136031,130392,129066,125682,114823,119056,117587,120028,120522,123289,124744,126752,123579,118120],
-  nonBranded:    [39288,40198,49403,48703,58219,53000,54194,54751,51917,56701,54652,57196,54727,56595,51413,54790,55508,52613,50198,52563,52384,51477,53723,53212,51608,49493,47593,44792,45258,49945,49541,47616,47821,46272,50583,48192,49893,51530,50569,50195,50413,48386,47117],
-  cyberglossary: [28520,26589,39739,41834,45887,48672,52580,52634,47755,53200,51533,50918,47597,49458,42574,49203,50212,49308,44057,43776,44339,42874,39714,40927,41433,39499,34981,31242,33064,33968,31122,31575,30970,28903,33015,31935,33641,34806,34225,33387,33363,34253,34041],
-  homePage:      [4015,4194,7729,7354,8766,10028,9409,9416,8592,9150,9092,9112,8097,8091,7579,7921,8061,8308,7562,7443,7215,7125,6534,7257,7480,7532,6862,6273,6476,7034,6604,6676,6394,6462,6623,6407,6455,6523,6575,6786,6550,6468,6307],
-  blog:          [2367,2035,3287,3044,4489,6859,4721,3944,3377,3629,3651,3661,3397,3195,2908,3226,3179,4108,2765,2583,2837,2845,2358,2663,2870,4331,8003,4199,3436,2887,2496,2345,2221,1982,2184,2148,2112,2040,2257,2004,2059,2674,2248],
-  articles:      [105,103,202,242,253,293,300,295,302,320,300,307,289,284,250,272,287,272,272,267,271,512,223,266,266,301,260,223,274,252,197,188,192,192,186,192,195,223,214,192,194,203,182],
-  solutions:     [1924,1476,3234,3607,3987,4180,4220,4071,3690,3911,3884,3875,3439,3756,3280,3748,4087,3995,3352,3447,3678,3808,3307,3394,3625,3437,3252,2724,3005,2958,2840,2791,2747,2575,2768,2750,2984,2723,2739,2511,2443,2599,2571],
-  products:      [11506,8012,17221,17963,19108,24515,21018,20441,18352,19705,19869,20187,18187,18320,16348,18329,18971,19683,16354,17264,19084,18894,16757,18090,18741,17792,17544,15656,16173,16032,15130,15109,15177,15297,16775,16650,16806,15258,14657,13891,14643,14264,13784],
-  aboutUs:       [3449,2575,5423,5305,5821,5941,6116,5757,5285,5674,5792,6404,5733,5700,5105,6373,6783,6953,5191,5223,5664,5684,5497,5638,5734,5735,5170,5063,5991,5981,5638,6149,5959,5596,6338,6015,5176,5289,5206,4601,4901,4590,4409],
-  directGA:         [86307,70744,115528,128971,109499,116029,129917,132972,143019,103659,108183,137028,109527,172648,144528,121981,126870,147052,125088,134833,139674,161698,174868,211459,190773,178866,137219,118425,121673,97430,94872,108806,80664,79635,93322,113930,97017,86343,98178,109243,94012,86982,108138],
-  directValid:      [84818,69655,113813,126840,107416,104294,106257,99542,93837,100631,106607,122660,108027,114502,100915,109946,115443,122067,123372,133085,137827,160335,173188,190245,189354,177375,130958,93841,97883,95654,92233,90687,79426,77517,86569,86469,84631,82858,89254,84207,91441,84178,89718],
-  directDownloads:  [67661,55300,88620,100997,80696,77972,77950,71720,69697,74282,79827,95874,82542,89435,76641,84386,89510,96310,100756,108863,113223,134726,150400,165439,164061,151928,104612,67503,77458,77959,74905,74030,63034,61210,69769,70394,68463,67302,73146,67872,73413,66277,71787],
-  referrals:        [8173,6700,10133,10290,11142,12690,12115,11349,9783,10671,10872,11469,10297,10249,9866,11459,10878,11521,10057,10872,11487,12067,10627,11341,10831,10640,13624,10239,10810,11337,11299,10729,10384,9278,10623,10570,10810,10424,11842,10866,18594,18312,11816],
+  allOrganic:    [210631,176959,316108,334632,364458,378345,381452,378974,338014,369274,368718,375747,347444,356155,315669,340454,360656,356914,313707,337993,339539,337851,299861,312500,323536,320217,316566,292047,295550,296426,286447,282713,275762,248282,266180,261225,270161,279346,285662,283336,284951,279517,267163,315927],
+  branded:       [94649,78586,142605,149523,157485,166374,166231,164636,144463,156891,160076,161115,147779,149305,134728,143435,150963,150830,131068,143951,144878,144807,124964,135587,141935,144808,146688,136851,136376,136031,130392,129066,125682,114823,119056,117587,120028,120522,123289,124744,126752,123579,118120,145779],
+  nonBranded:    [39288,40198,49403,48703,58219,53000,54194,54751,51917,56701,54652,57196,54727,56595,51413,54790,55508,52613,50198,52563,52384,51477,53723,53212,51608,49493,47593,44792,45258,49945,49541,47616,47821,46272,50583,48192,49893,51530,50569,50195,50413,48386,47117,48255],
+  cyberglossary: [28520,26589,39739,41834,45887,48672,52580,52634,47755,53200,51533,50918,47597,49458,42574,49203,50212,49308,44057,43776,44339,42874,39714,40927,41433,39499,34981,31242,33064,33968,31122,31575,30970,28903,33015,31935,33641,34806,34225,33387,33363,34253,34041,35264],
+  homePage:      [4015,4194,7729,7354,8766,10028,9409,9416,8592,9150,9092,9112,8097,8091,7579,7921,8061,8308,7562,7443,7215,7125,6534,7257,7480,7532,6862,6273,6476,7034,6604,6676,6394,6462,6623,6407,6455,6523,6575,6786,6550,6468,6307,7988],
+  blog:          [2367,2035,3287,3044,4489,6859,4721,3944,3377,3629,3651,3661,3397,3195,2908,3226,3179,4108,2765,2583,2837,2845,2358,2663,2870,4331,8003,4199,3436,2887,2496,2345,2221,1982,2184,2148,2112,2040,2257,2004,2059,2674,2248,18442],
+  articles:      [105,103,202,242,253,293,300,295,302,320,300,307,289,284,250,272,287,272,272,267,271,512,223,266,266,301,260,223,274,252,197,188,192,192,186,192,195,223,214,192,194,203,182,219],
+  solutions:     [1924,1476,3234,3607,3987,4180,4220,4071,3690,3911,3884,3875,3439,3756,3280,3748,4087,3995,3352,3447,3678,3808,3307,3394,3625,3437,3252,2724,3005,2958,2840,2791,2747,2575,2768,2750,2984,2723,2739,2511,2443,2599,2571,2892],
+  products:      [11506,8012,17221,17963,19108,24515,21018,20441,18352,19705,19869,20187,18187,18320,16348,18329,18971,19683,16354,17264,19084,18894,16757,18090,18741,17792,17544,15656,16173,16032,15130,15109,15177,15297,16775,16650,16806,15258,14657,13891,14643,14264,13784,16339],
+  aboutUs:       [3449,2575,5423,5305,5821,5941,6116,5757,5285,5674,5792,6404,5733,5700,5105,6373,6783,6953,5191,5223,5664,5684,5497,5638,5734,5735,5170,5063,5991,5981,5638,6149,5959,5596,6338,6015,5176,5289,5206,4601,4901,4590,4409,5484],
+  directGA:         [86307,70744,115528,128971,109499,116029,129917,132972,143019,103659,108183,137028,109527,172648,144528,121981,126870,147052,125088,134833,139674,161698,174868,211459,190773,178866,137219,118425,121673,97430,94872,108806,80664,79635,93322,113930,97017,86343,98178,109243,94012,86982,108138,150125],
+  directValid:      [84818,69655,113813,126840,107416,104294,106257,99542,93837,100631,106607,122660,108027,114502,100915,109946,115443,122067,123372,133085,137827,160335,173188,190245,189354,177375,130958,93841,97883,95654,92233,90687,79426,77517,86569,86469,84631,82858,89254,84207,91441,84178,89718,130305],
+  directDownloads:  [67661,55300,88620,100997,80696,77972,77950,71720,69697,74282,79827,95874,82542,89435,76641,84386,89510,96310,100756,108863,113223,134726,150400,165439,164061,151928,104612,67503,77458,77959,74905,74030,63034,61210,69769,70394,68463,67302,73146,67872,73413,66277,71787,108780],
+  referrals:        [8173,6700,10133,10290,11142,12690,12115,11349,9783,10671,10872,11469,10297,10249,9866,11459,10878,11521,10057,10872,11487,12067,10627,11341,10831,10640,13624,10239,10810,11337,11299,10729,10384,9278,10623,10570,10810,10424,11842,10866,18594,18312,11816,24508],
 };
 
-// WoW change values (Oct 14 → Oct 21)
+// WoW change values (Oct 21 → Oct 28)
 const TRAFFIC_WOW = {
-  allOrganic:       {pct: -4.42,  abs:-12354},
-  branded:          {pct: -4.42,  abs:-5459},
-  nonBranded:       {pct: -2.62,  abs:-1269},
-  cyberglossary:    {pct: -0.62,  abs:-212},
-  homePage:         {pct: -2.49,  abs:-161},
-  blog:             {pct:-15.93,  abs:-426},
-  articles:         {pct:-10.34,  abs:-21},
-  solutions:        {pct: -1.08,  abs:-28},
-  products:         {pct: -3.37,  abs:-480},
-  aboutUs:          {pct: -3.94,  abs:-181},
-  directGA:         {pct:  24.32,  abs:21156},
-  directValid:      {pct:   6.58,  abs:5540},
-  directDownloads:  {pct:   8.31,  abs:5510},
-  referrals:        {pct:-35.47,  abs:-6496},
+  allOrganic:       {pct: 18.25,  abs:48764},
+  branded:          {pct: 23.42,  abs:27659},
+  nonBranded:       {pct:  2.42,  abs:1138},
+  cyberglossary:    {pct:  3.59,  abs:1223},
+  homePage:         {pct: 26.65,  abs:1681},
+  blog:             {pct:720.37,  abs:16194},
+  articles:         {pct: 20.33,  abs:37},
+  solutions:        {pct: 12.49,  abs:321},
+  products:         {pct: 18.54,  abs:2555},
+  aboutUs:          {pct: 24.38,  abs:1075},
+  directGA:         {pct: 38.83,  abs:41987},
+  directValid:      {pct: 45.24,  abs:40587},
+  directDownloads:  {pct: 51.53,  abs:36993},
+  referrals:        {pct:107.41,  abs:12692},
 };
 
 type KwRow = {kw:string;cat:string;funnel:string;sv:number;prev:string;cur:number|string};
-// Oct 21, 2026 (wk43) · source: Wow Dashboard Data - 9 Category With AIO Data.csv · one row per tracked keyword/category, so list length = KPI count
+// Oct 28, 2026 (wk44) · source: Wow Dashboard Data - 9 Category With AIO Data.csv · one row per tracked keyword/category, so list length = KPI count
 const RANK_11_100:KwRow[] = [
-  {kw:"what is malware",cat:"Top Opportunities",funnel:"TOFU",sv:135000,prev:'17',cur:24},
-  {kw:"ips",cat:"Top Opportunities",funnel:"TOFU",sv:49500,prev:'21',cur:17},
+  {kw:"vpn",cat:"Top Opportunities",funnel:"TOFU",sv:673000,prev:'1',cur:15},
+  {kw:"phishing",cat:"Top Opportunities",funnel:"TOFU",sv:49500,prev:'-',cur:26},
+  {kw:"ips",cat:"Top Opportunities",funnel:"TOFU",sv:49500,prev:'17',cur:21},
   {kw:"malware",cat:"Top Opportunities",funnel:"TOFU",sv:40500,prev:'15',cur:15},
-  {kw:"iot",cat:"Top Opportunities",funnel:"TOFU",sv:27100,prev:'29',cur:34},
-  {kw:"phishing definition",cat:"Top Opportunities",funnel:"TOFU",sv:27100,prev:'26',cur:26},
-  {kw:"encryption",cat:"Top Opportunities",funnel:"TOFU",sv:22200,prev:'15',cur:16},
-  {kw:"internet of things",cat:"Top Opportunities",funnel:"TOFU",sv:22200,prev:'37',cur:48},
-  {kw:"quantum cryptography",cat:"Quantum Security",funnel:"TOFU",sv:18100,prev:'25',cur:39},
-  {kw:"saml",cat:"Top Opportunities",funnel:"TOFU",sv:18100,prev:'15',cur:18},
-  {kw:"access control",cat:"NAC",funnel:"TOFU",sv:12100,prev:'1',cur:18},
-  {kw:"access control",cat:"Top Opportunities",funnel:"TOFU",sv:12100,prev:'1',cur:18},
-  {kw:"two factor authentication",cat:"Top Opportunities",funnel:"TOFU",sv:12100,prev:'13',cur:13},
-  {kw:"malware definition",cat:"Top Opportunities",funnel:"TOFU",sv:8100,prev:'-',cur:18},
-  {kw:"AI security",cat:"AI Cybersecurity",funnel:"TOFU",sv:6600,prev:'1',cur:22},
-  {kw:"aiops",cat:"AI Cybersecurity",funnel:"TOFU",sv:5400,prev:'11',cur:14},
-  {kw:"list of ai cybersecurity tools",cat:"AI Cybersecurity",funnel:"BOFU",sv:2400,prev:'30',cur:47},
-  {kw:"aiops tools",cat:"AI Cybersecurity",funnel:"BOFU",sv:1900,prev:'16',cur:15},
-  {kw:"PQC",cat:"Quantum Security",funnel:"TOFU",sv:1900,prev:'24',cur:24},
-  {kw:"what is aiops",cat:"AI Cybersecurity",funnel:"TOFU",sv:1900,prev:'-',cur:22},
-  {kw:"what is sd wan",cat:"SD-WAN",funnel:"TOFU",sv:1900,prev:'1',cur:30},
-  {kw:"ai adoption framework",cat:"AI Cybersecurity",funnel:"MOFU",sv:1000,prev:'19',cur:24},
-  {kw:"sd wan managed services",cat:"SD-WAN",funnel:"TOFU",sv:880,prev:'30',cur:34},
-  {kw:"access control management",cat:"NAC",funnel:"TOFU",sv:720,prev:'32',cur:49},
-  {kw:"access control services",cat:"NAC",funnel:"TOFU",sv:720,prev:'1',cur:23},
-  {kw:"how do deepfakes work",cat:"AI Cybersecurity",funnel:"TOFU",sv:720,prev:'15',cur:15},
-  {kw:"ai security software",cat:"AI Cybersecurity",funnel:"BOFU",sv:590,prev:'-',cur:13},
-  {kw:"aiops software",cat:"AI Cybersecurity",funnel:"BOFU",sv:590,prev:'23',cur:25},
-  {kw:"sd wan providers",cat:"SD-WAN",funnel:"TOFU",sv:590,prev:'26',cur:37},
-  {kw:"ai cybersecurity threats",cat:"AI Cybersecurity",funnel:"TOFU",sv:480,prev:'14',cur:12},
+  {kw:"iot",cat:"Top Opportunities",funnel:"TOFU",sv:27100,prev:'34',cur:31},
+  {kw:"phishing definition",cat:"Top Opportunities",funnel:"TOFU",sv:27100,prev:'26',cur:39},
+  {kw:"encryption",cat:"Top Opportunities",funnel:"TOFU",sv:22200,prev:'16',cur:16},
+  {kw:"internet of things",cat:"Top Opportunities",funnel:"TOFU",sv:22200,prev:'48',cur:25},
+  {kw:"quantum cryptography",cat:"Quantum Security",funnel:"TOFU",sv:18100,prev:'39',cur:33},
+  {kw:"Sse",cat:"SASE",funnel:"TOFU",sv:14800,prev:'10',cur:12},
+  {kw:"single sign on",cat:"Top Opportunities",funnel:"TOFU",sv:12100,prev:'1',cur:20},
+  {kw:"two factor authentication",cat:"Top Opportunities",funnel:"TOFU",sv:12100,prev:'13',cur:14},
+  {kw:"malware definition",cat:"Top Opportunities",funnel:"TOFU",sv:8100,prev:'18',cur:15},
+  {kw:"zero trust architecture",cat:"Zero Trust",funnel:"TOFU",sv:6600,prev:'1',cur:22},
+  {kw:"aiops",cat:"AI Cybersecurity",funnel:"TOFU",sv:5400,prev:'14',cur:25},
+  {kw:"ai data center",cat:"AI Cybersecurity",funnel:"TOFU",sv:5400,prev:'-',cur:18},
+  {kw:"identity access management",cat:"NAC",funnel:"TOFU",sv:2900,prev:'-',cur:35},
+  {kw:"list of ai cybersecurity tools",cat:"AI Cybersecurity",funnel:"BOFU",sv:2400,prev:'47',cur:21},
+  {kw:"PQC",cat:"Quantum Security",funnel:"TOFU",sv:1900,prev:'24',cur:26},
+  {kw:"ai cybersecurity risks",cat:"AI Cybersecurity",funnel:"TOFU",sv:1600,prev:'-',cur:27},
+  {kw:"nac network",cat:"NAC",funnel:"TOFU",sv:1300,prev:'1',cur:19},
+  {kw:"what are ai data centers",cat:"AI Cybersecurity",funnel:"TOFU",sv:1000,prev:'1',cur:22},
+  {kw:"deepfakes meaning",cat:"AI Cybersecurity",funnel:"TOFU",sv:1000,prev:'1',cur:23},
+  {kw:"ai adoption framework",cat:"AI Cybersecurity",funnel:"MOFU",sv:1000,prev:'24',cur:18},
+  {kw:"what is access control",cat:"NAC",funnel:"TOFU",sv:1000,prev:'1',cur:21},
+  {kw:"managed sd wan",cat:"SD-WAN",funnel:"TOFU",sv:1000,prev:'4',cur:20},
+  {kw:"Generative ai security",cat:"AI Cybersecurity",funnel:"TOFU",sv:720,prev:'1',cur:37},
+  {kw:"how do deepfakes work",cat:"AI Cybersecurity",funnel:"TOFU",sv:720,prev:'15',cur:32},
+  {kw:"what does deepfake mean",cat:"AI Cybersecurity",funnel:"TOFU",sv:720,prev:'1',cur:18},
+  {kw:"access control management",cat:"NAC",funnel:"TOFU",sv:720,prev:'49',cur:19},
+  {kw:"sd wan explained",cat:"SD-WAN",funnel:"TOFU",sv:720,prev:'1',cur:21},
+  {kw:"ai security software",cat:"AI Cybersecurity",funnel:"BOFU",sv:590,prev:'13',cur:25},
+  {kw:"sd wan providers",cat:"SD-WAN",funnel:"TOFU",sv:590,prev:'37',cur:16},
+  {kw:"ai cybersecurity threats",cat:"AI Cybersecurity",funnel:"TOFU",sv:480,prev:'12',cur:12},
   {kw:"generative ai in cybersecurity",cat:"AI Cybersecurity",funnel:"MOFU",sv:480,prev:'14',cur:14},
-  {kw:"layer 7 firewall",cat:"NGFW",funnel:"TOFU",sv:390,prev:'25',cur:41},
-  {kw:"ai security threats",cat:"AI Cybersecurity",funnel:"TOFU",sv:320,prev:'1',cur:19},
-  {kw:"enterprise firewall",cat:"NGFW",funnel:"BOFU",sv:320,prev:'11',cur:11},
-  {kw:"fully managed sd wan",cat:"SD-WAN",funnel:"MOFU",sv:320,prev:'101',cur:26},
-  {kw:"ai driven security",cat:"AI Cybersecurity",funnel:"MOFU",sv:210,prev:'1',cur:17},
-  {kw:"aiops vendors",cat:"AI Cybersecurity",funnel:"BOFU",sv:210,prev:'60',cur:68},
-  {kw:"generative ai adoption",cat:"AI Cybersecurity",funnel:"MOFU",sv:210,prev:'23',cur:12},
-  {kw:"ot security companies",cat:"OT Security",funnel:"BOFU",sv:210,prev:'28',cur:17},
-  {kw:"sd wan companies",cat:"SD-WAN",funnel:"BOFU",sv:210,prev:'12',cur:17},
-  {kw:"ai cyber security companies",cat:"AI Cybersecurity",funnel:"BOFU",sv:170,prev:'1',cur:17},
-  {kw:"access control list example",cat:"NAC",funnel:"TOFU",sv:140,prev:'8',cur:25},
-  {kw:"ai security frameworks",cat:"AI Cybersecurity",funnel:"MOFU",sv:140,prev:'21',cur:34},
-  {kw:"aiops meaning",cat:"AI Cybersecurity",funnel:"TOFU",sv:140,prev:'1',cur:28},
-  {kw:"aiops monitoring",cat:"AI Cybersecurity",funnel:"MOFU",sv:140,prev:'56',cur:65},
-  {kw:"business sd wan",cat:"SD-WAN",funnel:"MOFU",sv:140,prev:'9',cur:47},
-  {kw:"cloud sd wan",cat:"SD-WAN",funnel:"MOFU",sv:140,prev:'1',cur:22},
-  {kw:"ics/ot",cat:"OT Security",funnel:"TOFU",sv:140,prev:'2',cur:35},
-  {kw:"ot vulnerabilities",cat:"OT Security",funnel:"TOFU",sv:140,prev:'12',cur:15},
-  {kw:"ai data center architecture",cat:"AI Cybersecurity",funnel:"MOFU",sv:110,prev:'34',cur:45},
-  {kw:"cloud managed sd wan",cat:"SD-WAN",funnel:"MOFU",sv:110,prev:'60',cur:26},
-  {kw:"ot security monitoring",cat:"OT Security",funnel:"TOFU",sv:110,prev:'8',cur:24},
-  {kw:"quantum readiness",cat:"Quantum Security",funnel:"TOFU",sv:110,prev:'1',cur:21},
-  {kw:"wan providers",cat:"SD-WAN",funnel:"TOFU",sv:110,prev:'-',cur:32},
-  {kw:"aiops framework",cat:"AI Cybersecurity",funnel:"MOFU",sv:90,prev:'17',cur:21},
-  {kw:"best sd wan",cat:"SD-WAN",funnel:"BOFU",sv:90,prev:'37',cur:62},
-  {kw:"best sd wan providers",cat:"SD-WAN",funnel:"MOFU",sv:90,prev:'40',cur:53},
-  {kw:"best sd wan vendors",cat:"SD-WAN",funnel:"MOFU",sv:90,prev:'29',cur:17},
-  {kw:"networking acl",cat:"NAC",funnel:"TOFU",sv:90,prev:'2',cur:19},
-  {kw:"ot cybersecurity vendors",cat:"OT Security",funnel:"BOFU",sv:90,prev:'19',cur:18},
-  {kw:"ot network architecture",cat:"OT Security",funnel:"MOFU",sv:90,prev:'19',cur:24},
-  {kw:"aiops network",cat:"AI Cybersecurity",funnel:"MOFU",sv:70,prev:'11',cur:11},
-  {kw:"Crypto-Agility",cat:"Quantum Security",funnel:"TOFU",sv:70,prev:'16',cur:17},
-  {kw:"iot/ot security",cat:"OT Security",funnel:"TOFU",sv:70,prev:'1',cur:12},
-  {kw:"layer 3 firewall",cat:"NGFW",funnel:"BOFU",sv:70,prev:'52',cur:62},
-  {kw:"ot/ics cybersecurity",cat:"OT Security",funnel:"MOFU",sv:70,prev:'95',cur:108},
-  {kw:"sd wan automation",cat:"SD-WAN",funnel:"MOFU",sv:70,prev:'42',cur:52},
-  {kw:"sd wan lte",cat:"SD-WAN",funnel:"TOFU",sv:70,prev:'13',cur:32},
-  {kw:"wan cost",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'13',cur:24},
-  {kw:"what are aiops",cat:"AI Cybersecurity",funnel:"TOFU",sv:50,prev:'1',cur:15},
-  {kw:"enterprise firewall router",cat:"NGFW",funnel:"BOFU",sv:40,prev:'28',cur:33},
-  {kw:"iot and ot security",cat:"OT Security",funnel:"TOFU",sv:40,prev:'1',cur:31},
-  {kw:"wan sd wan",cat:"SD-WAN",funnel:"TOFU",sv:40,prev:'2',cur:18},
-  {kw:"Ai Powered Sase",cat:"SASE",funnel:"BOFU",sv:30,prev:'7',cur:14},
-  {kw:"enterprise grade firewall",cat:"NGFW",funnel:"BOFU",sv:30,prev:'16',cur:15},
-  {kw:"ngfw network",cat:"NGFW",funnel:"TOFU",sv:30,prev:'7',cur:12},
-  {kw:"sd wan brands",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'23',cur:15},
-  {kw:"sd wan data center",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'10',cur:12},
-  {kw:"sd wan lan",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'14',cur:28},
-  {kw:"secure web gateway vs next generation firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'23',cur:21},
-  {kw:"what is enterprise firewall",cat:"NGFW",funnel:"MOFU",sv:30,prev:'8',cur:26},
-  {kw:"cheap firewall",cat:"NGFW",funnel:"BOFU",sv:20,prev:'13',cur:29},
-  {kw:"sd wan and cloud",cat:"SD-WAN",funnel:"BOFU",sv:20,prev:'1',cur:20},
-  {kw:"sd wan ready",cat:"SD-WAN",funnel:"TOFU",sv:20,prev:'1',cur:17},
-  {kw:"ai cybersecurity providers",cat:"AI Cybersecurity",funnel:"BOFU",sv:10,prev:'8',cur:25},
-  {kw:"ai security platfrom",cat:"AI Cybersecurity",funnel:"BOFU",sv:0,prev:'50',cur:54},
-  {kw:"ai security use case",cat:"AI Cybersecurity",funnel:"MOFU",sv:0,prev:'19',cur:18},
+  {kw:"artificial intelligence data center",cat:"AI Cybersecurity",funnel:"TOFU",sv:480,prev:'1',cur:32},
+  {kw:"Sase Providers",cat:"SASE",funnel:"TOFU",sv:480,prev:'1',cur:21},
+  {kw:"layer 7 firewall",cat:"NGFW",funnel:"TOFU",sv:390,prev:'41',cur:17},
+  {kw:"sd wan vendors",cat:"SD-WAN",funnel:"MOFU",sv:390,prev:'-',cur:14},
+  {kw:"stateless firewall",cat:"NGFW",funnel:"TOFU",sv:320,prev:'2',cur:20},
+  {kw:"ai security monitoring",cat:"AI Cybersecurity",funnel:"MOFU",sv:260,prev:'9',cur:22},
+  {kw:"ethernet switching",cat:"Top Opportunities",funnel:"TOFU",sv:260,prev:'1',cur:20},
+  {kw:"ai driven security",cat:"AI Cybersecurity",funnel:"MOFU",sv:210,prev:'17',cur:23},
+  {kw:"preparing for ai adoption",cat:"AI Cybersecurity",funnel:"MOFU",sv:210,prev:'3',cur:22},
+  {kw:"ot security companies",cat:"OT Security",funnel:"BOFU",sv:210,prev:'17',cur:19},
+  {kw:"sd wan companies",cat:"SD-WAN",funnel:"BOFU",sv:210,prev:'17',cur:23},
+  {kw:"generative ai for cybersecurity",cat:"AI Cybersecurity",funnel:"MOFU",sv:170,prev:'-',cur:37},
+  {kw:"how to secure iot devices",cat:"NAC",funnel:"TOFU",sv:170,prev:'5',cur:19},
+  {kw:"ai cybersecurity incidents",cat:"AI Cybersecurity",funnel:"TOFU",sv:140,prev:'2',cur:18},
+  {kw:"aiops meaning",cat:"AI Cybersecurity",funnel:"TOFU",sv:140,prev:'28',cur:15},
+  {kw:"aiops monitoring",cat:"AI Cybersecurity",funnel:"MOFU",sv:140,prev:'65',cur:40},
+  {kw:"artificial intelligence risk management",cat:"AI Cybersecurity",funnel:"TOFU",sv:140,prev:'-',cur:56},
+  {kw:"ics/ot",cat:"OT Security",funnel:"TOFU",sv:140,prev:'35',cur:14},
+  {kw:"ot vulnerabilities",cat:"OT Security",funnel:"TOFU",sv:140,prev:'15',cur:90},
+  {kw:"ot cyber security companies",cat:"OT Security",funnel:"BOFU",sv:140,prev:'-',cur:12},
+  {kw:"sd wan software",cat:"SD-WAN",funnel:"TOFU",sv:140,prev:'-',cur:21},
+  {kw:"business sd wan",cat:"SD-WAN",funnel:"MOFU",sv:140,prev:'47',cur:24},
+  {kw:"sdn in the wan",cat:"SD-WAN",funnel:"TOFU",sv:140,prev:'3',cur:22},
+  {kw:"risks of ai in cybersecurity",cat:"AI Cybersecurity",funnel:"TOFU",sv:110,prev:'-',cur:25},
+  {kw:"ai data center architecture",cat:"AI Cybersecurity",funnel:"MOFU",sv:110,prev:'45',cur:16},
+  {kw:"ot security monitoring",cat:"OT Security",funnel:"TOFU",sv:110,prev:'24',cur:14},
+  {kw:"quantum readiness",cat:"Quantum Security",funnel:"TOFU",sv:110,prev:'21',cur:43},
+  {kw:"wan providers",cat:"SD-WAN",funnel:"TOFU",sv:110,prev:'32',cur:40},
+  {kw:"sd wan security features",cat:"SD-WAN",funnel:"TOFU",sv:110,prev:'5',cur:22},
+  {kw:"cloud managed sd wan",cat:"SD-WAN",funnel:"MOFU",sv:110,prev:'26',cur:92},
+  {kw:"aiops framework",cat:"AI Cybersecurity",funnel:"MOFU",sv:90,prev:'21',cur:25},
+  {kw:"aiops capabilities",cat:"AI Cybersecurity",funnel:"MOFU",sv:90,prev:'-',cur:40},
+  {kw:"ai security services",cat:"AI Cybersecurity",funnel:"BOFU",sv:90,prev:'10',cur:11},
+  {kw:"access control in network security",cat:"NAC",funnel:"TOFU",sv:90,prev:'1',cur:23},
+  {kw:"ot network architecture",cat:"OT Security",funnel:"MOFU",sv:90,prev:'24',cur:23},
+  {kw:"ot cybersecurity vendors",cat:"OT Security",funnel:"BOFU",sv:90,prev:'18',cur:18},
+  {kw:"sd wan vendors comparison",cat:"SD-WAN",funnel:"BOFU",sv:90,prev:'-',cur:44},
+  {kw:"sd wan requirements",cat:"SD-WAN",funnel:"TOFU",sv:90,prev:'5',cur:24},
+  {kw:"is sd wan better than mpls",cat:"SD-WAN",funnel:"TOFU",sv:90,prev:'4',cur:21},
+  {kw:"sd wan vs mpls cost comparison",cat:"SD-WAN",funnel:"TOFU",sv:90,prev:'3',cur:20},
+  {kw:"next gen firewall services",cat:"NGFW",funnel:"MOFU",sv:70,prev:'4',cur:47},
+  {kw:"features of next generation firewall",cat:"NGFW",funnel:"MOFU",sv:70,prev:'1',cur:15},
+  {kw:"ot cyber security framework",cat:"OT Security",funnel:"MOFU",sv:70,prev:'3',cur:24},
+  {kw:"industrial ot cybersecurity",cat:"OT Security",funnel:"MOFU",sv:70,prev:'-',cur:49},
+  {kw:"ot/ics cybersecurity",cat:"OT Security",funnel:"MOFU",sv:70,prev:'108',cur:15},
+  {kw:"Crypto-Agility",cat:"Quantum Security",funnel:"TOFU",sv:70,prev:'17',cur:25},
+  {kw:"define sd wan",cat:"SD-WAN",funnel:"TOFU",sv:70,prev:'1',cur:20},
+  {kw:"diy vs managed sd wan",cat:"SD-WAN",funnel:"TOFU",sv:70,prev:'2',cur:17},
+  {kw:"sd wan visibility",cat:"SD-WAN",funnel:"MOFU",sv:70,prev:'-',cur:64},
+  {kw:"sd wan automation",cat:"SD-WAN",funnel:"MOFU",sv:70,prev:'52',cur:35},
+  {kw:"what does aiops stand for",cat:"AI Cybersecurity",funnel:"TOFU",sv:50,prev:'-',cur:38},
+  {kw:"what are aiops",cat:"AI Cybersecurity",funnel:"TOFU",sv:50,prev:'15',cur:31},
+  {kw:"types of access control list",cat:"NAC",funnel:"TOFU",sv:50,prev:'9',cur:13},
+  {kw:"business firewall solutions",cat:"NGFW",funnel:"BOFU",sv:50,prev:'4',cur:22},
+  {kw:"next generation firewall benefits",cat:"NGFW",funnel:"MOFU",sv:50,prev:'5',cur:21},
+  {kw:"sd wan appliances",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'-',cur:36},
+  {kw:"wan cost",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'24',cur:13},
+  {kw:"benefits of ai data center",cat:"AI Cybersecurity",funnel:"MOFU",sv:40,prev:'1',cur:16},
+  {kw:"benefits of access control list",cat:"NAC",funnel:"TOFU",sv:40,prev:'4',cur:34},
+  {kw:"what is next generation firewalls",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:21},
+  {kw:"ngfw definition",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:21},
+  {kw:"how network firewall is different from application firewall",cat:"NGFW",funnel:"TOFU",sv:40,prev:'2',cur:20},
+  {kw:"application firewall and network firewall",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:20},
+  {kw:"enterprise firewall router",cat:"NGFW",funnel:"BOFU",sv:40,prev:'33',cur:30},
+  {kw:"iot and ot security",cat:"OT Security",funnel:"TOFU",sv:40,prev:'31',cur:15},
+  {kw:"wan sd wan",cat:"SD-WAN",funnel:"TOFU",sv:40,prev:'18',cur:18},
+  {kw:"enterprise grade firewall",cat:"NGFW",funnel:"BOFU",sv:30,prev:'15',cur:11},
+  {kw:"ngfw network",cat:"NGFW",funnel:"TOFU",sv:30,prev:'12',cur:23},
+  {kw:"firewall price comparison",cat:"NGFW",funnel:"BOFU",sv:30,prev:'1',cur:21},
+  {kw:"secure web gateway vs next generation firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'21',cur:24},
+  {kw:"what is the next generation firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'1',cur:21},
+  {kw:"next generation firewall features list",cat:"NGFW",funnel:"MOFU",sv:30,prev:'1',cur:15},
+  {kw:"ngfw layer 7 firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'4',cur:23},
+  {kw:"next generation firewall meaning",cat:"NGFW",funnel:"TOFU",sv:30,prev:'1',cur:21},
+  {kw:"ot it security",cat:"OT Security",funnel:"MOFU",sv:30,prev:'1',cur:21},
+  {kw:"Ai Powered Sase",cat:"SASE",funnel:"BOFU",sv:30,prev:'14',cur:12},
+  {kw:"sd wan connectivity",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'2',cur:15},
+  {kw:"sd wan price comparison",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'9',cur:22},
+  {kw:"difference between wan and sd wan",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'7',cur:21},
+  {kw:"why use sd wan",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'1',cur:16},
+  {kw:"sd wan lan",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'28',cur:23},
+  {kw:"sd wan access",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'10',cur:26},
+  {kw:"sd wan aggregation",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'1',cur:17},
+  {kw:"sd wan multi cloud",cat:"SD-WAN",funnel:"BOFU",sv:30,prev:'4',cur:21},
+  {kw:"sd wan data center",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'12',cur:23},
+  {kw:"small business wan",cat:"SD-WAN",funnel:"BOFU",sv:30,prev:'1',cur:21},
+  {kw:"ngfw magic quadrant",cat:"NGFW",funnel:"MOFU",sv:20,prev:'2',cur:19},
+  {kw:"how much is a network firewall",cat:"NGFW",funnel:"BOFU",sv:20,prev:'1',cur:21},
+  {kw:"ngfw firewall features",cat:"NGFW",funnel:"MOFU",sv:20,prev:'1',cur:24},
+  {kw:"affordable firewall",cat:"NGFW",funnel:"BOFU",sv:20,prev:'6',cur:24},
+  {kw:"post quantum readiness",cat:"Quantum Security",funnel:"TOFU",sv:20,prev:'-',cur:45},
+  {kw:"sd wan price list",cat:"SD-WAN",funnel:"TOFU",sv:20,prev:'10',cur:26},
+  {kw:"sd wan cost calculator",cat:"SD-WAN",funnel:"TOFU",sv:20,prev:'3',cur:14},
+  {kw:"sd wan ready",cat:"SD-WAN",funnel:"TOFU",sv:20,prev:'17',cur:30},
+  {kw:"sd-wan aggregation",cat:"SD-WAN",funnel:"TOFU",sv:20,prev:'1',cur:14},
+  {kw:"ai cybersecurity providers",cat:"AI Cybersecurity",funnel:"BOFU",sv:10,prev:'25',cur:33},
+  {kw:"top ai cybersecurity vendors",cat:"AI Cybersecurity",funnel:"BOFU",sv:10,prev:'7',cur:14},
+  {kw:"ai security use case",cat:"AI Cybersecurity",funnel:"MOFU",sv:0,prev:'18',cur:18},
+  {kw:"ai security platfrom",cat:"AI Cybersecurity",funnel:"BOFU",sv:0,prev:'54',cur:36},
 ];
 
 const NOT_RANKING:KwRow[] = [
   {kw:"zero day",cat:"Top Opportunities",funnel:"TOFU",sv:368000,prev:'-',cur:'-'},
+  {kw:"what is malware",cat:"Top Opportunities",funnel:"TOFU",sv:135000,prev:'24',cur:'-'},
   {kw:"quantum computing",cat:"Quantum Security",funnel:"TOFU",sv:74000,prev:'-',cur:'-'},
-  {kw:"phishing",cat:"Top Opportunities",funnel:"TOFU",sv:49500,prev:'-',cur:'-'},
-  {kw:"ethernet switch",cat:"Top Opportunities",funnel:"BOFU",sv:14800,prev:'1',cur:'-'},
+  {kw:"saml",cat:"Top Opportunities",funnel:"TOFU",sv:18100,prev:'18',cur:'-'},
   {kw:"multi factor authentication",cat:"Top Opportunities",funnel:"TOFU",sv:14800,prev:'-',cur:'-'},
-  {kw:"phishing email",cat:"Top Opportunities",funnel:"TOFU",sv:9900,prev:'-',cur:'-'},
   {kw:"vpn service",cat:"Top Opportunities",funnel:"MOFU",sv:9900,prev:'-',cur:'-'},
+  {kw:"phishing email",cat:"Top Opportunities",funnel:"TOFU",sv:9900,prev:'-',cur:'-'},
   {kw:"ai governance",cat:"AI Cybersecurity",funnel:"TOFU",sv:8100,prev:'-',cur:'-'},
-  {kw:"ai data center",cat:"AI Cybersecurity",funnel:"TOFU",sv:5400,prev:'1',cur:'-'},
+  {kw:"frontier ai",cat:"AI Cybersecurity",funnel:"TOFU",sv:3600,prev:'-',cur:'-'},
   {kw:"ai in risk management",cat:"AI Cybersecurity",funnel:"MOFU",sv:3600,prev:'-',cur:'-'},
   {kw:"ai risk management",cat:"AI Cybersecurity",funnel:"MOFU",sv:3600,prev:'-',cur:'-'},
-  {kw:"frontier ai",cat:"AI Cybersecurity",funnel:"TOFU",sv:3600,prev:'-',cur:'-'},
   {kw:"ai governance framework",cat:"AI Cybersecurity",funnel:"TOFU",sv:2900,prev:'-',cur:'-'},
-  {kw:"identity access management",cat:"NAC",funnel:"TOFU",sv:2900,prev:'-',cur:'-'},
   {kw:"bring your own device",cat:"NAC",funnel:"TOFU",sv:2400,prev:'-',cur:'-'},
+  {kw:"aiops tools",cat:"AI Cybersecurity",funnel:"BOFU",sv:1900,prev:'15',cur:'-'},
   {kw:"access control solutions",cat:"NAC",funnel:"BOFU",sv:1900,prev:'-',cur:'-'},
+  {kw:"iam identity access management",cat:"NAC",funnel:"TOFU",sv:1900,prev:'1',cur:'-'},
   {kw:"What Is Sse",cat:"SASE",funnel:"TOFU",sv:1900,prev:'-',cur:'-'},
-  {kw:"ai cybersecurity risks",cat:"AI Cybersecurity",funnel:"TOFU",sv:1600,prev:'-',cur:'-'},
-  {kw:"ai risk assessment",cat:"AI Cybersecurity",funnel:"MOFU",sv:1300,prev:'-',cur:'-'},
-  {kw:"ai risk management framework",cat:"AI Cybersecurity",funnel:"MOFU",sv:1300,prev:'-',cur:'-'},
   {kw:"aiops platforms",cat:"AI Cybersecurity",funnel:"BOFU",sv:1300,prev:'-',cur:'-'},
+  {kw:"ai risk management framework",cat:"AI Cybersecurity",funnel:"MOFU",sv:1300,prev:'-',cur:'-'},
+  {kw:"ai risk assessment",cat:"AI Cybersecurity",funnel:"MOFU",sv:1300,prev:'-',cur:'-'},
   {kw:"agentic ai security",cat:"AI Cybersecurity",funnel:"TOFU",sv:1000,prev:'-',cur:'-'},
   {kw:"HNDL",cat:"Quantum Security",funnel:"TOFU",sv:1000,prev:'-',cur:'-'},
   {kw:"ai operations",cat:"AI Cybersecurity",funnel:"MOFU",sv:880,prev:'-',cur:'-'},
-  {kw:"ai adoption challenges",cat:"AI Cybersecurity",funnel:"MOFU",sv:720,prev:'-',cur:'-'},
   {kw:"enterprise ai adoption",cat:"AI Cybersecurity",funnel:"MOFU",sv:720,prev:'-',cur:'-'},
-  {kw:"access control devices",cat:"NAC",funnel:"BOFU",sv:590,prev:'-',cur:'-'},
+  {kw:"ai adoption challenges",cat:"AI Cybersecurity",funnel:"MOFU",sv:720,prev:'-',cur:'-'},
+  {kw:"ai security companies",cat:"AI Cybersecurity",funnel:"BOFU",sv:720,prev:'1',cur:'-'},
+  {kw:"ai prompt injection",cat:"AI Cybersecurity",funnel:"TOFU",sv:590,prev:'1',cur:'-'},
   {kw:"ai cybersecurity certification",cat:"AI Cybersecurity",funnel:"BOFU",sv:590,prev:'-',cur:'-'},
-  {kw:"managed sd wan solutions",cat:"SD-WAN",funnel:"TOFU",sv:480,prev:'-',cur:'-'},
+  {kw:"aiops software",cat:"AI Cybersecurity",funnel:"BOFU",sv:590,prev:'25',cur:'-'},
+  {kw:"access control devices",cat:"NAC",funnel:"BOFU",sv:590,prev:'-',cur:'-'},
   {kw:"quantum day",cat:"Quantum Security",funnel:"TOFU",sv:480,prev:'-',cur:'-'},
-  {kw:"ai security best practices",cat:"AI Cybersecurity",funnel:"MOFU",sv:390,prev:'-',cur:'-'},
+  {kw:"managed sd wan solutions",cat:"SD-WAN",funnel:"TOFU",sv:480,prev:'-',cur:'-'},
   {kw:"ai siem",cat:"AI Cybersecurity",funnel:"MOFU",sv:390,prev:'-',cur:'-'},
-  {kw:"sd wan vendors",cat:"SD-WAN",funnel:"MOFU",sv:390,prev:'-',cur:'-'},
+  {kw:"ai security best practices",cat:"AI Cybersecurity",funnel:"MOFU",sv:390,prev:'-',cur:'-'},
   {kw:"artificial intelligence risk management framework",cat:"AI Cybersecurity",funnel:"MOFU",sv:320,prev:'-',cur:'-'},
-  {kw:"ai adoption by industry",cat:"AI Cybersecurity",funnel:"TOFU",sv:260,prev:'-',cur:'-'},
-  {kw:"ai adoption statistics",cat:"AI Cybersecurity",funnel:"TOFU",sv:260,prev:'-',cur:'-'},
+  {kw:"fully managed sd wan",cat:"SD-WAN",funnel:"MOFU",sv:320,prev:'26',cur:'-'},
   {kw:"ai and risk management",cat:"AI Cybersecurity",funnel:"MOFU",sv:260,prev:'-',cur:'-'},
   {kw:"ai for risk management",cat:"AI Cybersecurity",funnel:"MOFU",sv:260,prev:'-',cur:'-'},
+  {kw:"ai adoption by industry",cat:"AI Cybersecurity",funnel:"TOFU",sv:260,prev:'-',cur:'-'},
+  {kw:"ai adoption statistics",cat:"AI Cybersecurity",funnel:"TOFU",sv:260,prev:'-',cur:'-'},
   {kw:"sd wan router",cat:"SD-WAN",funnel:"TOFU",sv:260,prev:'-',cur:'-'},
+  {kw:"aiops vendors",cat:"AI Cybersecurity",funnel:"BOFU",sv:210,prev:'68',cur:'-'},
   {kw:"harvest now decrypt later",cat:"Quantum Security",funnel:"TOFU",sv:210,prev:'-',cur:'-'},
-  {kw:"managed service sd wan",cat:"SD-WAN",funnel:"TOFU",sv:210,prev:'-',cur:'-'},
   {kw:"ai adoption in healthcare",cat:"AI Cybersecurity",funnel:"MOFU",sv:170,prev:'-',cur:'-'},
-  {kw:"generative ai for cybersecurity",cat:"AI Cybersecurity",funnel:"MOFU",sv:170,prev:'-',cur:'-'},
-  {kw:"what is PQC",cat:"Quantum Security",funnel:"TOFU",sv:170,prev:'1',cur:'-'},
-  {kw:"ai adoption rate",cat:"AI Cybersecurity",funnel:"TOFU",sv:140,prev:'-',cur:'-'},
+  {kw:"ai security frameworks",cat:"AI Cybersecurity",funnel:"MOFU",sv:140,prev:'34',cur:'-'},
   {kw:"aiops definition",cat:"AI Cybersecurity",funnel:"TOFU",sv:140,prev:'-',cur:'-'},
-  {kw:"artificial intelligence risk management",cat:"AI Cybersecurity",funnel:"TOFU",sv:140,prev:'-',cur:'-'},
-  {kw:"ot cyber security companies",cat:"OT Security",funnel:"BOFU",sv:140,prev:'-',cur:'-'},
-  {kw:"sd wan software",cat:"SD-WAN",funnel:"TOFU",sv:140,prev:'1',cur:'-'},
-  {kw:"risks of ai in cybersecurity",cat:"AI Cybersecurity",funnel:"TOFU",sv:110,prev:'-',cur:'-'},
+  {kw:"ai adoption rate",cat:"AI Cybersecurity",funnel:"TOFU",sv:140,prev:'-',cur:'-'},
+  {kw:"how to setup a firewall",cat:"NGFW",funnel:"TOFU",sv:140,prev:'1',cur:'-'},
+  {kw:"Cryptographic Agility",cat:"Quantum Security",funnel:"TOFU",sv:140,prev:'1',cur:'-'},
+  {kw:"enterprise aiops",cat:"AI Cybersecurity",funnel:"MOFU",sv:110,prev:'1',cur:'-'},
   {kw:"top sd wan providers",cat:"SD-WAN",funnel:"BOFU",sv:110,prev:'-',cur:'-'},
-  {kw:"ai based security system",cat:"AI Cybersecurity",funnel:"MOFU",sv:90,prev:'-',cur:'-'},
   {kw:"ai model risk management",cat:"AI Cybersecurity",funnel:"MOFU",sv:90,prev:'-',cur:'-'},
-  {kw:"aiops capabilities",cat:"AI Cybersecurity",funnel:"MOFU",sv:90,prev:'-',cur:'-'},
   {kw:"enterprise ai adoption trends",cat:"AI Cybersecurity",funnel:"MOFU",sv:90,prev:'-',cur:'-'},
-  {kw:"sd wan vendors comparison",cat:"SD-WAN",funnel:"BOFU",sv:90,prev:'-',cur:'-'},
-  {kw:"ai adoption in financial services",cat:"AI Cybersecurity",funnel:"MOFU",sv:70,prev:'-',cur:'-'},
+  {kw:"best sd wan",cat:"SD-WAN",funnel:"BOFU",sv:90,prev:'62',cur:'-'},
+  {kw:"best sd wan providers",cat:"SD-WAN",funnel:"MOFU",sv:90,prev:'53',cur:'-'},
+  {kw:"best sd wan vendors",cat:"SD-WAN",funnel:"MOFU",sv:90,prev:'17',cur:'-'},
   {kw:"ai impact on data centers",cat:"AI Cybersecurity",funnel:"MOFU",sv:70,prev:'-',cur:'-'},
   {kw:"aiops trends",cat:"AI Cybersecurity",funnel:"MOFU",sv:70,prev:'-',cur:'-'},
+  {kw:"ai adoption in financial services",cat:"AI Cybersecurity",funnel:"MOFU",sv:70,prev:'-',cur:'-'},
+  {kw:"layer 3 firewall",cat:"NGFW",funnel:"BOFU",sv:70,prev:'62',cur:'-'},
   {kw:"best ot security companies",cat:"OT Security",funnel:"BOFU",sv:70,prev:'-',cur:'-'},
-  {kw:"industrial ot cybersecurity",cat:"OT Security",funnel:"MOFU",sv:70,prev:'-',cur:'-'},
   {kw:"NIST PQC standards",cat:"Quantum Security",funnel:"TOFU",sv:70,prev:'-',cur:'-'},
-  {kw:"sd wan visibility",cat:"SD-WAN",funnel:"MOFU",sv:70,prev:'-',cur:'-'},
   {kw:"top sd wan vendors",cat:"SD-WAN",funnel:"BOFU",sv:70,prev:'-',cur:'-'},
+  {kw:"what is ai risk management",cat:"AI Cybersecurity",funnel:"TOFU",sv:50,prev:'-',cur:'-'},
   {kw:"enterprise ai adoption challenges",cat:"AI Cybersecurity",funnel:"MOFU",sv:50,prev:'-',cur:'-'},
   {kw:"leading sd wan vendors",cat:"SD-WAN",funnel:"MOFU",sv:50,prev:'-',cur:'-'},
-  {kw:"sd wan appliances",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'-',cur:'-'},
-  {kw:"what does aiops stand for",cat:"AI Cybersecurity",funnel:"TOFU",sv:50,prev:'-',cur:'-'},
-  {kw:"what is ai risk management",cat:"AI Cybersecurity",funnel:"TOFU",sv:50,prev:'-',cur:'-'},
+  {kw:"ai security challenges",cat:"AI Cybersecurity",funnel:"MOFU",sv:40,prev:'1',cur:'-'},
   {kw:"ai and machine learning for risk management",cat:"AI Cybersecurity",funnel:"MOFU",sv:40,prev:'-',cur:'-'},
   {kw:"nac service",cat:"NAC",funnel:"BOFU",sv:40,prev:'-',cur:'-'},
   {kw:"ai data center trends",cat:"AI Cybersecurity",funnel:"MOFU",sv:30,prev:'-',cur:'-'},
+  {kw:"5th generation firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'6',cur:'-'},
   {kw:"sd wan hardware vendors",cat:"SD-WAN",funnel:"BOFU",sv:30,prev:'-',cur:'-'},
   {kw:"ai security for enterprise",cat:"AI Cybersecurity",funnel:"MOFU",sv:20,prev:'-',cur:'-'},
-  {kw:"post quantum readiness",cat:"Quantum Security",funnel:"TOFU",sv:20,prev:'42',cur:'-'},
+  {kw:"cheap firewall",cat:"NGFW",funnel:"BOFU",sv:20,prev:'29',cur:'-'},
   {kw:"what is HNDL",cat:"Quantum Security",funnel:"TOFU",sv:20,prev:'-',cur:'-'},
+  {kw:"gen ai security solutions",cat:"AI Cybersecurity",funnel:"BOFU",sv:0,prev:'-',cur:'-'},
   {kw:"data center challenges in ai",cat:"AI Cybersecurity",funnel:"MOFU",sv:0,prev:'-',cur:'-'},
   {kw:"deepfake ai best practices",cat:"AI Cybersecurity",funnel:"MOFU",sv:0,prev:'-',cur:'-'},
   {kw:"deepfake ai challenges",cat:"AI Cybersecurity",funnel:"MOFU",sv:0,prev:'-',cur:'-'},
-  {kw:"gen ai security platform",cat:"AI Cybersecurity",funnel:"BOFU",sv:0,prev:'-',cur:'-'},
-  {kw:"gen ai security solutions",cat:"AI Cybersecurity",funnel:"BOFU",sv:0,prev:'-',cur:'-'},
-  {kw:"what frameworks guide successful ai adoption",cat:"AI Cybersecurity",funnel:"TOFU",sv:0,prev:'-',cur:'-'},
   {kw:"what industries benefit most from ai adoption",cat:"AI Cybersecurity",funnel:"TOFU",sv:0,prev:'-',cur:'-'},
+  {kw:"what frameworks guide successful ai adoption",cat:"AI Cybersecurity",funnel:"TOFU",sv:0,prev:'-',cur:'-'},
+  {kw:"gen ai security platform",cat:"AI Cybersecurity",funnel:"BOFU",sv:0,prev:'-',cur:'-'},
 ];
 
 const AIO_KEYWORDS:KwRow[] = [
-  {kw:"vpn",cat:"Top Opportunities",funnel:"TOFU",sv:673000,prev:'1',cur:1},
-  {kw:"cybersecurity",cat:"Top Opportunities",funnel:"TOFU",sv:201000,prev:'34',cur:1},
-  {kw:"proxy",cat:"Top Opportunities",funnel:"TOFU",sv:201000,prev:'6',cur:3},
+  {kw:"cybersecurity",cat:"Top Opportunities",funnel:"TOFU",sv:201000,prev:'1',cur:1},
   {kw:"what is a firewall",cat:"NGFW",funnel:"TOFU",sv:135000,prev:'1',cur:1},
   {kw:"what is a firewall",cat:"Top Opportunities",funnel:"TOFU",sv:135000,prev:'1',cur:1},
-  {kw:"what is phishing",cat:"Top Opportunities",funnel:"TOFU",sv:74000,prev:'8',cur:1},
+  {kw:"wan",cat:"SD-WAN",funnel:"TOFU",sv:33100,prev:'1',cur:1},
   {kw:"ddos",cat:"Top Opportunities",funnel:"TOFU",sv:33100,prev:'1',cur:1},
   {kw:"iam",cat:"Top Opportunities",funnel:"TOFU",sv:33100,prev:'1',cur:1},
-  {kw:"proxy server",cat:"Top Opportunities",funnel:"TOFU",sv:33100,prev:'5',cur:1},
-  {kw:"ransomware",cat:"Top Opportunities",funnel:"TOFU",sv:33100,prev:'6',cur:1},
-  {kw:"wan",cat:"SD-WAN",funnel:"TOFU",sv:33100,prev:'1',cur:1},
   {kw:"wan",cat:"Top Opportunities",funnel:"TOFU",sv:33100,prev:'1',cur:1},
+  {kw:"ransomware",cat:"Top Opportunities",funnel:"TOFU",sv:33100,prev:'1',cur:1},
+  {kw:"proxy server",cat:"Top Opportunities",funnel:"TOFU",sv:33100,prev:'1',cur:1},
   {kw:"firewall",cat:"NGFW",funnel:"TOFU",sv:27100,prev:'1',cur:1},
   {kw:"firewall",cat:"Top Opportunities",funnel:"TOFU",sv:27100,prev:'1',cur:1},
   {kw:"AI in cybersecurity",cat:"AI Cybersecurity",funnel:"TOFU",sv:22200,prev:'1',cur:1},
   {kw:"ddos attack",cat:"Top Opportunities",funnel:"TOFU",sv:18100,prev:'1',cur:1},
-  {kw:"what is a proxy server",cat:"Top Opportunities",funnel:"TOFU",sv:18100,prev:'3',cur:1},
-  {kw:"Sase",cat:"SASE",funnel:"TOFU",sv:14800,prev:'18',cur:1},
-  {kw:"sase",cat:"Top Opportunities",funnel:"TOFU",sv:14800,prev:'18',cur:1},
+  {kw:"what is a proxy server",cat:"Top Opportunities",funnel:"TOFU",sv:18100,prev:'1',cur:1},
+  {kw:"Sase",cat:"SASE",funnel:"TOFU",sv:14800,prev:'1',cur:1},
+  {kw:"ethernet switch",cat:"Top Opportunities",funnel:"BOFU",sv:14800,prev:'-',cur:1},
+  {kw:"sase",cat:"Top Opportunities",funnel:"TOFU",sv:14800,prev:'1',cur:1},
+  {kw:"access control",cat:"NAC",funnel:"TOFU",sv:12100,prev:'18',cur:1},
   {kw:"oauth",cat:"Top Opportunities",funnel:"TOFU",sv:12100,prev:'1',cur:1},
-  {kw:"single sign on",cat:"Top Opportunities",funnel:"TOFU",sv:12100,prev:'1',cur:1},
+  {kw:"access control",cat:"Top Opportunities",funnel:"TOFU",sv:12100,prev:'18',cur:1},
   {kw:"byod",cat:"NAC",funnel:"TOFU",sv:9900,prev:'1',cur:1},
-  {kw:"byod",cat:"Top Opportunities",funnel:"TOFU",sv:9900,prev:'1',cur:1},
   {kw:"qos",cat:"Top Opportunities",funnel:"TOFU",sv:9900,prev:'1',cur:1},
-  {kw:"ddos meaning",cat:"Top Opportunities",funnel:"TOFU",sv:8100,prev:'1',cur:1},
+  {kw:"byod",cat:"Top Opportunities",funnel:"TOFU",sv:9900,prev:'1',cur:1},
   {kw:"post-quantum cryptography",cat:"Quantum Security",funnel:"TOFU",sv:8100,prev:'1',cur:1},
-  {kw:"encryption definition",cat:"Top Opportunities",funnel:"TOFU",sv:6600,prev:'3',cur:1},
+  {kw:"ddos meaning",cat:"Top Opportunities",funnel:"TOFU",sv:8100,prev:'1',cur:1},
   {kw:"sd wan",cat:"SD-WAN",funnel:"TOFU",sv:6600,prev:'1',cur:1},
-  {kw:"sd wan",cat:"Top Opportunities",funnel:"TOFU",sv:6600,prev:'1',cur:1},
   {kw:"sd-wan",cat:"SD-WAN",funnel:"TOFU",sv:6600,prev:'1',cur:1},
-  {kw:"sd-wan",cat:"Top Opportunities",funnel:"TOFU",sv:6600,prev:'1',cur:1},
   {kw:"sdwan",cat:"SD-WAN",funnel:"TOFU",sv:6600,prev:'1',cur:1},
+  {kw:"wan definition",cat:"SD-WAN",funnel:"TOFU",sv:6600,prev:'1',cur:1},
+  {kw:"sd wan",cat:"Top Opportunities",funnel:"TOFU",sv:6600,prev:'1',cur:1},
+  {kw:"sd-wan",cat:"Top Opportunities",funnel:"TOFU",sv:6600,prev:'1',cur:1},
   {kw:"sdwan",cat:"Top Opportunities",funnel:"TOFU",sv:6600,prev:'1',cur:1},
-  {kw:"wan definition",cat:"SD-WAN",funnel:"TOFU",sv:6600,prev:'15',cur:1},
-  {kw:"zero trust architecture",cat:"Zero Trust",funnel:"TOFU",sv:6600,prev:'17',cur:1},
-  {kw:"firewall configuration",cat:"NGFW",funnel:"TOFU",sv:5400,prev:'1',cur:1},
+  {kw:"encryption definition",cat:"Top Opportunities",funnel:"TOFU",sv:6600,prev:'1',cur:1},
+  {kw:"deepfake ai",cat:"AI Cybersecurity",funnel:"TOFU",sv:5400,prev:'4',cur:1},
   {kw:"firewalls",cat:"NGFW",funnel:"TOFU",sv:5400,prev:'1',cur:1},
-  {kw:"firewalls",cat:"Top Opportunities",funnel:"TOFU",sv:5400,prev:'1',cur:1},
+  {kw:"firewall configuration",cat:"NGFW",funnel:"TOFU",sv:5400,prev:'1',cur:1},
   {kw:"iot security",cat:"OT Security",funnel:"TOFU",sv:5400,prev:'1',cur:1},
+  {kw:"firewalls",cat:"Top Opportunities",funnel:"TOFU",sv:5400,prev:'1',cur:1},
+  {kw:"ztna",cat:"Zero Trust",funnel:"BOFU",sv:5400,prev:'1',cur:1},
   {kw:"zero trust security",cat:"Zero Trust",funnel:"TOFU",sv:5400,prev:'1',cur:1},
-  {kw:"ztna",cat:"Zero Trust",funnel:"BOFU",sv:5400,prev:'4',cur:1},
   {kw:"ai cybersecurity",cat:"AI Cybersecurity",funnel:"TOFU",sv:4400,prev:'1',cur:1},
-  {kw:"hardware firewall",cat:"NGFW",funnel:"TOFU",sv:4400,prev:'1',cur:1},
   {kw:"network firewall security",cat:"NGFW",funnel:"TOFU",sv:4400,prev:'1',cur:1},
   {kw:"ngfw",cat:"NGFW",funnel:"BOFU",sv:4400,prev:'1',cur:1},
   {kw:"Sase Meaning",cat:"SASE",funnel:"TOFU",sv:4400,prev:'1',cur:1},
+  {kw:"how does vpn work",cat:"Top Opportunities",funnel:"TOFU",sv:4400,prev:'9',cur:1},
   {kw:"iot security",cat:"NAC",funnel:"TOFU",sv:3600,prev:'1',cur:1},
+  {kw:"network firewall",cat:"NGFW",funnel:"TOFU",sv:3600,prev:'7',cur:1},
   {kw:"ot security",cat:"OT Security",funnel:"MOFU",sv:3600,prev:'1',cur:1},
-  {kw:"what is ddos",cat:"Top Opportunities",funnel:"TOFU",sv:3600,prev:'1',cur:1},
-  {kw:"what is ips",cat:"Top Opportunities",funnel:"TOFU",sv:3600,prev:'1',cur:1},
   {kw:"What Is Sase",cat:"SASE",funnel:"TOFU",sv:3600,prev:'1',cur:1},
+  {kw:"what is ddos",cat:"Top Opportunities",funnel:"TOFU",sv:3600,prev:'1',cur:1},
+  {kw:"network firewall",cat:"Top Opportunities",funnel:"TOFU",sv:3600,prev:'7',cur:1},
   {kw:"network access control",cat:"NAC",funnel:"TOFU",sv:2900,prev:'1',cur:1},
   {kw:"quantum encryption",cat:"Quantum Security",funnel:"TOFU",sv:2900,prev:'1',cur:1},
   {kw:"Secure Access Service Edge",cat:"SASE",funnel:"TOFU",sv:2900,prev:'1',cur:1},
-  {kw:"what is wan",cat:"SD-WAN",funnel:"TOFU",sv:2900,prev:'1',cur:1},
   {kw:"wide area network",cat:"SD-WAN",funnel:"TOFU",sv:2900,prev:'1',cur:1},
   {kw:"zero trust network access",cat:"Zero Trust",funnel:"TOFU",sv:2900,prev:'1',cur:1},
   {kw:"ai adoption",cat:"AI Cybersecurity",funnel:"TOFU",sv:2400,prev:'1',cur:1},
-  {kw:"ai cybersecurity tools",cat:"AI Cybersecurity",funnel:"BOFU",sv:2400,prev:'9',cur:1},
+  {kw:"ai cybersecurity tools",cat:"AI Cybersecurity",funnel:"BOFU",sv:2400,prev:'1',cur:1},
+  {kw:"what is an ai data center",cat:"AI Cybersecurity",funnel:"TOFU",sv:2400,prev:'1',cur:1},
   {kw:"ai deepfakes",cat:"AI Cybersecurity",funnel:"TOFU",sv:2400,prev:'1',cur:1},
-  {kw:"network security firewall",cat:"NGFW",funnel:"TOFU",sv:2400,prev:'3',cur:1},
-  {kw:"network security firewall",cat:"NGFW",funnel:"TOFU",sv:2400,prev:'3',cur:1},
+  {kw:"network security firewall",cat:"NGFW",funnel:"TOFU",sv:2400,prev:'1',cur:1},
+  {kw:"network security firewall",cat:"NGFW",funnel:"TOFU",sv:2400,prev:'1',cur:1},
+  {kw:"next generation firewall",cat:"NGFW",funnel:"BOFU",sv:2400,prev:'1',cur:1},
   {kw:"next gen firewall",cat:"NGFW",funnel:"BOFU",sv:2400,prev:'1',cur:1},
-  {kw:"next generation firewall",cat:"NGFW",funnel:"BOFU",sv:2400,prev:'4',cur:1},
-  {kw:"what is an ai data center",cat:"AI Cybersecurity",funnel:"TOFU",sv:2400,prev:'-',cur:1},
-  {kw:"what is sd-wan",cat:"SD-WAN",funnel:"TOFU",sv:2400,prev:'3',cur:1},
-  {kw:"iam identity access management",cat:"NAC",funnel:"TOFU",sv:1900,prev:'1',cur:1},
-  {kw:"Sase Solutions",cat:"SASE",funnel:"TOFU",sv:1900,prev:'1',cur:1},
+  {kw:"what is sd-wan",cat:"SD-WAN",funnel:"TOFU",sv:2400,prev:'1',cur:1},
+  {kw:"what is aiops",cat:"AI Cybersecurity",funnel:"TOFU",sv:1900,prev:'22',cur:1},
   {kw:"what is iam",cat:"NAC",funnel:"TOFU",sv:1900,prev:'1',cur:1},
+  {kw:"Sase Solutions",cat:"SASE",funnel:"TOFU",sv:1900,prev:'1',cur:1},
+  {kw:"what is sd wan",cat:"SD-WAN",funnel:"TOFU",sv:1900,prev:'30',cur:1},
   {kw:"zero trust network",cat:"Zero Trust",funnel:"TOFU",sv:1900,prev:'1',cur:1},
-  {kw:"ai security solutions",cat:"AI Cybersecurity",funnel:"BOFU",sv:1600,prev:'9',cur:1},
-  {kw:"ot cybersecurity",cat:"OT Security",funnel:"TOFU",sv:1600,prev:'1',cur:1},
-  {kw:"sd wan solutions",cat:"SD-WAN",funnel:"TOFU",sv:1600,prev:'1',cur:1},
-  {kw:"Security Service Edge",cat:"SASE",funnel:"TOFU",sv:1600,prev:'1',cur:1},
+  {kw:"ai security solutions",cat:"AI Cybersecurity",funnel:"BOFU",sv:1600,prev:'1',cur:1},
   {kw:"what does a firewall do",cat:"NGFW",funnel:"TOFU",sv:1600,prev:'1',cur:1},
-  {kw:"what is zero trust security",cat:"Zero Trust",funnel:"TOFU",sv:1600,prev:'7',cur:1},
-  {kw:"access control security",cat:"NAC",funnel:"TOFU",sv:1300,prev:'1',cur:2},
-  {kw:"nac network",cat:"NAC",funnel:"TOFU",sv:1300,prev:'1',cur:1},
-  {kw:"Sase Architecture",cat:"SASE",funnel:"TOFU",sv:1300,prev:'1',cur:1},
+  {kw:"ot cybersecurity",cat:"OT Security",funnel:"TOFU",sv:1600,prev:'1',cur:1},
+  {kw:"Security Service Edge",cat:"SASE",funnel:"TOFU",sv:1600,prev:'1',cur:1},
+  {kw:"sd wan solutions",cat:"SD-WAN",funnel:"TOFU",sv:1600,prev:'1',cur:1},
+  {kw:"software defined wan",cat:"SD-WAN",funnel:"TOFU",sv:1600,prev:'3',cur:1},
+  {kw:"what is zero trust security",cat:"Zero Trust",funnel:"TOFU",sv:1600,prev:'1',cur:1},
+  {kw:"access control security",cat:"NAC",funnel:"TOFU",sv:1300,prev:'2',cur:2},
   {kw:"stateful firewall",cat:"NGFW",funnel:"TOFU",sv:1300,prev:'1',cur:1},
-  {kw:"waf security",cat:"NGFW",funnel:"TOFU",sv:1300,prev:'9',cur:1},
   {kw:"what is waf",cat:"NGFW",funnel:"TOFU",sv:1300,prev:'1',cur:1},
-  {kw:"what is zero trust architecture",cat:"Zero Trust",funnel:"TOFU",sv:1300,prev:'1',cur:1},
+  {kw:"waf security",cat:"NGFW",funnel:"TOFU",sv:1300,prev:'1',cur:1},
+  {kw:"Sase Architecture",cat:"SASE",funnel:"TOFU",sv:1300,prev:'1',cur:1},
+  {kw:"sd wan meaning",cat:"SD-WAN",funnel:"TOFU",sv:1300,prev:'3',cur:1},
   {kw:"zero trust model",cat:"Zero Trust",funnel:"TOFU",sv:1300,prev:'1',cur:1},
   {kw:"zero trust security model",cat:"Zero Trust",funnel:"TOFU",sv:1300,prev:'1',cur:1},
-  {kw:"802.1 x",cat:"Top Opportunities",funnel:"TOFU",sv:1000,prev:'1',cur:1},
+  {kw:"what is zero trust architecture",cat:"Zero Trust",funnel:"TOFU",sv:1300,prev:'1',cur:1},
   {kw:"cybersecurity and ai",cat:"AI Cybersecurity",funnel:"TOFU",sv:1000,prev:'1',cur:1},
-  {kw:"deepfakes meaning",cat:"AI Cybersecurity",funnel:"TOFU",sv:1000,prev:'1',cur:1},
-  {kw:"firewall as a service",cat:"NGFW",funnel:"TOFU",sv:1000,prev:'1',cur:1},
   {kw:"iot device security",cat:"NAC",funnel:"TOFU",sv:1000,prev:'1',cur:1},
   {kw:"iot security solutions",cat:"NAC",funnel:"BOFU",sv:1000,prev:'1',cur:1},
-  {kw:"network access control solutions",cat:"NAC",funnel:"TOFU",sv:1000,prev:'3',cur:1},
+  {kw:"network access control solutions",cat:"NAC",funnel:"TOFU",sv:1000,prev:'1',cur:1},
+  {kw:"waf meaning",cat:"NGFW",funnel:"TOFU",sv:1000,prev:'4',cur:1},
+  {kw:"stateful vs stateless firewall",cat:"NGFW",funnel:"TOFU",sv:1000,prev:'1',cur:1},
+  {kw:"stateful inspection firewall",cat:"NGFW",funnel:"TOFU",sv:1000,prev:'1',cur:1},
+  {kw:"firewall as a service",cat:"NGFW",funnel:"TOFU",sv:1000,prev:'1',cur:1},
+  {kw:"what is ot security",cat:"OT Security",funnel:"MOFU",sv:1000,prev:'1',cur:1},
   {kw:"operational technology security",cat:"OT Security",funnel:"MOFU",sv:1000,prev:'1',cur:1},
   {kw:"quantum key distribution",cat:"Quantum Security",funnel:"TOFU",sv:1000,prev:'1',cur:1},
   {kw:"Sase Definition",cat:"SASE",funnel:"TOFU",sv:1000,prev:'1',cur:1},
   {kw:"Sase Vs Sse",cat:"SASE",funnel:"TOFU",sv:1000,prev:'1',cur:1},
-  {kw:"stateful inspection firewall",cat:"NGFW",funnel:"TOFU",sv:1000,prev:'3',cur:1},
-  {kw:"stateful vs stateless firewall",cat:"NGFW",funnel:"TOFU",sv:1000,prev:'2',cur:1},
-  {kw:"what are ai data centers",cat:"AI Cybersecurity",funnel:"TOFU",sv:1000,prev:'-',cur:1},
-  {kw:"what is access control",cat:"NAC",funnel:"TOFU",sv:1000,prev:'1',cur:1},
-  {kw:"what is ot security",cat:"OT Security",funnel:"MOFU",sv:1000,prev:'1',cur:1},
-  {kw:"access control technologies",cat:"NAC",funnel:"MOFU",sv:880,prev:'-',cur:1},
+  {kw:"802.1 x",cat:"Top Opportunities",funnel:"TOFU",sv:1000,prev:'1',cur:1},
+  {kw:"ai red teaming",cat:"AI Cybersecurity",funnel:"TOFU",sv:880,prev:'1',cur:1},
   {kw:"ai cybersecurity solutions",cat:"AI Cybersecurity",funnel:"BOFU",sv:880,prev:'1',cur:1},
-  {kw:"ai for cybersecurity",cat:"AI Cybersecurity",funnel:"MOFU",sv:880,prev:'1',cur:1},
-  {kw:"ai red teaming",cat:"AI Cybersecurity",funnel:"TOFU",sv:880,prev:'-',cur:1},
-  {kw:"how can generative ai be used in cybersecurity",cat:"AI Cybersecurity",funnel:"TOFU",sv:880,prev:'1',cur:1},
+  {kw:"access control technologies",cat:"NAC",funnel:"MOFU",sv:880,prev:'1',cur:1},
   {kw:"internet of things security",cat:"NAC",funnel:"TOFU",sv:880,prev:'1',cur:1},
-  {kw:"QKD",cat:"Quantum Security",funnel:"TOFU",sv:880,prev:'1',cur:1},
-  {kw:"quantum security",cat:"Quantum Security",funnel:"TOFU",sv:880,prev:'1',cur:1},
-  {kw:"sd wan vs mpls",cat:"SD-WAN",funnel:"TOFU",sv:880,prev:'1',cur:1},
   {kw:"what is iot security",cat:"NAC",funnel:"TOFU",sv:880,prev:'1',cur:1},
+  {kw:"quantum security",cat:"Quantum Security",funnel:"TOFU",sv:880,prev:'1',cur:1},
+  {kw:"QKD",cat:"Quantum Security",funnel:"TOFU",sv:880,prev:'1',cur:1},
+  {kw:"sd wan vs mpls",cat:"SD-WAN",funnel:"TOFU",sv:880,prev:'1',cur:1},
+  {kw:"ai security definition",cat:"AI Cybersecurity",funnel:"TOFU",sv:720,prev:'1',cur:1},
+  {kw:"what is ai security",cat:"AI Cybersecurity",funnel:"TOFU",sv:720,prev:'4',cur:1},
   {kw:"access control lists",cat:"NAC",funnel:"TOFU",sv:720,prev:'1',cur:1},
   {kw:"acl network",cat:"NAC",funnel:"TOFU",sv:720,prev:'1',cur:1},
-  {kw:"ai security companies",cat:"AI Cybersecurity",funnel:"BOFU",sv:720,prev:'1',cur:1},
-  {kw:"ai security definition",cat:"AI Cybersecurity",funnel:"TOFU",sv:720,prev:'1',cur:1},
-  {kw:"bring your own device policy",cat:"NAC",funnel:"TOFU",sv:720,prev:'1',cur:1},
-  {kw:"firewall next generation",cat:"NGFW",funnel:"BOFU",sv:720,prev:'1',cur:1},
-  {kw:"Generative ai security",cat:"AI Cybersecurity",funnel:"TOFU",sv:720,prev:'1',cur:1},
   {kw:"identity and access management system",cat:"NAC",funnel:"TOFU",sv:720,prev:'1',cur:1},
   {kw:"network firewalls",cat:"NGFW",funnel:"TOFU",sv:720,prev:'1',cur:1},
-  {kw:"network firewalls",cat:"Top Opportunities",funnel:"TOFU",sv:720,prev:'1',cur:1},
+  {kw:"firewall next generation",cat:"NGFW",funnel:"BOFU",sv:720,prev:'1',cur:1},
+  {kw:"what is operational technology",cat:"OT Security",funnel:"MOFU",sv:720,prev:'1',cur:1},
   {kw:"q-day",cat:"Quantum Security",funnel:"TOFU",sv:720,prev:'1',cur:1},
   {kw:"Sase Benefits",cat:"SASE",funnel:"TOFU",sv:720,prev:'1',cur:1},
-  {kw:"sd wan explained",cat:"SD-WAN",funnel:"TOFU",sv:720,prev:'4',cur:1},
   {kw:"sd wan security",cat:"SD-WAN",funnel:"MOFU",sv:720,prev:'1',cur:1},
-  {kw:"small business firewall",cat:"NGFW",funnel:"BOFU",sv:720,prev:'1',cur:1},
-  {kw:"stateless vs stateful firewall",cat:"NGFW",funnel:"TOFU",sv:720,prev:'20',cur:1},
-  {kw:"types of firewall",cat:"NGFW",funnel:"TOFU",sv:720,prev:'1',cur:1},
-  {kw:"what does deepfake mean",cat:"AI Cybersecurity",funnel:"TOFU",sv:720,prev:'10',cur:1},
-  {kw:"what is operational technology",cat:"OT Security",funnel:"MOFU",sv:720,prev:'1',cur:1},
-  {kw:"what is zero trust network access",cat:"Zero Trust",funnel:"TOFU",sv:720,prev:'1',cur:1},
+  {kw:"network firewalls",cat:"Top Opportunities",funnel:"TOFU",sv:720,prev:'1',cur:1},
   {kw:"zero trust access",cat:"Zero Trust",funnel:"TOFU",sv:720,prev:'1',cur:1},
-  {kw:"ai prompt injection",cat:"AI Cybersecurity",funnel:"TOFU",sv:590,prev:'1',cur:1},
+  {kw:"what is zero trust network access",cat:"Zero Trust",funnel:"TOFU",sv:720,prev:'1',cur:1},
+  {kw:"what is identity and access management",cat:"NAC",funnel:"TOFU",sv:590,prev:'7',cur:1},
   {kw:"how does a firewall work",cat:"NGFW",funnel:"TOFU",sv:590,prev:'1',cur:1},
-  {kw:"proxy firewall",cat:"NGFW",funnel:"TOFU",sv:590,prev:'1',cur:1},
-  {kw:"stateful firewall vs stateless firewall",cat:"NGFW",funnel:"TOFU",sv:590,prev:'1',cur:1},
   {kw:"utm firewall",cat:"NGFW",funnel:"TOFU",sv:590,prev:'1',cur:1},
+  {kw:"proxy firewall",cat:"NGFW",funnel:"TOFU",sv:590,prev:'1',cur:1},
   {kw:"zero trust networking",cat:"Zero Trust",funnel:"TOFU",sv:590,prev:'1',cur:1},
-  {kw:"ai adoption strategy",cat:"AI Cybersecurity",funnel:"MOFU",sv:480,prev:'4',cur:1},
-  {kw:"artificial intelligence data center",cat:"AI Cybersecurity",funnel:"TOFU",sv:480,prev:'39',cur:1},
+  {kw:"ai adoption strategy",cat:"AI Cybersecurity",funnel:"MOFU",sv:480,prev:'1',cur:1},
+  {kw:"network access control list",cat:"NAC",funnel:"TOFU",sv:480,prev:'1',cur:1},
+  {kw:"waf firewall",cat:"NGFW",funnel:"TOFU",sv:480,prev:'5',cur:1},
   {kw:"firewalls explained",cat:"NGFW",funnel:"TOFU",sv:480,prev:'1',cur:1},
-  {kw:"network access control list",cat:"NAC",funnel:"TOFU",sv:480,prev:'3',cur:1},
-  {kw:"ot security solutions",cat:"OT Security",funnel:"BOFU",sv:480,prev:'1',cur:1},
   {kw:"ot technology",cat:"OT Security",funnel:"MOFU",sv:480,prev:'1',cur:1},
-  {kw:"Sase Platform",cat:"SASE",funnel:"TOFU",sv:480,prev:'1',cur:1},
-  {kw:"Sase Providers",cat:"SASE",funnel:"TOFU",sv:480,prev:'9',cur:1},
-  {kw:"sd wan benefits",cat:"SD-WAN",funnel:"TOFU",sv:480,prev:'1',cur:1},
+  {kw:"ot security solutions",cat:"OT Security",funnel:"BOFU",sv:480,prev:'1',cur:1},
   {kw:"Secure Access Service Edge SASE",cat:"SASE",funnel:"TOFU",sv:480,prev:'1',cur:1},
-  {kw:"artificial intelligence for it operations",cat:"AI Cybersecurity",funnel:"MOFU",sv:390,prev:'-',cur:1},
+  {kw:"Sase Platform",cat:"SASE",funnel:"TOFU",sv:480,prev:'1',cur:1},
+  {kw:"sd wan benefits",cat:"SD-WAN",funnel:"TOFU",sv:480,prev:'1',cur:1},
   {kw:"Artificial intelligence in cybersecurity",cat:"AI Cybersecurity",funnel:"TOFU",sv:390,prev:'1',cur:1},
+  {kw:"artificial intelligence for it operations",cat:"AI Cybersecurity",funnel:"MOFU",sv:390,prev:'1',cur:1},
+  {kw:"nac solutions",cat:"NAC",funnel:"BOFU",sv:390,prev:'6',cur:1},
+  {kw:"what is network access control",cat:"NAC",funnel:"TOFU",sv:390,prev:'1',cur:1},
   {kw:"nac cyber security",cat:"NAC",funnel:"TOFU",sv:390,prev:'1',cur:1},
+  {kw:"what is nac in networking",cat:"NAC",funnel:"TOFU",sv:390,prev:'1',cur:1},
+  {kw:"security firewall",cat:"NGFW",funnel:"TOFU",sv:390,prev:'1',cur:1},
+  {kw:"security firewall",cat:"NGFW",funnel:"TOFU",sv:390,prev:'1',cur:1},
   {kw:"network based firewall",cat:"NGFW",funnel:"TOFU",sv:390,prev:'1',cur:1},
   {kw:"next generation firewall ngfw",cat:"NGFW",funnel:"TOFU",sv:390,prev:'1',cur:1},
   {kw:"operational technology cyber security",cat:"OT Security",funnel:"TOFU",sv:390,prev:'1',cur:1},
-  {kw:"ot devices",cat:"OT Security",funnel:"MOFU",sv:390,prev:'1',cur:1},
-  {kw:"ot environment",cat:"OT Security",funnel:"MOFU",sv:390,prev:'1',cur:1},
-  {kw:"ot network security",cat:"OT Security",funnel:"MOFU",sv:390,prev:'1',cur:1},
   {kw:"ot security meaning",cat:"OT Security",funnel:"MOFU",sv:390,prev:'1',cur:1},
+  {kw:"ot environment",cat:"OT Security",funnel:"MOFU",sv:390,prev:'1',cur:1},
+  {kw:"ot devices",cat:"OT Security",funnel:"MOFU",sv:390,prev:'1',cur:1},
   {kw:"quantum safe encryption",cat:"Quantum Security",funnel:"TOFU",sv:390,prev:'1',cur:1},
   {kw:"Sase Vs Casb",cat:"SASE",funnel:"TOFU",sv:390,prev:'1',cur:1},
-  {kw:"sd wan definition",cat:"SD-WAN",funnel:"TOFU",sv:390,prev:'3',cur:1},
+  {kw:"Sase Services",cat:"SASE",funnel:"TOFU",sv:390,prev:'2',cur:1},
+  {kw:"sd wan definition",cat:"SD-WAN",funnel:"TOFU",sv:390,prev:'1',cur:1},
   {kw:"sd wan technology",cat:"SD-WAN",funnel:"TOFU",sv:390,prev:'1',cur:1},
-  {kw:"security firewall",cat:"NGFW",funnel:"TOFU",sv:390,prev:'1',cur:1},
-  {kw:"security firewall",cat:"NGFW",funnel:"TOFU",sv:390,prev:'1',cur:1},
-  {kw:"what is nac in networking",cat:"NAC",funnel:"TOFU",sv:390,prev:'1',cur:1},
-  {kw:"what is network access control",cat:"NAC",funnel:"TOFU",sv:390,prev:'1',cur:1},
+  {kw:"ai security risk",cat:"AI Cybersecurity",funnel:"TOFU",sv:320,prev:'5',cur:1},
+  {kw:"ai security threats",cat:"AI Cybersecurity",funnel:"TOFU",sv:320,prev:'19',cur:1},
+  {kw:"access control definition",cat:"NAC",funnel:"TOFU",sv:320,prev:'4',cur:1},
+  {kw:"iot network security",cat:"NAC",funnel:"TOFU",sv:320,prev:'1',cur:1},
+  {kw:"iot network security",cat:"NAC",funnel:"TOFU",sv:320,prev:'1',cur:1},
+  {kw:"network access control software",cat:"NAC",funnel:"TOFU",sv:320,prev:'6',cur:1},
   {kw:"business firewall",cat:"NGFW",funnel:"BOFU",sv:320,prev:'1',cur:1},
-  {kw:"iot network security",cat:"NAC",funnel:"TOFU",sv:320,prev:'1',cur:1},
-  {kw:"iot network security",cat:"NAC",funnel:"TOFU",sv:320,prev:'1',cur:1},
+  {kw:"what is a network firewall",cat:"NGFW",funnel:"TOFU",sv:320,prev:'1',cur:1},
+  {kw:"enterprise firewall",cat:"NGFW",funnel:"BOFU",sv:320,prev:'11',cur:1},
+  {kw:"waf vs firewall",cat:"NGFW",funnel:"TOFU",sv:320,prev:'1',cur:1},
   {kw:"Sase Network",cat:"SASE",funnel:"TOFU",sv:320,prev:'1',cur:1},
   {kw:"Sase Provider",cat:"SASE",funnel:"TOFU",sv:320,prev:'1',cur:1},
-  {kw:"Sase Vendor",cat:"SASE",funnel:"TOFU",sv:320,prev:'6',cur:1},
-  {kw:"waf vs firewall",cat:"NGFW",funnel:"TOFU",sv:320,prev:'1',cur:1},
-  {kw:"what is a network firewall",cat:"NGFW",funnel:"TOFU",sv:320,prev:'1',cur:1},
-  {kw:"access control meaning",cat:"NAC",funnel:"TOFU",sv:260,prev:'1',cur:1},
-  {kw:"access control methods",cat:"NAC",funnel:"TOFU",sv:260,prev:'1',cur:1},
-  {kw:"benefits of sd wan",cat:"SD-WAN",funnel:"TOFU",sv:260,prev:'1',cur:1},
-  {kw:"ethernet switching",cat:"Top Opportunities",funnel:"TOFU",sv:260,prev:'1',cur:1},
-  {kw:"physical firewall",cat:"NGFW",funnel:"TOFU",sv:260,prev:'1',cur:1},
+  {kw:"Sase Vendor",cat:"SASE",funnel:"TOFU",sv:320,prev:'1',cur:1},
   {kw:"role of ai in cybersecurity",cat:"AI Cybersecurity",funnel:"TOFU",sv:260,prev:'1',cur:1},
-  {kw:"sdn wan",cat:"SD-WAN",funnel:"TOFU",sv:260,prev:'1',cur:1},
-  {kw:"software defined wide area network",cat:"SD-WAN",funnel:"TOFU",sv:260,prev:'1',cur:1},
-  {kw:"wan aggregation",cat:"SD-WAN",funnel:"TOFU",sv:260,prev:'1',cur:1},
+  {kw:"iam definition",cat:"NAC",funnel:"TOFU",sv:260,prev:'2',cur:1},
+  {kw:"access control methods",cat:"NAC",funnel:"TOFU",sv:260,prev:'1',cur:1},
+  {kw:"access control meaning",cat:"NAC",funnel:"TOFU",sv:260,prev:'1',cur:1},
   {kw:"what is firewall in networking",cat:"NGFW",funnel:"TOFU",sv:260,prev:'1',cur:1},
-  {kw:"zero trust edge",cat:"Zero Trust",funnel:"TOFU",sv:260,prev:'7',cur:1},
-  {kw:"acls networking",cat:"NAC",funnel:"TOFU",sv:210,prev:'1',cur:1},
+  {kw:"physical firewall",cat:"NGFW",funnel:"TOFU",sv:260,prev:'1',cur:1},
+  {kw:"what is a stateful firewall",cat:"NGFW",funnel:"TOFU",sv:260,prev:'2',cur:1},
+  {kw:"benefits of sd wan",cat:"SD-WAN",funnel:"TOFU",sv:260,prev:'1',cur:1},
+  {kw:"wan aggregation",cat:"SD-WAN",funnel:"TOFU",sv:260,prev:'1',cur:1},
+  {kw:"software defined wide area network",cat:"SD-WAN",funnel:"TOFU",sv:260,prev:'1',cur:1},
+  {kw:"sdn wan",cat:"SD-WAN",funnel:"TOFU",sv:260,prev:'1',cur:1},
+  {kw:"ztna security",cat:"Zero Trust",funnel:"TOFU",sv:260,prev:'6',cur:1},
   {kw:"ai cybersecurity software",cat:"AI Cybersecurity",funnel:"BOFU",sv:210,prev:'1',cur:1},
   {kw:"ai powered cybersecurity",cat:"AI Cybersecurity",funnel:"MOFU",sv:210,prev:'1',cur:1},
-  {kw:"how firewall works",cat:"NGFW",funnel:"TOFU",sv:210,prev:'1',cur:1},
+  {kw:"nac security",cat:"NAC",funnel:"TOFU",sv:210,prev:'3',cur:1},
+  {kw:"acls networking",cat:"NAC",funnel:"TOFU",sv:210,prev:'1',cur:5},
   {kw:"nac network access",cat:"NAC",funnel:"TOFU",sv:210,prev:'1',cur:1},
-  {kw:"network access control system",cat:"NAC",funnel:"TOFU",sv:210,prev:'1',cur:1},
+  {kw:"how firewall works",cat:"NGFW",funnel:"TOFU",sv:210,prev:'1',cur:1},
+  {kw:"firewall as a service providers",cat:"NGFW",funnel:"TOFU",sv:210,prev:'2',cur:1},
   {kw:"perimeter firewall",cat:"NGFW",funnel:"TOFU",sv:210,prev:'1',cur:1},
+  {kw:"cloud firewall service",cat:"NGFW",funnel:"TOFU",sv:210,prev:'2',cur:1},
+  {kw:"sd wan device",cat:"SD-WAN",funnel:"TOFU",sv:210,prev:'4',cur:1},
   {kw:"sd wan advantages",cat:"SD-WAN",funnel:"MOFU",sv:210,prev:'1',cur:1},
-  {kw:"sd wan cost",cat:"SD-WAN",funnel:"TOFU",sv:210,prev:'1',cur:1},
+  {kw:"strategic ai adoption",cat:"AI Cybersecurity",funnel:"MOFU",sv:170,prev:'1',cur:1},
+  {kw:"ai cyber security companies",cat:"AI Cybersecurity",funnel:"BOFU",sv:170,prev:'17',cur:1},
   {kw:"firewall price",cat:"NGFW",funnel:"BOFU",sv:170,prev:'1',cur:1},
   {kw:"hardware vs software firewall",cat:"NGFW",funnel:"TOFU",sv:170,prev:'1',cur:1},
-  {kw:"quantum computing security",cat:"Quantum Security",funnel:"TOFU",sv:170,prev:'1',cur:1},
-  {kw:"Sase Vs Vpn",cat:"SASE",funnel:"TOFU",sv:170,prev:'1',cur:1},
+  {kw:"ot security tools",cat:"OT Security",funnel:"TOFU",sv:170,prev:'5',cur:1},
+  {kw:"quantum computing security",cat:"Quantum Security",funnel:"TOFU",sv:170,prev:'1',cur:5},
+  {kw:"what is PQC",cat:"Quantum Security",funnel:"TOFU",sv:170,prev:'-',cur:1},
   {kw:"Sase Vs Ztna",cat:"SASE",funnel:"TOFU",sv:170,prev:'1',cur:1},
-  {kw:"sd wan pricing",cat:"SD-WAN",funnel:"TOFU",sv:170,prev:'1',cur:1},
-  {kw:"strategic ai adoption",cat:"AI Cybersecurity",funnel:"MOFU",sv:170,prev:'1',cur:1},
-  {kw:"what is next generation firewall",cat:"NGFW",funnel:"TOFU",sv:170,prev:'21',cur:1},
-  {kw:"access control list in networking",cat:"NAC",funnel:"TOFU",sv:140,prev:'2',cur:1},
-  {kw:"benefits of firewall",cat:"NGFW",funnel:"TOFU",sv:140,prev:'1',cur:1},
-  {kw:"Cryptographic Agility",cat:"Quantum Security",funnel:"TOFU",sv:140,prev:'30',cur:1},
-  {kw:"hardware firewall vs software firewall",cat:"NGFW",funnel:"TOFU",sv:140,prev:'1',cur:1},
-  {kw:"how to setup a firewall",cat:"NGFW",funnel:"TOFU",sv:140,prev:'4',cur:1},
+  {kw:"Sase Vs Vpn",cat:"SASE",funnel:"TOFU",sv:170,prev:'1',cur:1},
+  {kw:"access control list example",cat:"NAC",funnel:"TOFU",sv:140,prev:'25',cur:1},
+  {kw:"access control list in networking",cat:"NAC",funnel:"TOFU",sv:140,prev:'1',cur:1},
   {kw:"nac network security",cat:"NAC",funnel:"TOFU",sv:140,prev:'1',cur:1},
-  {kw:"operational technology definition",cat:"OT Security",funnel:"MOFU",sv:140,prev:'4',cur:1},
-  {kw:"ot infrastructure",cat:"OT Security",funnel:"MOFU",sv:140,prev:'1',cur:1},
+  {kw:"hardware firewall vs software firewall",cat:"NGFW",funnel:"TOFU",sv:140,prev:'1',cur:1},
   {kw:"proxy server firewall",cat:"NGFW",funnel:"TOFU",sv:140,prev:'1',cur:1},
-  {kw:"VPN vs ZTNA",cat:"Zero Trust",funnel:"TOFU",sv:140,prev:'1',cur:1},
-  {kw:"what is managed sd wan",cat:"SD-WAN",funnel:"TOFU",sv:140,prev:'1',cur:1},
+  {kw:"benefits of firewall",cat:"NGFW",funnel:"TOFU",sv:140,prev:'1',cur:1},
   {kw:"what is ot cybersecurity",cat:"OT Security",funnel:"MOFU",sv:140,prev:'1',cur:1},
+  {kw:"operational technology definition",cat:"OT Security",funnel:"MOFU",sv:140,prev:'1',cur:1},
+  {kw:"ot infrastructure",cat:"OT Security",funnel:"MOFU",sv:140,prev:'1',cur:1},
+  {kw:"VPN vs ZTNA",cat:"Zero Trust",funnel:"TOFU",sv:140,prev:'1',cur:1},
+  {kw:"ai secops",cat:"AI Cybersecurity",funnel:"MOFU",sv:110,prev:'7',cur:1},
   {kw:"acl firewall",cat:"NAC",funnel:"TOFU",sv:110,prev:'1',cur:1},
-  {kw:"acls security",cat:"NAC",funnel:"TOFU",sv:110,prev:'1',cur:1},
-  {kw:"enterprise aiops",cat:"AI Cybersecurity",funnel:"MOFU",sv:110,prev:'1',cur:1},
-  {kw:"nac it",cat:"NAC",funnel:"TOFU",sv:110,prev:'1',cur:1},
   {kw:"nac network access control",cat:"NAC",funnel:"TOFU",sv:110,prev:'1',cur:1},
+  {kw:"access control examples",cat:"NAC",funnel:"TOFU",sv:110,prev:'4',cur:1},
+  {kw:"nac it",cat:"NAC",funnel:"TOFU",sv:110,prev:'1',cur:1},
   {kw:"nac technology",cat:"NAC",funnel:"TOFU",sv:110,prev:'1',cur:1},
+  {kw:"acls security",cat:"NAC",funnel:"TOFU",sv:110,prev:'1',cur:1},
   {kw:"utm vs firewall",cat:"NGFW",funnel:"TOFU",sv:110,prev:'1',cur:1},
+  {kw:"sd wan explanation",cat:"SD-WAN",funnel:"TOFU",sv:110,prev:'5',cur:1},
   {kw:"what is wan aggregation",cat:"SD-WAN",funnel:"TOFU",sv:110,prev:'1',cur:1},
-  {kw:"access control in network security",cat:"NAC",funnel:"TOFU",sv:90,prev:'1',cur:1},
-  {kw:"firewall cost",cat:"NGFW",funnel:"BOFU",sv:90,prev:'1',cur:1},
-  {kw:"firewall vs waf",cat:"NGFW",funnel:"TOFU",sv:90,prev:'1',cur:1},
+  {kw:"ai based security system",cat:"AI Cybersecurity",funnel:"MOFU",sv:90,prev:'-',cur:1},
+  {kw:"deepfake attacks",cat:"AI Cybersecurity",funnel:"MOFU",sv:90,prev:'5',cur:1},
+  {kw:"what is ai adoption",cat:"AI Cybersecurity",funnel:"TOFU",sv:90,prev:'1',cur:1},
   {kw:"how firewalls work",cat:"NGFW",funnel:"TOFU",sv:90,prev:'1',cur:1},
-  {kw:"mpls to sd wan",cat:"SD-WAN",funnel:"TOFU",sv:90,prev:'1',cur:1},
+  {kw:"firewall cost",cat:"NGFW",funnel:"BOFU",sv:90,prev:'1',cur:1},
   {kw:"network firewall price",cat:"NGFW",funnel:"BOFU",sv:90,prev:'1',cur:1},
+  {kw:"firewall vs waf",cat:"NGFW",funnel:"TOFU",sv:90,prev:'1',cur:1},
   {kw:"next generation firewall appliance",cat:"NGFW",funnel:"BOFU",sv:90,prev:'1',cur:1},
   {kw:"next generation firewall vs utm",cat:"NGFW",funnel:"TOFU",sv:90,prev:'1',cur:1},
-  {kw:"ot networking",cat:"OT Security",funnel:"MOFU",sv:90,prev:'1',cur:1},
-  {kw:"ot security assessment",cat:"OT Security",funnel:"BOFU",sv:90,prev:'31',cur:1},
-  {kw:"sd wan leaders",cat:"SD-WAN",funnel:"MOFU",sv:90,prev:'-',cur:1},
-  {kw:"sd wan with mpls",cat:"SD-WAN",funnel:"TOFU",sv:90,prev:'1',cur:1},
-  {kw:"Sd-Wan Vs Sase",cat:"SASE",funnel:"TOFU",sv:90,prev:'1',cur:1},
-  {kw:"what is ai adoption",cat:"AI Cybersecurity",funnel:"TOFU",sv:90,prev:'2',cur:1},
   {kw:"what is ot in cybersecurity",cat:"OT Security",funnel:"MOFU",sv:90,prev:'1',cur:1},
+  {kw:"ot networking",cat:"OT Security",funnel:"MOFU",sv:90,prev:'1',cur:1},
+  {kw:"ot security assessment",cat:"OT Security",funnel:"BOFU",sv:90,prev:'1',cur:1},
+  {kw:"Sd-Wan Vs Sase",cat:"SASE",funnel:"TOFU",sv:90,prev:'1',cur:1},
+  {kw:"mpls to sd wan",cat:"SD-WAN",funnel:"TOFU",sv:90,prev:'1',cur:1},
+  {kw:"sd wan with mpls",cat:"SD-WAN",funnel:"TOFU",sv:90,prev:'1',cur:1},
+  {kw:"ai based security",cat:"AI Cybersecurity",funnel:"MOFU",sv:70,prev:'6',cur:1},
+  {kw:"what is deepfake ai",cat:"AI Cybersecurity",funnel:"TOFU",sv:70,prev:'1',cur:1},
   {kw:"adoption of ai for cybersecurity",cat:"AI Cybersecurity",funnel:"MOFU",sv:70,prev:'1',cur:1},
-  {kw:"advantages of sd wan",cat:"SD-WAN",funnel:"MOFU",sv:70,prev:'1',cur:1},
-  {kw:"define sd wan",cat:"SD-WAN",funnel:"TOFU",sv:70,prev:'4',cur:1},
-  {kw:"distributed firewall",cat:"NGFW",funnel:"TOFU",sv:70,prev:'1',cur:1},
-  {kw:"features of next generation firewall",cat:"NGFW",funnel:"MOFU",sv:70,prev:'4',cur:1},
-  {kw:"network firewall cost",cat:"NGFW",funnel:"BOFU",sv:70,prev:'2',cur:2},
-  {kw:"network firewall security price",cat:"NGFW",funnel:"BOFU",sv:70,prev:'1',cur:1},
-  {kw:"next generation firewall vs waf",cat:"NGFW",funnel:"TOFU",sv:70,prev:'5',cur:1},
-  {kw:"operational technology examples",cat:"OT Security",funnel:"MOFU",sv:70,prev:'1',cur:1},
-  {kw:"ot security framework",cat:"OT Security",funnel:"TOFU",sv:70,prev:'1',cur:1},
-  {kw:"sd wan overview",cat:"SD-WAN",funnel:"TOFU",sv:70,prev:'5',cur:1},
-  {kw:"securing ot networks",cat:"OT Security",funnel:"TOFU",sv:70,prev:'1',cur:1},
   {kw:"security for iot devices",cat:"NAC",funnel:"TOFU",sv:70,prev:'1',cur:1},
   {kw:"software firewall vs hardware firewall",cat:"NGFW",funnel:"TOFU",sv:70,prev:'1',cur:1},
-  {kw:"what are software firewalls",cat:"NGFW",funnel:"TOFU",sv:70,prev:'1',cur:1},
-  {kw:"what is deepfake ai",cat:"AI Cybersecurity",funnel:"TOFU",sv:70,prev:'4',cur:1},
+  {kw:"distributed firewall",cat:"NGFW",funnel:"TOFU",sv:70,prev:'1',cur:1},
+  {kw:"network firewall security price",cat:"NGFW",funnel:"BOFU",sv:70,prev:'1',cur:1},
   {kw:"what is proxy firewall",cat:"NGFW",funnel:"TOFU",sv:70,prev:'1',cur:1},
+  {kw:"what are software firewalls",cat:"NGFW",funnel:"TOFU",sv:70,prev:'1',cur:1},
+  {kw:"next generation firewall vs waf",cat:"NGFW",funnel:"TOFU",sv:70,prev:'1',cur:1},
+  {kw:"network firewall cost",cat:"NGFW",funnel:"BOFU",sv:70,prev:'2',cur:2},
+  {kw:"iot/ot security",cat:"OT Security",funnel:"TOFU",sv:70,prev:'12',cur:1},
+  {kw:"operational technology examples",cat:"OT Security",funnel:"MOFU",sv:70,prev:'1',cur:1},
+  {kw:"securing ot networks",cat:"OT Security",funnel:"TOFU",sv:70,prev:'1',cur:1},
+  {kw:"sd wan overview",cat:"SD-WAN",funnel:"TOFU",sv:70,prev:'1',cur:1},
+  {kw:"advantages of sd wan",cat:"SD-WAN",funnel:"MOFU",sv:70,prev:'1',cur:1},
   {kw:"what is zero trust networking",cat:"Zero Trust",funnel:"TOFU",sv:70,prev:'1',cur:1},
   {kw:"ai automation in cybersecurity",cat:"AI Cybersecurity",funnel:"MOFU",sv:50,prev:'1',cur:1},
-  {kw:"benefits of firewall security",cat:"NGFW",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"border firewall",cat:"NGFW",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"cyber security in iot devices",cat:"NAC",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"difference between sdn and sd wan",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"diy sd wan",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"firewall vs utm",cat:"NGFW",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"How Does Sase Work",cat:"SASE",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"network access control device",cat:"NAC",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"sd wan security concerns",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"what does sd wan mean",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'3',cur:1},
+  {kw:"nac tools",cat:"NAC",funnel:"TOFU",sv:50,prev:'3',cur:1},
+  {kw:"network access control device",cat:"NAC",funnel:"TOFU",sv:50,prev:'1',cur:4},
   {kw:"what is iam security",cat:"NAC",funnel:"TOFU",sv:50,prev:'1',cur:1},
+  {kw:"cyber security in iot devices",cat:"NAC",funnel:"TOFU",sv:50,prev:'1',cur:1},
   {kw:"what is utm firewall",cat:"NGFW",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"why is sd wan important",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'1',cur:1},
-  {kw:"Ai Sase",cat:"SASE",funnel:"MOFU",sv:40,prev:'8',cur:1},
-  {kw:"ai security challenges",cat:"AI Cybersecurity",funnel:"MOFU",sv:40,prev:'1',cur:1},
-  {kw:"ai security examples",cat:"AI Cybersecurity",funnel:"TOFU",sv:40,prev:'19',cur:1},
-  {kw:"application firewall and network firewall",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:1},
-  {kw:"benefits of ai data center",cat:"AI Cybersecurity",funnel:"MOFU",sv:40,prev:'18',cur:1},
-  {kw:"configuration of firewall",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:1},
-  {kw:"cyber security for operational technology",cat:"OT Security",funnel:"TOFU",sv:40,prev:'1',cur:1},
-  {kw:"firewall defined",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:1},
-  {kw:"how network firewall works",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:1},
-  {kw:"network access control policy",cat:"NAC",funnel:"TOFU",sv:40,prev:'1',cur:1},
+  {kw:"firewall vs utm",cat:"NGFW",funnel:"TOFU",sv:50,prev:'1',cur:1},
+  {kw:"border firewall",cat:"NGFW",funnel:"TOFU",sv:50,prev:'1',cur:1},
+  {kw:"benefits of firewall security",cat:"NGFW",funnel:"TOFU",sv:50,prev:'1',cur:1},
+  {kw:"How Does Sase Work",cat:"SASE",funnel:"TOFU",sv:50,prev:'1',cur:1},
+  {kw:"definition sd wan",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'3',cur:1},
+  {kw:"sd wan security concerns",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'1',cur:1},
+  {kw:"what does sd wan mean",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'1',cur:1},
+  {kw:"diy sd wan",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'1',cur:1},
+  {kw:"difference between sdn and sd wan",cat:"SD-WAN",funnel:"TOFU",sv:50,prev:'1',cur:1},
+  {kw:"ai security examples",cat:"AI Cybersecurity",funnel:"TOFU",sv:40,prev:'1',cur:1},
   {kw:"network access control products",cat:"NAC",funnel:"BOFU",sv:40,prev:'1',cur:1},
-  {kw:"next gen firewall magic quadrant",cat:"NGFW",funnel:"MOFU",sv:40,prev:'1',cur:1},
-  {kw:"next generation firewall security",cat:"NGFW",funnel:"MOFU",sv:40,prev:'4',cur:1},
-  {kw:"ngfw definition",cat:"NGFW",funnel:"TOFU",sv:40,prev:'8',cur:1},
-  {kw:"quantum security solutions",cat:"Quantum Security",funnel:"TOFU",sv:40,prev:'1',cur:1},
+  {kw:"firewall defined",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:1},
+  {kw:"configuration of firewall",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:1},
+  {kw:"how network firewall works",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:1},
+  {kw:"next generation firewall security",cat:"NGFW",funnel:"MOFU",sv:40,prev:'1',cur:1},
+  {kw:"what does ot stand for in cyber security",cat:"OT Security",funnel:"MOFU",sv:40,prev:'1',cur:1},
+  {kw:"cyber security for operational technology",cat:"OT Security",funnel:"TOFU",sv:40,prev:'1',cur:1},
+  {kw:"Ai Sase",cat:"SASE",funnel:"MOFU",sv:40,prev:'1',cur:1},
+  {kw:"sdwan explained",cat:"SD-WAN",funnel:"TOFU",sv:40,prev:'4',cur:1},
+  {kw:"sd wan pricing model",cat:"SD-WAN",funnel:"TOFU",sv:40,prev:'3',cur:1},
   {kw:"sd wan bandwidth",cat:"SD-WAN",funnel:"MOFU",sv:40,prev:'1',cur:1},
-  {kw:"what does ot stand for in cyber security",cat:"OT Security",funnel:"MOFU",sv:40,prev:'2',cur:1},
-  {kw:"what is next generation firewalls",cat:"NGFW",funnel:"TOFU",sv:40,prev:'1',cur:1},
-  {kw:"application proxy firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"cyber security iot devices",cat:"NAC",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"difference between next generation firewall and standard firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'9',cur:1},
-  {kw:"enterprise firewall magic quadrant",cat:"NGFW",funnel:"MOFU",sv:30,prev:'2',cur:1},
-  {kw:"firewall price comparison",cat:"NGFW",funnel:"BOFU",sv:30,prev:'1',cur:1},
-  {kw:"firewall security price",cat:"NGFW",funnel:"BOFU",sv:30,prev:'1',cur:1},
-  {kw:"how hardware firewall works",cat:"NGFW",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"How to migrate from VPN to ZTNA",cat:"Zero Trust",funnel:"MOFU",sv:30,prev:'1',cur:1},
-  {kw:"nexgen firewall",cat:"NGFW",funnel:"BOFU",sv:30,prev:'-',cur:1},
-  {kw:"next generation enterprise firewall",cat:"NGFW",funnel:"MOFU",sv:30,prev:'1',cur:1},
-  {kw:"next generation firewall features list",cat:"NGFW",funnel:"MOFU",sv:30,prev:'6',cur:1},
-  {kw:"next generation firewall meaning",cat:"NGFW",funnel:"TOFU",sv:30,prev:'7',cur:1},
-  {kw:"ngfw networking",cat:"NGFW",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"ngfw products",cat:"NGFW",funnel:"BOFU",sv:30,prev:'1',cur:1},
-  {kw:"ot it security",cat:"OT Security",funnel:"MOFU",sv:30,prev:'1',cur:1},
-  {kw:"Sase Service Provider",cat:"SASE",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"sd wan concept",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'20',cur:1},
-  {kw:"sd wan vs firewall",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'4',cur:1},
-  {kw:"sd wan vs. mpls",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"sdn wan vs mpls",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"security on iot devices",cat:"NAC",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"small business wan",cat:"SD-WAN",funnel:"BOFU",sv:30,prev:'20',cur:1},
-  {kw:"VPN to ZTNA",cat:"Zero Trust",funnel:"TOFU",sv:30,prev:'1',cur:1},
   {kw:"what is nac security",cat:"NAC",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"what is next generation firewall ngfw",cat:"NGFW",funnel:"TOFU",sv:30,prev:'5',cur:1},
-  {kw:"what is q-day",cat:"Quantum Security",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"what is sd wan and how does it work",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"what is the next generation firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'21',cur:1},
-  {kw:"whats sd wan",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'3',cur:1},
-  {kw:"why use sd wan",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'1',cur:1},
+  {kw:"security on iot devices",cat:"NAC",funnel:"TOFU",sv:30,prev:'1',cur:1},
+  {kw:"cyber security iot devices",cat:"NAC",funnel:"TOFU",sv:30,prev:'1',cur:1},
+  {kw:"application proxy firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'1',cur:1},
+  {kw:"firewall security price",cat:"NGFW",funnel:"BOFU",sv:30,prev:'1',cur:1},
   {kw:"working of firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'1',cur:1},
-  {kw:"add a next generation firewall",cat:"NGFW",funnel:"BOFU",sv:20,prev:'1',cur:1},
+  {kw:"nexgen firewall",cat:"NGFW",funnel:"BOFU",sv:30,prev:'1',cur:1},
+  {kw:"how hardware firewall works",cat:"NGFW",funnel:"TOFU",sv:30,prev:'1',cur:1},
+  {kw:"next generation enterprise firewall",cat:"NGFW",funnel:"MOFU",sv:30,prev:'1',cur:1},
+  {kw:"ngfw products",cat:"NGFW",funnel:"BOFU",sv:30,prev:'1',cur:1},
+  {kw:"difference between next generation firewall and standard firewall",cat:"NGFW",funnel:"TOFU",sv:30,prev:'1',cur:1},
+  {kw:"what is q-day",cat:"Quantum Security",funnel:"TOFU",sv:30,prev:'1',cur:1},
+  {kw:"sd wan vs. mpls",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'1',cur:1},
+  {kw:"sd wan what is it",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'3',cur:1},
+  {kw:"sdn wan vs mpls",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'1',cur:1},
+  {kw:"sd wan software defined wide area network",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'3',cur:1},
+  {kw:"sd wan solutions with dynamic routing",cat:"SD-WAN",funnel:"MOFU",sv:30,prev:'5',cur:1},
+  {kw:"sd wan brands",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'15',cur:2},
+  {kw:"what is sd wan and how does it work",cat:"SD-WAN",funnel:"TOFU",sv:30,prev:'1',cur:4},
   {kw:"ai security benefits",cat:"AI Cybersecurity",funnel:"MOFU",sv:20,prev:'1',cur:1},
+  {kw:"what is ai in cybersecurity",cat:"AI Cybersecurity",funnel:"TOFU",sv:20,prev:'1',cur:1},
+  {kw:"deepfake ai technology",cat:"AI Cybersecurity",funnel:"MOFU",sv:20,prev:'4',cur:1},
+  {kw:"best ai security companies",cat:"AI Cybersecurity",funnel:"BOFU",sv:20,prev:'1',cur:7},
   {kw:"ai security providers",cat:"AI Cybersecurity",funnel:"BOFU",sv:20,prev:'1',cur:1},
-  {kw:"best ai security companies",cat:"AI Cybersecurity",funnel:"BOFU",sv:20,prev:'1',cur:1},
-  {kw:"difference between application level firewall and network level firewall",cat:"NGFW",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"firewall security price in usa",cat:"NGFW",funnel:"BOFU",sv:20,prev:'1',cur:1},
-  {kw:"how firewall works in network",cat:"NGFW",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"how much is a network firewall",cat:"NGFW",funnel:"BOFU",sv:20,prev:'1',cur:1},
-  {kw:"how to secure iot network",cat:"NAC",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"layer 2 firewall",cat:"NGFW",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"nac computer",cat:"NAC",funnel:"TOFU",sv:20,prev:'3',cur:1},
+  {kw:"nac computer",cat:"NAC",funnel:"TOFU",sv:20,prev:'1',cur:1},
+  {kw:"nac server",cat:"NAC",funnel:"TOFU",sv:20,prev:'3',cur:1},
+  {kw:"network access control methods",cat:"NAC",funnel:"TOFU",sv:20,prev:'1',cur:1},
   {kw:"nac computer security",cat:"NAC",funnel:"TOFU",sv:20,prev:'1',cur:1},
   {kw:"nac network access control products",cat:"NAC",funnel:"BOFU",sv:20,prev:'1',cur:1},
-  {kw:"network access control methods",cat:"NAC",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"network firewall definition",cat:"NGFW",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"next generation firewalls ngfw",cat:"NGFW",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"ngfw firewall features",cat:"NGFW",funnel:"MOFU",sv:20,prev:'6',cur:1},
-  {kw:"price of hardware firewall",cat:"NGFW",funnel:"BOFU",sv:20,prev:'1',cur:1},
-  {kw:"Quantum-Risk Assessment",cat:"Quantum Security",funnel:"MOFU",sv:20,prev:'1',cur:1},
-  {kw:"sd wan fec",cat:"SD-WAN",funnel:"MOFU",sv:20,prev:'9',cur:1},
-  {kw:"sd-wan aggregation",cat:"SD-WAN",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"sdn sd wan",cat:"SD-WAN",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"sdn wan solutions",cat:"SD-WAN",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"Shor's and Grover's Algorithms",cat:"Quantum Security",funnel:"TOFU",sv:20,prev:'1',cur:1},
+  {kw:"how to secure iot network",cat:"NAC",funnel:"TOFU",sv:20,prev:'1',cur:3},
   {kw:"transparent firewalls",cat:"NGFW",funnel:"TOFU",sv:20,prev:'1',cur:1},
-  {kw:"what is ai in cybersecurity",cat:"AI Cybersecurity",funnel:"TOFU",sv:20,prev:'1',cur:1},
+  {kw:"layer 2 firewall",cat:"NGFW",funnel:"TOFU",sv:20,prev:'1',cur:1},
+  {kw:"network firewall definition",cat:"NGFW",funnel:"TOFU",sv:20,prev:'1',cur:1},
+  {kw:"firewall security price in usa",cat:"NGFW",funnel:"BOFU",sv:20,prev:'1',cur:1},
+  {kw:"difference between application level firewall and network level firewall",cat:"NGFW",funnel:"TOFU",sv:20,prev:'1',cur:1},
+  {kw:"add a next generation firewall",cat:"NGFW",funnel:"BOFU",sv:20,prev:'1',cur:1},
+  {kw:"next generation firewalls ngfw",cat:"NGFW",funnel:"TOFU",sv:20,prev:'1',cur:1},
+  {kw:"price of hardware firewall",cat:"NGFW",funnel:"BOFU",sv:20,prev:'1',cur:1},
+  {kw:"ngfw tools",cat:"NGFW",funnel:"MOFU",sv:20,prev:'4',cur:1},
+  {kw:"Shor's and Grover's Algorithms",cat:"Quantum Security",funnel:"TOFU",sv:20,prev:'1',cur:1},
+  {kw:"Quantum-Risk Assessment",cat:"Quantum Security",funnel:"MOFU",sv:20,prev:'1',cur:1},
+  {kw:"sdn wan solutions",cat:"SD-WAN",funnel:"TOFU",sv:20,prev:'1',cur:1},
+  {kw:"sd wan software defined wan",cat:"SD-WAN",funnel:"TOFU",sv:20,prev:'4',cur:1},
   {kw:"acl access control lists",cat:"NAC",funnel:"TOFU",sv:10,prev:'1',cur:1},
   {kw:"physical firewall prices",cat:"NGFW",funnel:"BOFU",sv:10,prev:'1',cur:1},
   {kw:"Quantum-Safe Security",cat:"Quantum Security",funnel:"TOFU",sv:10,prev:'1',cur:1},
+  {kw:"sd wan security measures",cat:"SD-WAN",funnel:"MOFU",sv:10,prev:'6',cur:1},
+  {kw:"how ai security works",cat:"AI Cybersecurity",funnel:"TOFU",sv:0,prev:'1',cur:10},
   {kw:"ai cybersecurity applications",cat:"AI Cybersecurity",funnel:"MOFU",sv:0,prev:'1',cur:1},
   {kw:"ai security vendor",cat:"AI Cybersecurity",funnel:"BOFU",sv:0,prev:'1',cur:1},
-  {kw:"how ai security works",cat:"AI Cybersecurity",funnel:"TOFU",sv:0,prev:'1',cur:1},
+  {kw:"which are the top ai security companies",cat:"AI Cybersecurity",funnel:"BOFU",sv:0,prev:'1',cur:1},
   {kw:"what companies provide ai security platforms",cat:"AI Cybersecurity",funnel:"BOFU",sv:0,prev:'1',cur:1},
   {kw:"what is quatum security",cat:"Quantum Security",funnel:"TOFU",sv:0,prev:'1',cur:1},
-  {kw:"which are the top ai security companies",cat:"AI Cybersecurity",funnel:"BOFU",sv:0,prev:'23',cur:1},
 ];
 
 const POS_CATS = ['All','NGFW','SD-WAN','NAC','Zero Trust','Top Opportunities','AI Cybersecurity','OT Security','Quantum Security','SASE'];
 const WOW_ROWS = Object.entries(CAT_KEYWORDS)
   .filter(([c])=>POS_CATS.includes(c))
-  .flatMap(([c,l])=>l.map(k=>({keyword:k.keyword,category:c,vol:k.vol_jan26,prev:(k.ranks[41]??101) as number,cur:(k.ranks[42]??101) as number})));
+  .flatMap(([c,l])=>l.map(k=>({keyword:k.keyword,category:c,vol:k.vol_jan26,prev:(k.ranks[42]??101) as number,cur:(k.ranks[43]??101) as number})));
 const POS_GAIN = WOW_ROWS.filter(r=>r.cur<r.prev&&r.prev<=100).sort((a,b)=>(b.prev-b.cur)-(a.prev-a.cur)||b.vol-a.vol);
 const POS_LOSS = WOW_ROWS.filter(r=>r.cur>r.prev&&r.cur<=100).sort((a,b)=>(b.cur-b.prev)-(a.cur-a.prev)||b.vol-a.vol);
 
-const RISK_ROWS = Object.entries(CAT_KEYWORDS).flatMap(([c,l])=>l.map(k=>({keyword:k.keyword,category:c,vol:k.vol_jan26,funnel:(k.funnel||'TOFU') as 'TOFU'|'MOFU'|'BOFU',base:k.ranks[0] as number|null,prev:k.ranks[41] as number|null,cur:k.ranks[42] as number|null})))
+const RISK_ROWS = Object.entries(CAT_KEYWORDS).flatMap(([c,l])=>l.map(k=>({keyword:k.keyword,category:c,vol:k.vol_jan26,funnel:(k.funnel||'TOFU') as 'TOFU'|'MOFU'|'BOFU',base:k.ranks[0] as number|null,prev:k.ranks[42] as number|null,cur:k.ranks[43] as number|null})))
   .filter((r,i,a)=>a.findIndex(x=>x.keyword===r.keyword)===i);
 const RISK = (()=>{
   const lostSinceDec = RISK_ROWS.filter(r=>r.base!=null&&r.cur!=null&&r.cur>r.base);
@@ -1382,21 +1640,21 @@ export default function App() {
         }
       });
 
-      // Trend Line — 43 weeks (Oct 21)
+      // Trend Line — 44 weeks (Oct 28)
       makeChart('trendLine', {
         type:'line',
         data:{
           labels:WEEKS,
           datasets:[
-            {label:'vpn (673K)',data:[41,29,31,33,20,17,25,16,24,null,29,10,17,1,1,1,1,1,17,1,1,1,1,11,1,8,7,8,1,7,8,20,1,13,1,14,19,14,13,12,1,1,1],borderColor:'#D93025',backgroundColor:'transparent',borderWidth:2.5,pointRadius:2,tension:.35,spanGaps:true},
-            {label:'cybersecurity (201K)',data:[7,8,9,9,8,1,23,10,9,19,8,19,8,1,1,23,1,17,1,11,36,16,9,null,5,7,9,1,1,1,36,1,31,null,1,1,null,1,1,null,24,34,1],borderColor:'#1A56DB',backgroundColor:'transparent',borderWidth:2,pointRadius:2,tension:.35,spanGaps:true},
-            {label:'proxy (201K)',data:[5,4,5,20,10,7,4,1,9,11,1,7,7,1,9,6,8,20,1,6,6,1,4,5,4,1,11,6,8,6,6,3,5,3,6,3,2,2,3,21,2,6,3],borderColor:'#0E7490',backgroundColor:'transparent',borderWidth:2,pointRadius:2,tension:.35},
-            {label:'what is malware (135K)',data:[3,1,6,6,1,4,6,1,1,1,8,4,5,5,6,18,14,16,13,16,18,15,1,20,20,18,18,20,null,21,23,1,20,26,32,null,21,19,25,23,20,17,24],borderColor:'#7C3AED',backgroundColor:'transparent',borderWidth:2,pointRadius:2,tension:.35},
-            {label:'what is phishing (74K)',data:[1,4,4,7,11,8,6,1,9,1,3,1,6,5,1,1,1,1,8,1,1,1,null,1,1,10,1,8,1,10,8,21,10,8,1,8,14,1,9,7,8,8,1],borderColor:'#0A7A55',backgroundColor:'transparent',borderWidth:2,pointRadius:2,tension:.35,spanGaps:true},
-            {label:'phishing (49.5K)',data:[12,16,17,13,16,16,12,19,5,1,16,26,10,1,6,1,1,1,1,1,1,48,1,1,1,1,1,49,27,57,19,20,26,29,28,24,25,50,67,26,null,null,null],borderColor:'#059669',backgroundColor:'transparent',borderWidth:1.5,pointRadius:2,tension:.35,borderDash:[4,2]},
-            {label:'ips (49.5K)',data:[26,19,18,16,15,17,1,1,1,1,1,18,14,1,1,23,1,1,1,1,21,null,21,21,1,9,13,12,12,7,9,13,10,1,35,7,6,22,15,21,12,21,17],borderColor:'#DC2626',backgroundColor:'transparent',borderWidth:1.5,pointRadius:2,tension:.35,borderDash:[4,2],spanGaps:true},
-            {label:'ddos (33.1K)',data:[4,4,4,4,1,5,4,1,1,1,1,1,1,1,1,1,1,1,1,5,1,1,1,1,6,1,1,1,1,1,1,5,1,1,1,7,1,8,1,1,1,1,1],borderColor:'#2563EB',backgroundColor:'transparent',borderWidth:1.5,pointRadius:2,tension:.35,borderDash:[4,2]},
-            {label:'ransomware (33.1K)',data:[4,3,4,1,1,4,4,4,6,5,5,4,4,1,1,1,1,1,1,1,4,5,5,7,1,6,1,6,6,4,8,7,7,5,1,6,6,9,1,6,6,6,1],borderColor:'#9333EA',backgroundColor:'transparent',borderWidth:1.5,pointRadius:2,tension:.35,borderDash:[4,2]}
+            {label:'vpn (673K)',data:[41,29,31,33,20,17,25,16,24,null,29,10,17,1,1,1,1,1,17,1,1,1,1,11,1,8,7,8,1,7,8,20,1,13,1,14,19,14,13,12,1,1,1,15],borderColor:'#D93025',backgroundColor:'transparent',borderWidth:2.5,pointRadius:2,tension:.35,spanGaps:true},
+            {label:'cybersecurity (201K)',data:[7,8,9,9,8,1,23,10,9,19,8,19,8,1,1,23,1,17,1,11,36,16,9,null,5,7,9,1,1,1,36,1,31,null,1,1,null,1,1,null,24,34,1,1],borderColor:'#1A56DB',backgroundColor:'transparent',borderWidth:2,pointRadius:2,tension:.35,spanGaps:true},
+            {label:'proxy (201K)',data:[5,4,5,20,10,7,4,1,9,11,1,7,7,1,9,6,8,20,1,6,6,1,4,5,4,1,11,6,8,6,6,3,5,3,6,3,2,2,3,21,2,6,3,5],borderColor:'#0E7490',backgroundColor:'transparent',borderWidth:2,pointRadius:2,tension:.35},
+            {label:'what is malware (135K)',data:[3,1,6,6,1,4,6,1,1,1,8,4,5,5,6,18,14,16,13,16,18,15,1,20,20,18,18,20,null,21,23,1,20,26,32,null,21,19,25,23,20,17,24,null],borderColor:'#7C3AED',backgroundColor:'transparent',borderWidth:2,pointRadius:2,tension:.35},
+            {label:'what is phishing (74K)',data:[1,4,4,7,11,8,6,1,9,1,3,1,6,5,1,1,1,1,8,1,1,1,null,1,1,10,1,8,1,10,8,21,10,8,1,8,14,1,9,7,8,8,1,8],borderColor:'#0A7A55',backgroundColor:'transparent',borderWidth:2,pointRadius:2,tension:.35,spanGaps:true},
+            {label:'phishing (49.5K)',data:[12,16,17,13,16,16,12,19,5,1,16,26,10,1,6,1,1,1,1,1,1,48,1,1,1,1,1,49,27,57,19,20,26,29,28,24,25,50,67,26,null,null,null,26],borderColor:'#059669',backgroundColor:'transparent',borderWidth:1.5,pointRadius:2,tension:.35,borderDash:[4,2]},
+            {label:'ips (49.5K)',data:[26,19,18,16,15,17,1,1,1,1,1,18,14,1,1,23,1,1,1,1,21,null,21,21,1,9,13,12,12,7,9,13,10,1,35,7,6,22,15,21,12,21,17,21],borderColor:'#DC2626',backgroundColor:'transparent',borderWidth:1.5,pointRadius:2,tension:.35,borderDash:[4,2],spanGaps:true},
+            {label:'ddos (33.1K)',data:[4,4,4,4,1,5,4,1,1,1,1,1,1,1,1,1,1,1,1,5,1,1,1,1,6,1,1,1,1,1,1,5,1,1,1,7,1,8,1,1,1,1,1,1],borderColor:'#2563EB',backgroundColor:'transparent',borderWidth:1.5,pointRadius:2,tension:.35,borderDash:[4,2]},
+            {label:'ransomware (33.1K)',data:[4,3,4,1,1,4,4,4,6,5,5,4,4,1,1,1,1,1,1,1,4,5,5,7,1,6,1,6,6,4,8,7,7,5,1,6,6,9,1,6,6,6,1,1],borderColor:'#9333EA',backgroundColor:'transparent',borderWidth:1.5,pointRadius:2,tension:.35,borderDash:[4,2]}
           ]
         },
         options:{
@@ -1409,7 +1667,7 @@ export default function App() {
         }
       });
 
-      // WoW Sentiment Distribution — Oct 14→Oct 21 · from 9_Category_With_AIO.csv
+      // WoW Sentiment Distribution — Oct 21→Oct 28 · from 9_Category_With_AIO.csv
       makeChart('wowDistChart', {
         type:'bar',
         data:{
@@ -1431,7 +1689,7 @@ export default function App() {
         }
       });
 
-      // Net WoW per category — Oct 14 → Oct 21 (week-over-week)
+      // Net WoW per category — Oct 21 → Oct 28 (week-over-week)
       const wowCats = ['NGFW','SD-WAN','NAC','Zero Trust','Top Opportunities','AI Cybersecurity','OT Security','Quantum Security','SASE'];
       const wowLabels = ['NGFW','SD-WAN','NAC','Zero Trust','Top Opps','AI Cyber','OT Sec','Quantum','SASE'];
       makeChart('netWowChart', {
@@ -1448,7 +1706,7 @@ export default function App() {
           responsive:true,maintainAspectRatio:false,
           plugins:{
             legend:{position:'top',labels:{font:{size:11,weight:'600'},boxWidth:12,color:'#334155',padding:12}},
-            tooltip:{callbacks:{title:(items:any)=>`${items[0].label} · Oct 14 → Oct 21`}}
+            tooltip:{callbacks:{title:(items:any)=>`${items[0].label} · Oct 21 → Oct 28`}}
           },
           scales:{
             x:{stacked:true,grid:{display:false},ticks:{font:{size:10},color:'#64748B'}},
@@ -1472,7 +1730,7 @@ export default function App() {
           {label:'Avg Position',data:ca.map(c=>CAT_STATS[c].avg_rank),backgroundColor:ca.map(c=>catColor(c)),borderRadius:5}]},options:{...opt('Avg Position'),plugins:{legend:{display:false}}}});
       }
 
-      // Cat bar — 9 categories Oct 21
+      // Cat bar — 9 categories Oct 28
       makeChart('catBarChart', {
         type:'bar',
         data:{
@@ -1509,8 +1767,8 @@ export default function App() {
       'rgba(236,72,153,.70)',
       'rgba(245,158,11,.70)',
     ];
-    // Pre-computed: page1Vol / totalVol × 100 per category (all keywords, Oct 21)
-    const velScores = [99.6, 96.4, 92.2, 65, 100, 93.6, 66.1, 13.8, 48.1]; // Oct 21
+    // Pre-computed: page1Vol / totalVol × 100 per category (all keywords, Oct 28)
+    const velScores = [99.3,68.2,92.8,78.8,84.6,93.4,39.6,13.8,50.7]; // Oct 28
 
     const velCtx = document.getElementById('velocityChart') as HTMLCanvasElement | null;
     if (!velCtx) return;
@@ -1626,14 +1884,14 @@ export default function App() {
       options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{font:{size:10,weight:'600'},boxWidth:10,color:'#334155',padding:10}},tooltip:{callbacks:{label:(ctx:any)=>`${ctx.dataset.label}: ${Number(ctx.raw)?.toLocaleString()}`}}},scales:{x:{grid:{color:'#F1F5F9'},ticks:{font:{size:9},autoSkip:false,minRotation:45,maxRotation:45,color:'#64748B'}},y:{grid:{color:'#F1F5F9'},ticks:{font:{size:10},color:'#64748B',callback:(v:any)=>v>=1000?`${(v/1000).toFixed(0)}K`:v},title:{display:true,text:'Weekly Sessions (GA)',font:{size:10},color:'#64748B'}}}}
     });
 
-    // GA — Horizontal bar: page sessions Oct 14 vs Oct 21
+    // GA — Horizontal bar: page sessions Oct 21 vs Oct 28
     makeChart('trafficPageBarChart', {
       type:'bar',
       data:{
         labels:['/cyberglossary','/products','/home page','/blog','/solutions','/about-us','/articles'],
         datasets:[
-          {label:'Oct 14',data:[TRAFFIC_DATA.cyberglossary[41],TRAFFIC_DATA.products[41],TRAFFIC_DATA.homePage[41],TRAFFIC_DATA.blog[41],TRAFFIC_DATA.solutions[41],TRAFFIC_DATA.aboutUs[41],TRAFFIC_DATA.articles[41]],backgroundColor:'rgba(100,116,139,.4)',borderRadius:3,borderSkipped:false},
-          {label:'Oct 21',data:[TRAFFIC_DATA.cyberglossary[42],TRAFFIC_DATA.products[42],TRAFFIC_DATA.homePage[42],TRAFFIC_DATA.blog[42],TRAFFIC_DATA.solutions[42],TRAFFIC_DATA.aboutUs[42],TRAFFIC_DATA.articles[42]],backgroundColor:['rgba(217,48,37,.75)','rgba(180,83,9,.75)','rgba(14,116,144,.75)','rgba(5,150,105,.75)','rgba(124,58,237,.75)','rgba(236,72,153,.75)','rgba(100,116,139,.75)'],borderRadius:3,borderSkipped:false},
+          {label:'Oct 21',data:[TRAFFIC_DATA.cyberglossary[42],TRAFFIC_DATA.products[42],TRAFFIC_DATA.homePage[42],TRAFFIC_DATA.blog[42],TRAFFIC_DATA.solutions[42],TRAFFIC_DATA.aboutUs[42],TRAFFIC_DATA.articles[42]],backgroundColor:'rgba(100,116,139,.4)',borderRadius:3,borderSkipped:false},
+          {label:'Oct 28',data:[TRAFFIC_DATA.cyberglossary[43],TRAFFIC_DATA.products[43],TRAFFIC_DATA.homePage[43],TRAFFIC_DATA.blog[43],TRAFFIC_DATA.solutions[43],TRAFFIC_DATA.aboutUs[43],TRAFFIC_DATA.articles[43]],backgroundColor:['rgba(217,48,37,.75)','rgba(180,83,9,.75)','rgba(14,116,144,.75)','rgba(5,150,105,.75)','rgba(124,58,237,.75)','rgba(236,72,153,.75)','rgba(100,116,139,.75)'],borderRadius:3,borderSkipped:false},
         ]
       },
       options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{font:{size:10,weight:'600'},boxWidth:10,color:'#334155',padding:8}},tooltip:{callbacks:{label:(ctx:any)=>`${ctx.dataset.label}: ${Number(ctx.raw)?.toLocaleString()}`}}},scales:{x:{grid:{color:'#F1F5F9'},ticks:{font:{size:10},color:'#64748B',callback:(v:any)=>v>=1000?`${(v/1000).toFixed(0)}K`:v}},y:{grid:{display:false},ticks:{font:{size:10,weight:'600'},color:'#334155'}}}}
@@ -1689,16 +1947,16 @@ export default function App() {
         <th style="text-align:left;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;min-width:180px">Keyword</th>
         <th style="text-align:right;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Vol<br/><span style="font-weight:500;font-size:9px">Search</span></th>
         <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Baseline<br/><span style="font-weight:500;font-size:9px">Dec 31</span></th>
-        <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Oct 14<br/><span style="font-weight:500;font-size:9px">Prev Week</span></th>
-        <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#1A56DB;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Oct 21<br/><span style="font-weight:500;font-size:9px">Latest</span></th>
-        <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Δ WoW<br/><span style="font-weight:500;font-size:9px">WoW Oct 14 → Oct 21</span></th>
-        <th style="text-align:center;padding:8px 16px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">43-Week Trend<br/><span style="font-weight:500;font-size:9px">Dec → Oct 21</span></th>
+        <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Oct 21<br/><span style="font-weight:500;font-size:9px">Prev Week</span></th>
+        <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#1A56DB;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Oct 28<br/><span style="font-weight:500;font-size:9px">Latest</span></th>
+        <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Δ WoW<br/><span style="font-weight:500;font-size:9px">WoW Oct 21 → Oct 28</span></th>
+        <th style="text-align:center;padding:8px 16px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">44-Week Trend<br/><span style="font-weight:500;font-size:9px">Dec → Oct 28</span></th>
       </tr></thead>
       <tbody>
       ${kws.map((d,i) => {
         const dec31 = d.ranks[0];
-        const aug12 = d.ranks[41] ?? null;  // Oct 14 (prev week)
-        const aug19 = d.ranks[42] ?? d.current_rank;  // Oct 21 (latest)
+        const aug12 = d.ranks[42] ?? null;  // Oct 21 (prev week)
+        const aug19 = d.ranks[43] ?? d.current_rank;  // Oct 28 (latest)
         const chg = (aug19 !== null && aug12 !== null) ? (aug19 - aug12) : null;
         const chgColor = chg === null ? '#64748B' : chg < 0 ? '#0A7A55' : chg > 0 ? '#D93025' : '#64748B';
         const chgLabel = chg === null ? '—' : chg < 0 ? `↑${Math.abs(chg)}` : chg > 0 ? `↓${chg}` : '—';
@@ -1718,28 +1976,28 @@ export default function App() {
   }
 
   const B = (t:string|number)=><strong>{t}</strong>;
-  const tf = (k:keyof typeof TRAFFIC_DATA)=>{const v=TRAFFIC_DATA[k][42];return v>=100000?Math.round(v/1000)+'K':v>=1000?(v/1000).toFixed(1)+'K':String(v);};
+  const tf = (k:keyof typeof TRAFFIC_DATA)=>{const v=TRAFFIC_DATA[k][43];return v>=100000?Math.round(v/1000)+'K':v>=1000?(v/1000).toFixed(1)+'K':String(v);};
   const sg = (n:number)=>`${n>=0?'+':'−'}${Math.abs(n).toLocaleString()}`;
   const ab = (n:number)=>`${Math.abs(n).toFixed(2)}%`;
   const sp = (n:number)=>`${n>=0?'+':'−'}${Math.abs(n).toFixed(2)}%`;
 
   const overviewInsights: InsightItem[] = [
-    {tone:'green',title:'Page 1 grew this week',body:<>{B('491 of 660')} tracked keywords rank on Page 1 (74.4%), up {B(3)} from 488 last week. Rank #1 slipped to {B(357)} ({B('−7')} WoW).</>},
-    {tone:'green',title:'Not Ranking decreased',body:<>{B(83)} keywords are not ranking, {B('−7')} vs 90 last week. {B('AI Cybersecurity')} still holds {B(48)} of them (58%), the main remaining gap.</>},
-    {tone:'blue',title:'Room to grow',body:<>{B(RANK_11_100.length)} keywords sit on Pages 2–10 (ranks 11–100), up from 82. They are the nearest-term opportunity to push onto Page 1.</>},
+    {tone:'red',title:'Page 1 slipped this week',body:<>{B('444 of 660')} tracked keywords rank on Page 1 (67.3%), down {B(47)} from 491 last week. Rank #1 fell to {B(329)} ({B('−28')} WoW).</>},
+    {tone:'blue',title:'Not Ranking held steady',body:<>{B(82)} keywords are not ranking, {B('−1')} vs 83 last week. {B('AI Cybersecurity')} still holds {B(48)} of them (59%), the main remaining gap.</>},
+    {tone:'amber',title:'Room to recover',body:<>{B(RANK_11_100.length)} keywords sit on Pages 2–10 (ranks 11–100), up from 86 last week as {B('NGFW')} and {B('SD-WAN')} slid off Page 1. They are the nearest-term opportunity to push back onto Page 1.</>},
   ];
   const tvR1 = TOP_VOL.filter(d=>d.current_rank===1).length;
   const tvNR = TOP_VOL.filter(d=>d.current_rank===null).length;
   const kwperfInsights: InsightItem[] = [
     {tone:'green',title:'Rank #1 wins on high volume',body:<>{B(tvR1)} of the {B(TOP_VOL.length)} highest-volume keywords hold position #1 this week.</>,icon:'ok'},
-    {tone:'blue',title:'Funnel mix of #1 rankings',body:<>Of {B(357)} keywords at #1, {B(319)} are TOFU/MOFU and {B(38)} are BOFU. Bottom-funnel content is the thinnest layer to grow.</>},
-    {tone:'red',title:'High-volume gaps',body:<>{B(tvNR)} top-volume keywords are not ranking, led by {B('zero day')} (368K SV). {B('cybersecurity')} (201K) recovered from #34 to {B('#1')}.</>,icon:'warn'},
+    {tone:'blue',title:'Funnel mix of #1 rankings',body:<>Of {B(329)} keywords at #1, {B(293)} are TOFU/MOFU and {B(36)} are BOFU. Bottom-funnel #1s slipped by only 2 WoW, while TOFU/MOFU lost 26.</>},
+    {tone:'red',title:'High-volume gaps',body:<>{B(tvNR)} top-volume keywords are not ranking, led by {B('zero day')} (368K SV) and {B('what is malware')} (135K SV, dropped from #24). {B('vpn')} (673K) slipped from #1 to {B('#15')}.</>,icon:'warn'},
   ];
   const topGain = POS_GAIN[0], topLoss = POS_LOSS[0];
   const posInsights: InsightItem[] = [
     {tone:POS_GAIN.length>=POS_LOSS.length?'green':'amber',title:POS_GAIN.length>=POS_LOSS.length?'Gainers lead the week':'Decliners outnumber gainers',body:<>{B(POS_GAIN.length)} keywords improved vs {B(POS_LOSS.length)} that declined WoW. Biggest jump: {B(topGain.keyword)} (#{topGain.prev} → #{topGain.cur}).</>},
     {tone:'red',title:'Biggest drop to recover',body:<>{B(topLoss.keyword)} fell #{topLoss.prev} → #{topLoss.cur}. Only keywords ranked in both weeks are listed, so NR moves are excluded.</>},
-    {tone:'blue',title:'Stable core, volatile edge',body:<>{B(solidR1.length)} keywords have held #1 for 24+ weeks, while the top {B(volatileKws.length)} zig-zag keywords reverse direction up to {B(volatileKws[0].reversals)} times across 43 weeks.</>},
+    {tone:'blue',title:'Stable core, volatile edge',body:<>{B(solidR1.length)} keywords have held #1 for 24+ weeks, while the top {B(volatileKws.length)} zig-zag keywords reverse direction up to {B(volatileKws[0].reversals)} times across 44 weeks.</>},
   ];
   const cs = CAT_STATS[selectedCat], ws = WOW_STATS[selectedCat], wm = WOW_MOVERS[selectedCat];
   const catInsights: InsightItem[] = cs && ws ? [
@@ -1748,25 +2006,25 @@ export default function App() {
     {tone:cs.not_ranking>10?'red':'blue',title:cs.not_ranking>0?'Growth opportunity':'Full visibility',body:cs.not_ranking>0?<>{B(cs.not_ranking)} keywords are not ranking ({B(`${Math.round(cs.not_ranking/cs.total*100)}%`)} of the set). Content for these terms is the largest upside.</>:<>Every tracked keyword in this category ranks in the top 100. Focus on lifting Page 1 keywords to #1.</>,icon:'info'},
   ] : [
     {tone:'blue',title:'Backlink view',body:<>Compare keywords with and without backlinks to see where link-building lifts rankings.</>},
-    {tone:'green',title:'Page 1 leaders',body:<>{B(491)} of 660 keywords rank on Page 1 and {B(357)} sit at #1 across all categories.</>},
-    {tone:'amber',title:'Watch list',body:<>{B(83)} keywords are not ranking. Select a category tab to see its share.</>},
+    {tone:'green',title:'Page 1 leaders',body:<>{B(444)} of 660 keywords rank on Page 1 and {B(329)} sit at #1 across all categories.</>},
+    {tone:'amber',title:'Watch list',body:<>{B(82)} keywords are not ranking. Select a category tab to see its share.</>},
   ];
   const riskInsights: InsightItem[] = [
-    {tone:'red',title:'Biggest single risk',body:<>{B('zero day')} (368K SV) and {B('phishing')} (49.5K SV) remain off the SERP. Together they represent 417.5K monthly searches. In total, {B(RISK.notRanking)} of 660 keywords are not ranking and {B(RISK.decliners)} declined week over week ({RISK.mostAffected.cat} is most affected).</>},
-    {tone:'amber',title:'AI Cybersecurity exposure',body:<>{B(`${CAT_STATS['AI Cybersecurity'].not_ranking} of ${CAT_STATS['AI Cybersecurity'].total}`)} AI Cybersecurity keywords are not ranking, {B(CAT_STATS['AI Cybersecurity'].declining)} declined WoW (29 lost positions, 1 dropped off), and only {B(`${CAT_STATS['AI Cybersecurity'].pct}%`)} are on Page 1, the weakest coverage of the 9 categories.</>},
-    {tone:'blue',title:'Quantum Security slipping',body:<>{B(`${CAT_STATS['Quantum Security'].not_ranking} of ${CAT_STATS['Quantum Security'].total}`)} Quantum keywords are not ranking and {B(6)} declined WoW (4 lost positions, 2 dropped off). {B('PQC')} held at #24 and {B('quantum computing')} (74K SV) still does not rank.</>},
+    {tone:'red',title:'Biggest single risk',body:<>{B('zero day')} (368K SV) and {B('what is malware')} (135K SV, dropped off from #24) are off the SERP. Together they represent 503K monthly searches. In total, {B(RISK.notRanking)} of 660 keywords are not ranking and {B(RISK.decliners)} declined week over week ({RISK.mostAffected.cat} is most affected).</>},
+    {tone:'amber',title:'AI Cybersecurity exposure',body:<>{B(`${CAT_STATS['AI Cybersecurity'].not_ranking} of ${CAT_STATS['AI Cybersecurity'].total}`)} AI Cybersecurity keywords are not ranking, {B(CAT_STATS['AI Cybersecurity'].declining)} declined WoW (23 lost positions, 8 dropped off), and only {B(`${CAT_STATS['AI Cybersecurity'].pct}%`)} are on Page 1, the weakest coverage of the 9 categories.</>},
+    {tone:'blue',title:'NGFW and SD-WAN losing Page 1',body:<>{B('NGFW')} declined on {B(39)} keywords (35 lost positions, 4 dropped off) and Page 1 fell from 132 to {B(114)}. {B('SD-WAN')} had {B(49)} decliners and Page 1 fell from 97 to {B(84)}, the largest losses of the 9 categories.</>},
   ];
   const gainInsights: InsightItem[] = [
-    {tone:'red',title:'Branded traffic declined',body:<>Branded GSC traffic fell {B('-4.42%')} ({B('-5,459')} clicks); the top 3 URLs lost {B('-1,381')}, led by {B('/support/product-downloads')} ({B('-811')}) and the {B('PSIRT credential compromise')} post ({B('-301')}, {B('-56.6%')}).</>},
-    {tone:'amber',title:'International markets slipped',body:<>The top international URLs fell {B('-13.7%')} ({B('-2,159')}), with {B('/lat/support/product-downloads')} down {B('-1,353')} and {B('/br/support/product-downloads')} down {B('-806')}. {B('forticlient')} keywords lost {B('-1,335')} clicks ({B('-3.7%')}).</>,icon:'warn'},
-    {tone:'green',title:'Valid direct traffic rebounded',body:<>Direct (Relevant) grew {B('+6.58%')} ({B('+5,540')}), driven by {B('/training/cybersecurity-professionals')} ({B('+1,071')}, {B('+168.7%')}) and the {B('Global Threat Landscape Report')} ({B('+632')}).</>,icon:'ok'},
-    {tone:'red',title:'Referrals and blog fell sharply',body:<>Referrals dropped {B('-35.47%')} ({B('-6,496')}), with {B('/library/gtm/sase')} down {B('-86.0%')}. {B('/blog (GA)')} fell {B('-15.93%')} ({B('-426')}), led by the PSIRT credential compromise post ({B('-221')}).</>},
+    {tone:'green',title:'Branded traffic surged',body:<>Branded GSC traffic rose {B('+23.42%')} ({B('+27,659')} clicks); the top 3 URLs gained {B('+12,228')}, led by the {B('security hardening release')} blog post ({B('+8,647')}, new this week) and the {B('fortinet.com')} homepage ({B('+2,076')}, {B('+29.1%')}).</>,icon:'ok'},
+    {tone:'green',title:'International markets grew',body:<>The top international URLs rose {B('+51.7%')} ({B('+5,066')}), with {B('/lat/support/product-downloads')} up {B('+2,079')} and the {B('/jp/ hardening release')} post up {B('+2,987')}. {B('forticlient')} keywords gained {B('+2,420')} clicks ({B('+9.1%')}).</>,icon:'ok'},
+    {tone:'green',title:'Valid direct traffic jumped',body:<>Direct (Relevant) grew {B('+45.24%')} ({B('+40,587')}), almost entirely the {B('security hardening release')} post ({B('+38,906')} from zero), with {B('/blog')} up {B('+815')} ({B('+277.2%')}).</>,icon:'ok'},
+    {tone:'amber',title:'Referrals and blog spiked on one post',body:<>Referrals rose {B('+107.41%')} ({B('+12,692')}) and {B('/blog (GA)')} rose {B('+720.37%')} ({B('+16,194')}); the hardening release post drove {B('+9,638')} and {B('+11,958')}. Top gaining keywords: {B('fortinet')} ({B('+4,326')}) and {B('fortinet vulnerability')} ({B('+1,460')}).</>},
   ];
   const trafficInsights: InsightItem[] = [
-    {tone:'amber',title:'Organic traffic dipped',body:<>All Organic Traffic is {B(tf('allOrganic'))}, down {B(ab(TRAFFIC_WOW.allOrganic.pct))} ({B(sg(TRAFFIC_WOW.allOrganic.abs))}) WoW (Oct 14 → Oct 21). Branded is {B(tf('branded'))} and Non-Branded {B(tf('nonBranded'))}.</>,icon:'warn'},
-    {tone:'blue',title:'Branded fell harder than non-branded',body:<>Branded fell {B(ab(TRAFFIC_WOW.branded.pct))} ({B(sg(TRAFFIC_WOW.branded.abs))}) while Non-Branded fell {B(ab(TRAFFIC_WOW.nonBranded.pct))} ({B(sg(TRAFFIC_WOW.nonBranded.abs))}), so most of the dip comes from brand queries.</>,icon:'info'},
-    {tone:'amber',title:'Content pages declined',body:<>/blog fell {B(ab(TRAFFIC_WOW.blog.pct))} ({B(sg(TRAFFIC_WOW.blog.abs))}), /articles {B(ab(TRAFFIC_WOW.articles.pct))}, /products {B(ab(TRAFFIC_WOW.products.pct))} and /about-us {B(ab(TRAFFIC_WOW.aboutUs.pct))}, while /cyberglossary was nearly flat ({B(sp(TRAFFIC_WOW.cyberglossary.pct))}).</>,icon:'warn'},
-    {tone:'green',title:'Direct traffic rebounded',body:<>Direct (All) rose {B(sp(TRAFFIC_WOW.directGA.pct))} to {B(tf('directGA'))} and Direct (Valid) rose {B(sp(TRAFFIC_WOW.directValid.pct))} to {B(tf('directValid'))}. Referrals fell {B(ab(TRAFFIC_WOW.referrals.pct))} to {B(tf('referrals'))}.</>},
+    {tone:'green',title:'Organic traffic rebounded',body:<>All Organic Traffic is {B(tf('allOrganic'))}, up {B(ab(TRAFFIC_WOW.allOrganic.pct))} ({B(sg(TRAFFIC_WOW.allOrganic.abs))}) WoW (Oct 21 → Oct 28). Branded is {B(tf('branded'))} and Non-Branded {B(tf('nonBranded'))}.</>,icon:'ok'},
+    {tone:'blue',title:'Branded rose faster than non-branded',body:<>Branded rose {B(ab(TRAFFIC_WOW.branded.pct))} ({B(sg(TRAFFIC_WOW.branded.abs))}) while Non-Branded rose {B(ab(TRAFFIC_WOW.nonBranded.pct))} ({B(sg(TRAFFIC_WOW.nonBranded.abs))}), so most of the lift comes from brand queries.</>,icon:'info'},
+    {tone:'green',title:'Content pages jumped',body:<>/blog rose {B(ab(TRAFFIC_WOW.blog.pct))} ({B(sg(TRAFFIC_WOW.blog.abs))}), /about-us {B(ab(TRAFFIC_WOW.aboutUs.pct))}, /home page {B(ab(TRAFFIC_WOW.homePage.pct))}, /products {B(ab(TRAFFIC_WOW.products.pct))} and /articles {B(ab(TRAFFIC_WOW.articles.pct))}, while /cyberglossary grew a steadier {B(sp(TRAFFIC_WOW.cyberglossary.pct))}.</>,icon:'ok'},
+    {tone:'green',title:'Direct and referral traffic spiked',body:<>Direct (All) rose {B(sp(TRAFFIC_WOW.directGA.pct))} to {B(tf('directGA'))} and Direct (Valid) rose {B(sp(TRAFFIC_WOW.directValid.pct))} to {B(tf('directValid'))}. Referrals rose {B(ab(TRAFFIC_WOW.referrals.pct))} to {B(tf('referrals'))}, largely from the security hardening release post.</>},
   ];
 
   return (
@@ -1781,12 +2039,12 @@ export default function App() {
           <div className="fn-header-body">
             <div className="fn-header-eyebrow">SEO INTELLIGENCE</div>
             <div className="fn-header-title">Fortinet Week Over Week Metrics</div>
-            <div className="fn-header-sub">Dec 31, 2025 → Oct 21, 2026 · Weekly Avg Base Rank · 660 Keywords · 9 Product Categories</div>
+            <div className="fn-header-sub">Dec 31, 2025 → Oct 28, 2026 · Weekly Avg Base Rank · 660 Keywords · 9 Product Categories</div>
           </div>
           <div className="fn-header-badges">
-            <span className="fn-badge fn-badge-green"><span className="fn-live-dot"></span>357 at #1</span>
-            <span className="fn-badge fn-badge-blue">43 Weeks Tracked</span>
-            <span className="fn-badge fn-badge-amber">Oct 21, 2026</span>
+            <span className="fn-badge fn-badge-green"><span className="fn-live-dot"></span>329 at #1</span>
+            <span className="fn-badge fn-badge-blue">44 Weeks Tracked</span>
+            <span className="fn-badge fn-badge-amber">Oct 28, 2026</span>
             <span className="fn-badge fn-badge-red">Live</span>
           </div>
         </div>
@@ -1824,28 +2082,28 @@ export default function App() {
             <div className="fn-kpi fn-kpi-green">
               <div className="fn-kpi-label">Rank #1 Keywords</div>
               <div style={{display:'flex',alignItems:'baseline',justifyContent:'space-between',gap:6}}>
-                <div className="fn-kpi-val green">357</div>
-                <span style={{fontSize:13,fontWeight:700,color:'#059669',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',letterSpacing:'.01em'}}>▼ 1.9% WoW</span>
+                <div className="fn-kpi-val green">329</div>
+                <span style={{fontSize:13,fontWeight:700,color:'#D93025',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',letterSpacing:'.01em'}}>▼ 7.8% WoW</span>
               </div>
-              <div style={{fontSize:11,fontWeight:600,color:'#94A3B8',fontFamily:"'DM Mono',monospace",letterSpacing:'.02em',marginTop:2,marginBottom:2}}>Prev 364</div>
-              <div className="fn-kpi-sub">54.1% of all tracked</div>
+              <div style={{fontSize:11,fontWeight:600,color:'#94A3B8',fontFamily:"'DM Mono',monospace",letterSpacing:'.02em',marginTop:2,marginBottom:2}}>Prev 357</div>
+              <div className="fn-kpi-sub">49.8% of all tracked</div>
             </div>
             <div className="fn-kpi fn-kpi-blue">
               <div className="fn-kpi-label">Page 1</div>
               <div style={{display:'flex',alignItems:'baseline',justifyContent:'space-between',gap:6}}>
-                <div className="fn-kpi-val blue">491</div>
-                <span style={{fontSize:13,fontWeight:700,color:'#059669',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',letterSpacing:'.01em'}}>▲ 0.6% WoW</span>
+                <div className="fn-kpi-val blue">444</div>
+                <span style={{fontSize:13,fontWeight:700,color:'#D93025',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',letterSpacing:'.01em'}}>▼ 9.6% WoW</span>
               </div>
-              <div style={{fontSize:11,fontWeight:600,color:'#94A3B8',fontFamily:"'DM Mono',monospace",letterSpacing:'.02em',marginTop:2,marginBottom:2}}>Prev 488</div>
-              <div className="fn-kpi-sub">74.4% of all tracked keywords</div>
+              <div style={{fontSize:11,fontWeight:600,color:'#94A3B8',fontFamily:"'DM Mono',monospace",letterSpacing:'.02em',marginTop:2,marginBottom:2}}>Prev 491</div>
+              <div className="fn-kpi-sub">67.3% of all tracked keywords</div>
             </div>
             <div className="fn-kpi fn-kpi-cyan">
               <div className="fn-kpi-label">Rank 11–100</div>
               <div style={{display:'flex',alignItems:'baseline',justifyContent:'space-between',gap:6}}>
                 <div className="fn-kpi-val cyan">{RANK_11_100.length}</div>
-                <span style={{fontSize:13,fontWeight:700,color:'#059669',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',letterSpacing:'.01em'}}>▲ {((RANK_11_100.length-82)/82*100).toFixed(1)}% WoW</span>
+                <span style={{fontSize:13,fontWeight:700,color:'#D93025',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',letterSpacing:'.01em'}}>▲ {((RANK_11_100.length-86)/86*100).toFixed(1)}% WoW</span>
               </div>
-              <div style={{fontSize:11,fontWeight:600,color:'#94A3B8',fontFamily:"'DM Mono',monospace",letterSpacing:'.02em',marginTop:2,marginBottom:2}}>Prev 82</div>
+              <div style={{fontSize:11,fontWeight:600,color:'#94A3B8',fontFamily:"'DM Mono',monospace",letterSpacing:'.02em',marginTop:2,marginBottom:2}}>Prev 86</div>
               <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:4}}>
                 <div className="fn-kpi-sub" style={{margin:0}}>{(RANK_11_100.length/660*100).toFixed(1)}% of all tracked</div>
                 <button onClick={()=>setModal1100(true)} style={{fontSize:10,fontWeight:700,color:'#fff',background:'#F97316',border:'none',borderRadius:20,padding:'2px 10px',cursor:'pointer',fontFamily:"'DM Mono',monospace",letterSpacing:'.03em',whiteSpace:'nowrap'}}>VIEW LIST</button>
@@ -1855,9 +2113,9 @@ export default function App() {
               <div className="fn-kpi-label">Not Ranking</div>
               <div style={{display:'flex',alignItems:'baseline',justifyContent:'space-between',gap:6}}>
                 <div className="fn-kpi-val amber">{NOT_RANKING.length}</div>
-                <span style={{fontSize:13,fontWeight:700,color:'#059669',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',letterSpacing:'.01em'}}>▼ 7.8% WoW</span>
+                <span style={{fontSize:13,fontWeight:700,color:'#059669',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',letterSpacing:'.01em'}}>▼ 1.2% WoW</span>
               </div>
-              <div style={{fontSize:11,fontWeight:600,color:'#94A3B8',fontFamily:"'DM Mono',monospace",letterSpacing:'.02em',marginTop:2,marginBottom:2}}>Prev 90</div>
+              <div style={{fontSize:11,fontWeight:600,color:'#94A3B8',fontFamily:"'DM Mono',monospace",letterSpacing:'.02em',marginTop:2,marginBottom:2}}>Prev 83</div>
               <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:4}}>
                 <div className="fn-kpi-sub" style={{margin:0}}>{(NOT_RANKING.length/660*100).toFixed(1)}% of all tracked</div>
                 <button onClick={()=>setModalNR(true)} style={{fontSize:10,fontWeight:700,color:'#fff',background:'#F97316',border:'none',borderRadius:20,padding:'2px 10px',cursor:'pointer',fontFamily:"'DM Mono',monospace",letterSpacing:'.03em',whiteSpace:'nowrap'}}>VIEW LIST</button>
@@ -1867,9 +2125,9 @@ export default function App() {
               <div className="fn-kpi-label" style={{color:'#4338CA'}}>AIO Keywords</div>
               <div style={{display:'flex',alignItems:'baseline',justifyContent:'space-between',gap:6}}>
                 <div className="fn-kpi-val" style={{color:'#4338CA'}}>{AIO_KEYWORDS.length}</div>
-                <span style={{fontSize:13,fontWeight:700,color:'#059669',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',letterSpacing:'.01em'}}>▲ {((AIO_KEYWORDS.length-342)/342*100).toFixed(1)}% WoW</span>
+                <span style={{fontSize:13,fontWeight:700,color:AIO_KEYWORDS.length>=353?'#059669':'#D93025',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',letterSpacing:'.01em'}}>{AIO_KEYWORDS.length>=353?'▲':'▼'} {(Math.abs(AIO_KEYWORDS.length-353)/353*100).toFixed(1)}% WoW</span>
               </div>
-              <div style={{fontSize:11,fontWeight:600,color:'#94A3B8',fontFamily:"'DM Mono',monospace",letterSpacing:'.02em',marginTop:2,marginBottom:2}}>Prev 342</div>
+              <div style={{fontSize:11,fontWeight:600,color:'#94A3B8',fontFamily:"'DM Mono',monospace",letterSpacing:'.02em',marginTop:2,marginBottom:2}}>Prev 353</div>
               <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:4}}>
                 <div className="fn-kpi-sub" style={{margin:0}}>{(AIO_KEYWORDS.length/660*100).toFixed(1)}% of all tracked</div>
                 <button onClick={()=>setModalAIO(true)} style={{fontSize:10,fontWeight:700,color:'#fff',background:'#4338CA',border:'none',borderRadius:20,padding:'2px 10px',cursor:'pointer',fontFamily:"'DM Mono',monospace",letterSpacing:'.03em',whiteSpace:'nowrap'}}>VIEW LIST</button>
@@ -1893,27 +2151,27 @@ export default function App() {
                 label:'Top of Funnel',
                 desc:'Informational / Awareness',
                 color:'#1A56DB', colorVar:'var(--blue)', bgVar:'rgba(26,86,219,.07)', border:'rgba(26,86,219,.2)',
-                keywords:446, page1:363, rank1:272,
+                keywords:446, page1:329, rank1:251,
                 kwPct:((446/660)*100).toFixed(1),
-                p1Pct:((363/446)*100).toFixed(1),
+                p1Pct:((329/446)*100).toFixed(1),
               },
               {
                 intent:'MOFU',
                 label:'Middle of Funnel',
                 desc:'Consideration / Evaluation',
                 color:'#0E7490', colorVar:'var(--cyan)', bgVar:'rgba(14,116,144,.07)', border:'rgba(14,116,144,.2)',
-                keywords:130, page1:77, rank1:47,
+                keywords:130, page1:69, rank1:42,
                 kwPct:((130/660)*100).toFixed(1),
-                p1Pct:((77/130)*100).toFixed(1),
+                p1Pct:((69/130)*100).toFixed(1),
               },
               {
                 intent:'BOFU',
                 label:'Bottom of Funnel',
                 desc:'Commercial / Purchase Intent',
                 color:'#7C3AED', colorVar:'var(--purple)', bgVar:'rgba(124,58,237,.07)', border:'rgba(124,58,237,.2)',
-                keywords:84, page1:51, rank1:38,
+                keywords:84, page1:46, rank1:36,
                 kwPct:((84/660)*100).toFixed(1),
-                p1Pct:((51/84)*100).toFixed(1),
+                p1Pct:((46/84)*100).toFixed(1),
               },
             ];
             return (
@@ -1975,7 +2233,7 @@ export default function App() {
               <div className="fn-chart-wrap" style={{height:420}}><canvas id="catTotalsChart"></canvas></div>
             </div>
             <div className="fn-card fn-card-green">
-              <div className="fn-card-head"><span className="fn-card-title">Average Position — Best to Weakest</span><span className="fn-card-meta">Lower = better · Oct 21</span></div>
+              <div className="fn-card-head"><span className="fn-card-title">Average Position — Best to Weakest</span><span className="fn-card-meta">Lower = better · Oct 28</span></div>
               <div className="fn-chart-wrap" style={{height:420}}><canvas id="catAvgChart"></canvas></div>
             </div>
           </div>
@@ -2015,7 +2273,7 @@ export default function App() {
                     <div style={{width:32,height:32,borderRadius:8,background:'rgba(26,86,219,.1)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:14,flexShrink:0}}>◈</div>
                     <div>
                       <div style={{fontSize:15,fontWeight:800,color:'var(--text)',letterSpacing:'-.01em'}}>Category Performance — Unified Overview</div>
-                      <div style={{fontSize:11,color:'var(--text3)',marginTop:1}}>Source: Semrush · All metrics · Oct 21, 2026 · WoW vs Oct 14</div>
+                      <div style={{fontSize:11,color:'var(--text3)',marginTop:1}}>Source: Semrush · All metrics · Oct 28, 2026 · WoW vs Oct 21</div>
                     </div>
                   </div>
                 </div>
@@ -2126,7 +2384,7 @@ export default function App() {
                           <span style={{fontSize:11,fontWeight:800,color:'#1A56DB',fontFamily:"'DM Mono',monospace"}}>{p1Aug26}</span>
                           <span style={{fontSize:9,color:'var(--text2)',fontWeight:800}}>on Page 1</span>
                           <span style={{fontSize:9,fontWeight:700,color:p1Wow>=0?'#059669':'#DC2626',fontFamily:"'DM Mono',monospace",background:p1Wow>=0?'rgba(5,150,105,.09)':'rgba(220,38,38,.08)',padding:'1px 5px',borderRadius:3}}>
-                            {p1Wow>=0?'+':''}{p1Wow} vs Oct 14
+                            {p1Wow>=0?'+':''}{p1Wow} vs Oct 21
                           </span>
                           <span style={{fontSize:9,fontWeight:700,color:p1Ytd>=0?'#059669':'#DC2626',fontFamily:"'DM Mono',monospace",background:p1Ytd>=0?'rgba(5,150,105,.09)':'rgba(220,38,38,.08)',padding:'1px 5px',borderRadius:3}}>
                             {p1Ytd>=0?'+':''}{p1Ytd} vs Dec 31
@@ -2145,7 +2403,7 @@ export default function App() {
                           if(rows.length===0) return null;
                           return (
                             <div style={{padding:'10px 13px 12px',flex:1}}>
-                              <div style={{fontSize:8,fontWeight:800,color:'var(--text3)',letterSpacing:'.1em',textTransform:'uppercase',marginBottom:6}}>Top Movers · Oct 14→Oct 21</div>
+                              <div style={{fontSize:8,fontWeight:800,color:'var(--text3)',letterSpacing:'.1em',textTransform:'uppercase',marginBottom:6}}>Top Movers · Oct 21→Oct 28</div>
                               {/* column headers */}
                               <div style={{display:'grid',gridTemplateColumns:'1fr 42px 36px 68px',gap:3,marginBottom:4,paddingLeft:14}}>
                                 {['Keyword','Funnel','SV','Pos Prev→Curr'].map(h=>(
@@ -2193,7 +2451,7 @@ export default function App() {
             <div className="fn-card fn-full">
               <div className="fn-card-head">
                 <div className="fn-card-icon" style={{background:'rgba(10,122,85,.1)'}}>📈</div>
-                <span className="fn-card-title">Weekly Page 1 Count per Category — 43-Week Trajectory</span>
+                <span className="fn-card-title">Weekly Page 1 Count per Category — 44-Week Trajectory</span>
                 <span className="fn-card-meta">Dec 2025 → Oct 2026</span>
               </div>
               <div className="fn-chart-wrap" style={{height:220}}><canvas id="weeklyR1Chart"></canvas></div>
@@ -2201,7 +2459,7 @@ export default function App() {
             <div className="fn-card fn-full">
               <div className="fn-card-head">
                 <div className="fn-card-icon" style={{background:'rgba(26,86,219,.1)'}}>📉</div>
-                <span className="fn-card-title">Weekly Average Position per Category — 43-Week Trajectory</span>
+                <span className="fn-card-title">Weekly Average Position per Category — 44-Week Trajectory</span>
                 <span className="fn-card-meta">Dec 2025 → Oct 2026 · lower = better</span>
               </div>
               <div className="fn-chart-wrap" style={{height:220}}><canvas id="avgRankChart"></canvas></div>
@@ -2221,7 +2479,7 @@ export default function App() {
                 <div className="fn-card-icon" style={{background:'rgba(217,48,37,.08)'}}>🎯</div>
                 <span className="fn-card-title">Highest-Volume Keywords — Position Status</span>
                 <span style={{fontSize:10,fontWeight:600,color:'var(--text3)',marginLeft:6,whiteSpace:'nowrap'}}>{TOP_VOL.length} Keywords</span>
-                <span className="fn-card-meta">Oct 21, 2026</span>
+                <span className="fn-card-meta">Oct 28, 2026</span>
               </div>
               {/* column headers */}
               <div style={{display:'flex',alignItems:'center',gap:8,padding:'4px 13.5px 6px',marginBottom:2}}>
@@ -2255,7 +2513,7 @@ export default function App() {
                 <div className="fn-card-icon" style={{background:'rgba(10,122,85,.08)'}}>✦</div>
                 <span className="fn-card-title">High-Volume Rank #1 Wins</span>
                 <span style={{fontSize:10,fontWeight:600,color:'var(--text3)',marginLeft:6,whiteSpace:'nowrap'}}>{RANK1_KEYWORDS.length} Keywords</span>
-                <span className="fn-card-meta">Vol &gt; 1,000 &amp; currently #1 · Oct 21, 2026</span>
+                <span className="fn-card-meta">Vol &gt; 1,000 &amp; currently #1 · Oct 28, 2026</span>
               </div>
               {/* column headers */}
               <div style={{display:'flex',alignItems:'center',gap:8,padding:'4px 13.5px 6px',marginBottom:2}}>
@@ -2292,7 +2550,7 @@ export default function App() {
                 <div className="fn-card-icon" style={{background:'rgba(26,86,219,.1)'}}>🔵</div>
                 <span className="fn-card-title">Top TOFU / MOFU Keywords — Position #1</span>
                 <span style={{fontSize:10,fontWeight:600,color:'var(--text3)',marginLeft:6,whiteSpace:'nowrap'}}>{TOP_TOFU_R1_KWS.length} Keywords</span>
-                <span className="fn-card-meta">Informational intent · sorted by search volume · Oct 21, 2026</span>
+                <span className="fn-card-meta">Informational intent · sorted by search volume · Oct 28, 2026</span>
               </div>
               {/* per-category rank-1 TOFU/MOFU summary bar */}
               <div style={{display:'flex',gap:6,flexWrap:'wrap',padding:'6px 0 10px'}}>
@@ -2335,7 +2593,7 @@ export default function App() {
                 <div className="fn-card-icon" style={{background:'rgba(124,58,237,.1)'}}>🟣</div>
                 <span className="fn-card-title">Top BOFU Keywords — Position #1</span>
                 <span style={{fontSize:10,fontWeight:600,color:'var(--text3)',marginLeft:6,whiteSpace:'nowrap'}}>{TOP_BOFU_R1_KWS.length} Keywords</span>
-                <span className="fn-card-meta">Commercial / purchase intent · sorted by search volume · Oct 21, 2026</span>
+                <span className="fn-card-meta">Commercial / purchase intent · sorted by search volume · Oct 28, 2026</span>
               </div>
               {/* per-category rank-1 BOFU summary bar */}
               <div style={{display:'flex',gap:6,flexWrap:'wrap',padding:'6px 0 10px'}}>
@@ -2378,7 +2636,7 @@ export default function App() {
               <div className="fn-card-icon" style={{background:'rgba(124,58,237,.1)'}}>📉</div>
               <span className="fn-card-title">SEO Position Journey — Top 10 High-Volume Keywords</span>
               <span style={{fontSize:10,fontWeight:600,color:'var(--text3)',marginLeft:6,whiteSpace:'nowrap'}}>10 Keywords</span>
-              <span className="fn-card-meta">Dec 2025 → Oct 2026 · 43 weeks</span>
+              <span className="fn-card-meta">Dec 2025 → Oct 2026 · 44 weeks</span>
             </div>
             <div className="fn-chart-wrap" style={{height:280}}><canvas id="trendLine"></canvas></div>
           </div>
@@ -2421,7 +2679,7 @@ export default function App() {
                     <span className="fn-card-title">Top Gainers — Biggest Rank Improvements</span>
                     {pill(gain.length,'#0A7A55','rgba(10,122,85,.12)')}
                   </div>
-                  <div className="fn-card-meta" style={{marginBottom:8}}>Top 20 · Oct 14 → Oct 21, 2026 · sorted by positions gained</div>
+                  <div className="fn-card-meta" style={{marginBottom:8}}>Top 20 · Oct 21 → Oct 28, 2026 · sorted by positions gained</div>
                   {chips('gain',gainAll)}
                   <div className="fn-scroll-list fn-posl">
                     {gain.length===0?empty:gain.map((d,i)=>(
@@ -2442,7 +2700,7 @@ export default function App() {
                     <span className="fn-card-title">Top Decliners — Biggest Rank Drops</span>
                     {pill(loss.length,'#D93025','rgba(217,48,37,.1)')}
                   </div>
-                  <div className="fn-card-meta" style={{marginBottom:8}}>Top 20 · Oct 14 → Oct 21, 2026 · sorted by positions lost</div>
+                  <div className="fn-card-meta" style={{marginBottom:8}}>Top 20 · Oct 21 → Oct 28, 2026 · sorted by positions lost</div>
                   {chips('loss',lossAll)}
                   <div className="fn-scroll-list fn-posl">
                     {loss.length===0?empty:loss.map((d,i)=>(
@@ -2466,7 +2724,7 @@ export default function App() {
                     <span className="fn-card-title">Rock-Solid Rank #1 — Consistent Holders</span>
                     {pill(solid.length,'#1A56DB','rgba(26,86,219,.1)')}
                   </div>
-                  <div className="fn-card-meta" style={{marginBottom:8}}>Ranked #1 on Oct 21 and #1 for 24+ of 43 weeks (Dec 31 → Oct 21) · {solidR1.length} keywords</div>
+                  <div className="fn-card-meta" style={{marginBottom:8}}>Ranked #1 on Oct 28 and #1 for 24+ of 44 weeks (Dec 31 → Oct 28) · {solidR1.length} keywords</div>
                   {chips('solid',solidR1)}
                   <div className="fn-scroll-list fn-posl">
                     {solid.length===0?empty:solid.map((d,i)=>(
@@ -2474,7 +2732,7 @@ export default function App() {
                         <span className="fn-kw-name">{d.keyword}</span>
                         <span className={`fn-kw-cat fn-pill ${catClass(d.category)}`} style={{fontSize:8,flexShrink:0}}>{shortCat(d.category)}</span>
                         <span className="fn-kw-vol">{fmtVol(d.vol_jan26)}</span>
-                        <span style={{fontSize:10,color:'var(--text3)',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',fontWeight:700}}>{d.r1weeks}/43 wks</span>
+                        <span style={{fontSize:10,color:'var(--text3)',fontFamily:"'DM Mono',monospace",whiteSpace:'nowrap',fontWeight:700}}>{d.r1weeks}/44 wks</span>
                         <span className="fn-kw-rank fn-r1">1</span>
                       </div>
                     ))}
@@ -2601,14 +2859,14 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
                     <th style="text-align:left;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Category</th>
                     <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Funnel</th>
                     <th style="text-align:right;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">SV</th>
-                    <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Oct 14<br/><span style="font-weight:500;font-size:9px">Prev Week</span></th>
-                    <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#1A56DB;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Oct 21<br/><span style="font-weight:500;font-size:9px">Latest</span></th>
-                    <th style="text-align:center;padding:8px 16px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">43-Week Trend<br/><span style="font-weight:500;font-size:9px">Dec → Oct 21</span></th>
+                    <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Oct 21<br/><span style="font-weight:500;font-size:9px">Prev Week</span></th>
+                    <th style="text-align:center;padding:8px 12px;font-size:10px;font-weight:700;color:#1A56DB;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Oct 28<br/><span style="font-weight:500;font-size:9px">Latest</span></th>
+                    <th style="text-align:center;padding:8px 16px;font-size:10px;font-weight:700;color:#64748B;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">44-Week Trend<br/><span style="font-weight:500;font-size:9px">Dec → Oct 28</span></th>
                   </tr></thead>
                   <tbody>
                   ${kws.map((d,i) => {
-                    const sep02 = d.ranks[41] ?? null;
-                    const sep09 = d.ranks[42] ?? d.current_rank;
+                    const sep02 = d.ranks[42] ?? null;
+                    const sep09 = d.ranks[43] ?? d.current_rank;
                     const vol = d.vol_jan26 >= 1000 ? `${(d.vol_jan26/1000).toFixed(d.vol_jan26>=10000?0:1)}K` : d.vol_jan26 > 0 ? String(d.vol_jan26) : '—';
                     const funnel = (d as any).funnel || 'TOFU';
                     const cat = (d as any).category || '';
@@ -2838,9 +3096,9 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             <div style={{display:'flex',alignItems:'center',gap:18,padding:'4px 0'}}>
               <div style={{width:56,height:56,borderRadius:14,background:'rgba(217,48,37,.12)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:26,flexShrink:0}}>⚠</div>
               <div style={{flex:1}}>
-                <div style={{fontSize:11,fontWeight:700,color:'var(--red)',fontFamily:"'DM Mono',monospace",textTransform:'uppercase',letterSpacing:'.08em',marginBottom:3}}>Primary SEO Risk — Oct 21, 2026</div>
+                <div style={{fontSize:11,fontWeight:700,color:'var(--red)',fontFamily:"'DM Mono',monospace",textTransform:'uppercase',letterSpacing:'.08em',marginBottom:3}}>Primary SEO Risk — Oct 28, 2026</div>
                 <div style={{fontSize:20,fontWeight:800,color:'#0F172A',letterSpacing:'-.3px',marginBottom:4}}>"zero day" — <span style={{color:'var(--red)'}}>Not Ranking · 368K SV</span> · Highest-Volume NR Keyword</div>
-                <div style={{fontSize:12,color:'var(--text3)',lineHeight:1.5}}>"zero day" (368K SV) and "phishing" (49.5K SV) remain off the SERP since baseline. {RISK.notRanking} of 660 keywords are not ranking and {RISK.decliners} declined week over week. {RISK.mostAffected.cat} is the most affected category ({RISK.mostAffected.declining} declining · {RISK.mostAffected.notRanking} not ranking). Immediate action required on NR high-volume keywords and AI Cybersecurity content coverage ({CAT_STATS['AI Cybersecurity'].not_ranking} of {CAT_STATS['AI Cybersecurity'].total} not ranking).</div>
+                <div style={{fontSize:12,color:'var(--text3)',lineHeight:1.5}}>"zero day" (368K SV) is off the SERP since baseline and "what is malware" (135K SV) dropped off this week from #24. {RISK.notRanking} of 660 keywords are not ranking and {RISK.decliners} declined week over week. {RISK.mostAffected.cat} is the most affected category ({RISK.mostAffected.declining} declining · {RISK.mostAffected.notRanking} not ranking). Immediate action required on NR high-volume keywords and AI Cybersecurity content coverage ({CAT_STATS['AI Cybersecurity'].not_ranking} of {CAT_STATS['AI Cybersecurity'].total} not ranking).</div>
               </div>
               <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:4,padding:'12px 20px',background:'rgba(217,48,37,.08)',borderRadius:12,border:'1.5px solid rgba(217,48,37,.2)',flexShrink:0}}>
                 <div style={{fontSize:36,fontWeight:900,color:'var(--red)',fontFamily:"'DM Mono',monospace",lineHeight:1}}>101</div>
@@ -2855,12 +3113,12 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             <div className="fn-kpi fn-kpi-red" style={{padding:'12px 16px'}}>
               <div className="fn-kpi-label">Total Decliners</div>
               <div className="fn-kpi-val red" style={{fontSize:28}}>{RISK.decliners}</div>
-              <div className="fn-kpi-sub">Keywords that lost rank or dropped off · Oct 14 → Oct 21</div>
+              <div className="fn-kpi-sub">Keywords that lost rank or dropped off · Oct 21 → Oct 28</div>
             </div>
             <div className="fn-kpi fn-kpi-amber" style={{padding:'12px 16px'}}>
               <div className="fn-kpi-label">Not Ranking</div>
               <div className="fn-kpi-val amber" style={{fontSize:28}}>{RISK.notRanking}</div>
-              <div className="fn-kpi-sub">Of 660 keywords · no position Oct 21</div>
+              <div className="fn-kpi-sub">Of 660 keywords · no position Oct 28</div>
             </div>
             <div className="fn-kpi fn-kpi-red" style={{padding:'12px 16px'}}>
               <div className="fn-kpi-label">Highest Vol at Risk</div>
@@ -2879,12 +3137,12 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             <div className="fn-card">
               <div className="fn-card-head">
                 <div className="fn-card-icon" style={{background:'rgba(217,48,37,.1)'}}>📉</div>
-                <span className="fn-card-title">Top Declining Keywords — Dec 31 → Oct 21</span>
+                <span className="fn-card-title">Top Declining Keywords — Dec 31 → Oct 28</span>
                 <span className="fn-card-meta">Baseline to current rank · positions lost</span>
               </div>
               <div style={{display:'flex',flexDirection:'column',gap:8,padding:'4px 0'}}>
                 {(()=>{
-                  const TRD = Object.entries(CAT_KEYWORDS).flatMap(([c,l])=>l.map(k=>({keyword:k.keyword,category:c,vol_jan26:k.vol_jan26,baseline_rank:k.ranks[0] as number|null,current_rank:k.ranks[42] as number|null})))
+                  const TRD = Object.entries(CAT_KEYWORDS).flatMap(([c,l])=>l.map(k=>({keyword:k.keyword,category:c,vol_jan26:k.vol_jan26,baseline_rank:k.ranks[0] as number|null,current_rank:k.ranks[43] as number|null})))
                     .filter(k=>POS_CATS.includes(k.category)&&k.baseline_rank!=null&&k.current_rank!=null&&k.baseline_rank<=100&&k.current_rank<=100&&k.current_rank>k.baseline_rank)
                     .map(k=>({...k,delta_baseline:(k.current_rank as number)-(k.baseline_rank as number)}))
                     .sort((x,y)=>y.delta_baseline-x.delta_baseline||y.vol_jan26-x.vol_jan26)
@@ -2914,7 +3172,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
               <div className="fn-card">
                 <div className="fn-card-head">
                   <div className="fn-card-icon" style={{background:'rgba(180,83,9,.1)'}}>🚫</div>
-                  <span className="fn-card-title">Not Ranking on Oct 21</span>
+                  <span className="fn-card-title">Not Ranking on Oct 28</span>
                   <span className="fn-card-meta">Ranked Dec 31, 2025, now NR — top {Math.min(12,RISK.droppedCount)} by SV shown ({RISK.droppedCount} of {RISK.notRanking} NR total)</span>
                 </div>
                 <div style={{display:'flex',flexDirection:'column',gap:8,padding:'4px 0'}}>
@@ -3223,14 +3481,14 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             <div className="fn-card-head">
               <div className="fn-card-icon" style={{background:'rgba(26,86,219,.08)'}}>◈</div>
               <span className="fn-card-title">Keyword Funnel Distribution — TOFU/MOFU vs BOFU vs Not Ranking by Category</span>
-              <span className="fn-card-meta">Source: Latest Top Rank URL classification · Oct 21, 2026</span>
+              <span className="fn-card-meta">Source: Latest Top Rank URL classification · Oct 28, 2026</span>
             </div>
             <div className="fn-chart-wrap" style={{height:220}}><canvas id="funnelChart"></canvas></div>
             <div style={{display:'flex',gap:16,flexWrap:'wrap',marginTop:12,paddingTop:10,borderTop:'1.5px solid var(--border)'}}>
               {[
                 {label:'TOFU/MOFU',color:'#1A56DB',desc:'Informational / Cyberglossary URLs — Awareness & Education'},
                 {label:'BOFU',color:'#7C3AED',desc:'Product / Solution URLs — Commercial Intent'},
-                {label:'Not Ranking',color:'#D93025',desc:'No position Oct 21, 2026 — Dropped off SERP'},
+                {label:'Not Ranking',color:'#D93025',desc:'No position Oct 28, 2026 — Dropped off SERP'},
               ].map((item,i)=>(
                 <div key={i} style={{display:'flex',alignItems:'center',gap:6}}>
                   <div style={{width:10,height:10,borderRadius:3,background:item.color,flexShrink:0}}></div>
@@ -3248,10 +3506,8 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
           <TabHead eyebrow="07 — GAIN & LOSS" title="Gain & Loss" sub="Top gaining URLs and keywords behind the traffic movement" accent="#0E7490" onHome={()=>handleTabSwitch('home')} />
           <KeyInsights items={gainInsights} />
 
-          {GL_SECTIONS.filter(s=>!s.title.startsWith('International Markets')).map((s,i)=>{
-            const intl = s.title.startsWith('Branded Traffic (GSC)')
-              ? GL_SECTIONS.find(x=>x.title==='International Markets — '+s.title.split('— ')[1])
-              : undefined;
+          {GL_SECTIONS.filter(s=>!s.intlFor).map((s,i)=>{
+            const intl = GL_SECTIONS.find(x=>x.intlFor===s.title);
             return <GlCard key={i} s={s} extra={intl} />;
           })}
 
@@ -3267,7 +3523,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             <div style={{flex:'1 1 300px'}}>
               <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:10}}>
                 <span style={{fontSize:11,fontWeight:700,letterSpacing:'.12em',textTransform:'uppercase',color:'#94A3B8'}}>Traffic Performance Report</span>
-                <span style={{background:'rgba(26,86,219,.35)',color:'#93C5FD',fontSize:10,fontWeight:700,padding:'2px 8px',borderRadius:20,border:'1px solid rgba(147,197,253,.3)'}}>Week of Oct 21, 2026</span>
+                <span style={{background:'rgba(26,86,219,.35)',color:'#93C5FD',fontSize:10,fontWeight:700,padding:'2px 8px',borderRadius:20,border:'1px solid rgba(147,197,253,.3)'}}>Week of Oct 28, 2026</span>
               </div>
               <div style={{fontSize:22,fontWeight:800,color:'#F8FAFC',lineHeight:1.2,marginBottom:6}}>Organic Traffic</div>
             </div>
@@ -3290,8 +3546,8 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
 
           {/* ══ Traffic Metrics — separate GSC and GA blocks ══ */}
           {([
-            {src:'GSC',color:'#047857',title:'Complete Traffic Metrics — GSC (Google Search Console)',sub:'All Organic · Branded · Non-Branded · Worldwide · Dec 31, 2025 → Oct 21, 2026',badge:'GSC · Search Console'},
-            {src:'GA',color:'#1D4ED8',title:'Complete Traffic Metrics — GA (Google Analytics)',sub:'Pages and Channels · Worldwide · Dec 31, 2025 → Oct 21, 2026',badge:'GA · Analytics'},
+            {src:'GSC',color:'#047857',title:'Complete Traffic Metrics — GSC (Google Search Console)',sub:'All Organic · Branded · Non-Branded · Worldwide · Dec 31, 2025 → Oct 28, 2026',badge:'GSC · Search Console'},
+            {src:'GA',color:'#1D4ED8',title:'Complete Traffic Metrics — GA (Google Analytics)',sub:'Pages and Channels · Worldwide · Dec 31, 2025 → Oct 28, 2026',badge:'GA · Analytics'},
           ] as const).map(blk=>(
           <div key={blk.src} style={{background:'#fff',border:`2px solid ${blk.color}`,borderRadius:14,overflow:'hidden',boxShadow:'0 4px 16px rgba(15,23,42,.08)',marginBottom:20}}>
             <div style={{padding:'16px 22px',display:'flex',alignItems:'center',justifyContent:'space-between',gap:12,flexWrap:'wrap',background:blk.color}}>
@@ -3308,10 +3564,10 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
                     <th style={{textAlign:'center',padding:'9px 10px',fontSize:9,fontWeight:700,color:'#64748B',letterSpacing:'.06em',textTransform:'uppercase',width:46}}>Source</th>
                     <th style={{textAlign:'left',padding:'9px 14px',fontSize:9,fontWeight:700,color:'#64748B',letterSpacing:'.06em',textTransform:'uppercase',minWidth:180}}>Category</th>
                     <th style={{textAlign:'right',padding:'9px 12px',fontSize:9,fontWeight:700,color:'#64748B',letterSpacing:'.06em',textTransform:'uppercase',whiteSpace:'nowrap'}}>Baseline<br/><span style={{fontWeight:500,fontSize:8}}>Dec 31</span></th>
-                    <th style={{textAlign:'right',padding:'9px 12px',fontSize:9,fontWeight:700,color:'#64748B',letterSpacing:'.06em',textTransform:'uppercase',whiteSpace:'nowrap'}}>Oct 14<br/><span style={{fontWeight:500,fontSize:8}}>Prev Week</span></th>
-                    <th style={{textAlign:'right',padding:'9px 12px',fontSize:9,fontWeight:700,color:'#1A56DB',letterSpacing:'.06em',textTransform:'uppercase',whiteSpace:'nowrap'}}>Oct 21<br/><span style={{fontWeight:500,fontSize:8}}>Latest</span></th>
-                    <th style={{textAlign:'center',padding:'9px 12px',fontSize:9,fontWeight:700,color:'#64748B',letterSpacing:'.06em',textTransform:'uppercase',whiteSpace:'nowrap'}}>WoW Δ<br/><span style={{fontWeight:500,fontSize:8}}>Oct 14 → Oct 21</span></th>
-                    <th style={{textAlign:'center',padding:'9px 14px',fontSize:9,fontWeight:700,color:'#64748B',letterSpacing:'.06em',textTransform:'uppercase',whiteSpace:'nowrap'}}>43-Wk Trend</th>
+                    <th style={{textAlign:'right',padding:'9px 12px',fontSize:9,fontWeight:700,color:'#64748B',letterSpacing:'.06em',textTransform:'uppercase',whiteSpace:'nowrap'}}>Oct 21<br/><span style={{fontWeight:500,fontSize:8}}>Prev Week</span></th>
+                    <th style={{textAlign:'right',padding:'9px 12px',fontSize:9,fontWeight:700,color:'#1A56DB',letterSpacing:'.06em',textTransform:'uppercase',whiteSpace:'nowrap'}}>Oct 28<br/><span style={{fontWeight:500,fontSize:8}}>Latest</span></th>
+                    <th style={{textAlign:'center',padding:'9px 12px',fontSize:9,fontWeight:700,color:'#64748B',letterSpacing:'.06em',textTransform:'uppercase',whiteSpace:'nowrap'}}>WoW Δ<br/><span style={{fontWeight:500,fontSize:8}}>Oct 21 → Oct 28</span></th>
+                    <th style={{textAlign:'center',padding:'9px 14px',fontSize:9,fontWeight:700,color:'#64748B',letterSpacing:'.06em',textTransform:'uppercase',whiteSpace:'nowrap'}}>44-Wk Trend</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -3332,7 +3588,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
                     {src:'GA',srcColor:'#3B82F6',srcBg:'rgba(59,130,246,.1)',label:'Referrals',key:'referrals',group:''},
                   ] as const).filter(r=>r.src===blk.src).map((row,i)=>{
                     const data = TRAFFIC_DATA[row.key];
-                    const base = data[0], prev = data[41], cur = data[42];
+                    const base = data[0], prev = data[42], cur = data[43];
                     const wow = TRAFFIC_WOW[row.key];
                     const pos = wow.pct >= 0;
                     const fmt = (v:number)=>v>=1000?(v>=100000?(v/1000).toFixed(0)+'K':(v/1000).toFixed(1)+'K'):v.toString();
@@ -3381,7 +3637,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             <span style={{background:'#10B981',color:'#fff',fontSize:9,fontWeight:800,padding:'3px 8px',borderRadius:5,letterSpacing:'.08em',flexShrink:0}}>GSC</span>
             <span style={{fontSize:13,fontWeight:800,color:'#0F172A',letterSpacing:'-.01em'}}>Google Search Console — Organic Search Traffic</span>
             <div style={{flex:1,height:1,background:'#E2E8F0'}}></div>
-            <span style={{fontSize:10,color:'#94A3B8',fontWeight:500}}>Worldwide · Oct 14 → Oct 21, 2026</span>
+            <span style={{fontSize:10,color:'#94A3B8',fontWeight:500}}>Worldwide · Oct 21 → Oct 28, 2026</span>
           </div>
 
           {/* GSC KPI Cards */}
@@ -3392,7 +3648,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
               {label:'Non-Branded Traffic',key:'nonBranded',desc:'Sessions from generic keywords',icon:'🌐'},
             ] as const).map(item=>{
               const data = TRAFFIC_DATA[item.key];
-              const cur = data[42], prev = data[41], base = data[0];
+              const cur = data[43], prev = data[42], base = data[0];
               const wow = TRAFFIC_WOW[item.key];
               const pos = wow.pct >= 0;
               const vsBase = cur - base;
@@ -3422,7 +3678,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
                       <span style={{fontSize:12,fontWeight:800,fontFamily:"'DM Mono',monospace",color:pos?'#059669':'#DC2626',background:pos?'rgba(5,150,105,.08)':'rgba(220,38,38,.08)',padding:'2px 7px',borderRadius:5}}>
                         {pos?'▲':'▼'} {Math.abs(wow.pct).toFixed(2)}%
                       </span>
-                      <span style={{fontSize:9,color:'#94A3B8',fontFamily:"'DM Mono',monospace"}}>{pos?'+':''}{wow.abs.toLocaleString()} vs Oct 14</span>
+                      <span style={{fontSize:9,color:'#94A3B8',fontFamily:"'DM Mono',monospace"}}>{pos?'+':''}{wow.abs.toLocaleString()} vs Oct 21</span>
                     </div>
                     <div style={{textAlign:'right'}}>
                       <div style={{fontSize:9,color:'#94A3B8'}}>vs Dec 31 baseline</div>
@@ -3440,9 +3696,9 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
               <div>
                 <div style={{display:'flex',alignItems:'center',gap:7,marginBottom:2}}>
                   <span style={{background:'rgba(16,185,129,.12)',color:'#065F46',fontSize:8,fontWeight:800,padding:'1px 5px',borderRadius:3,letterSpacing:'.06em'}}>GSC</span>
-                  <span style={{fontSize:12,fontWeight:700,color:'#0F172A'}}>Search Traffic — 43-Week Trend</span>
+                  <span style={{fontSize:12,fontWeight:700,color:'#0F172A'}}>Search Traffic — 44-Week Trend</span>
                 </div>
-                <div style={{fontSize:10,color:'#94A3B8'}}>All Organic · Branded · Non-Branded · Dec 31, 2025 → Oct 21, 2026</div>
+                <div style={{fontSize:10,color:'#94A3B8'}}>All Organic · Branded · Non-Branded · Dec 31, 2025 → Oct 28, 2026</div>
               </div>
               <div style={{display:'flex',gap:6}}>
                 {[{c:'#1A56DB',l:'All Organic'},{c:'#7C3AED',l:'Branded',d:true},{c:'#0A7A55',l:'Non-Branded'}].map(s=>(
@@ -3463,10 +3719,10 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             <span style={{background:'#3B82F6',color:'#fff',fontSize:9,fontWeight:800,padding:'3px 8px',borderRadius:5,letterSpacing:'.08em',flexShrink:0}}>GA</span>
             <span style={{fontSize:13,fontWeight:800,color:'#0F172A',letterSpacing:'-.01em'}}>Google Analytics — Page-Level Traffic</span>
             <div style={{flex:1,height:1,background:'#E2E8F0'}}></div>
-            <span style={{fontSize:10,color:'#94A3B8',fontWeight:500}}>Worldwide · Oct 14 → Oct 21, 2026</span>
+            <span style={{fontSize:10,color:'#94A3B8',fontWeight:500}}>Worldwide · Oct 21 → Oct 28, 2026</span>
           </div>
 
-          {/* GA Page KPI grid — cur=data[42]=Oct14, prev=data[41]=Oct07 */}
+          {/* GA Page KPI grid — cur=data[43]=Oct21, prev=data[42]=Oct07 */}
           <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:10,marginBottom:16}}>
             {([
               {label:'/cyberglossary',key:'cyberglossary',color:'#D93025',bg:'rgba(217,48,37,.08)',icon:'📚'},
@@ -3478,7 +3734,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
               {label:'/articles',key:'articles',color:'#64748B',bg:'rgba(100,116,139,.08)',icon:'📄'},
             ] as const).map(item=>{
               const data = TRAFFIC_DATA[item.key];
-              const cur = data[42], prev = data[41];
+              const cur = data[43], prev = data[42];
               const wow = TRAFFIC_WOW[item.key];
               const pos = wow.pct >= 0;
               const fmt = (v:number)=>v>=1000?(v>=10000?(v/1000).toFixed(0)+'K':(v/1000).toFixed(1)+'K'):v.toLocaleString();
@@ -3504,9 +3760,9 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             <div style={{background:'#fff',border:'1px solid #E2E8F0',borderRadius:12,padding:'16px 20px',boxShadow:'0 1px 4px rgba(0,0,0,.04)'}}>
               <div style={{display:'flex',alignItems:'center',gap:7,marginBottom:2}}>
                 <span style={{background:'rgba(59,130,246,.1)',color:'#1D4ED8',fontSize:8,fontWeight:800,padding:'1px 5px',borderRadius:3,letterSpacing:'.06em'}}>GA</span>
-                <span style={{fontSize:12,fontWeight:700,color:'#0F172A'}}>43-Week Page Traffic Trend</span>
+                <span style={{fontSize:12,fontWeight:700,color:'#0F172A'}}>44-Week Page Traffic Trend</span>
               </div>
-              <div style={{fontSize:10,color:'#94A3B8',marginBottom:10}}>Key URL traffic by week · Dec 31 → Oct 21</div>
+              <div style={{fontSize:10,color:'#94A3B8',marginBottom:10}}>Key URL traffic by week · Dec 31 → Oct 28</div>
               <div style={{height:210}}>
                 <canvas id="trafficPageChart"></canvas>
               </div>
@@ -3514,7 +3770,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             <div style={{background:'#fff',border:'1px solid #E2E8F0',borderRadius:12,padding:'16px 20px',boxShadow:'0 1px 4px rgba(0,0,0,.04)'}}>
               <div style={{display:'flex',alignItems:'center',gap:7,marginBottom:2}}>
                 <span style={{background:'rgba(59,130,246,.1)',color:'#1D4ED8',fontSize:8,fontWeight:800,padding:'1px 5px',borderRadius:3,letterSpacing:'.06em'}}>GA</span>
-                <span style={{fontSize:12,fontWeight:700,color:'#0F172A'}}>Page Sessions — Oct 14 vs Oct 21</span>
+                <span style={{fontSize:12,fontWeight:700,color:'#0F172A'}}>Page Sessions — Oct 21 vs Oct 28</span>
               </div>
               <div style={{fontSize:10,color:'#94A3B8',marginBottom:10}}>WoW comparison by page</div>
               <div style={{height:210}}>
@@ -3560,7 +3816,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
               },
             ] as const).map(item=>{
               const data = TRAFFIC_DATA[item.key];
-              const cur = data[42], prev = data[41], base = data[0];
+              const cur = data[43], prev = data[42], base = data[0];
               const wow = TRAFFIC_WOW[item.key];
               const pos = wow.pct >= 0;
               const fmt = (v:number)=>v>=1000?(v>=100000?(v/1000).toFixed(0)+'K':(v/1000).toFixed(1)+'K'):v.toLocaleString();
@@ -3587,7 +3843,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
                   </div>
                   <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:10,borderTop:'1px solid #F1F5F9',paddingTop:12}}>
                     <div>
-                      <div style={{fontSize:9,color:'#94A3B8',textTransform:'uppercase',letterSpacing:'.05em',marginBottom:2}}>Prev Week (Oct 14)</div>
+                      <div style={{fontSize:9,color:'#94A3B8',textTransform:'uppercase',letterSpacing:'.05em',marginBottom:2}}>Prev Week (Oct 21)</div>
                       <div style={{fontSize:14,fontWeight:800,fontFamily:"'DM Mono',monospace",color:'#64748B'}}>{fmt(prev)}</div>
                     </div>
                     <div>
@@ -3610,9 +3866,9 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
 
           {/* Direct Delta Insight */}
           {(()=>{
-            const allCur   = TRAFFIC_DATA.directGA[42];
-            const validCur = TRAFFIC_DATA.directValid[42];
-            const dlCur    = TRAFFIC_DATA.directDownloads[42];
+            const allCur   = TRAFFIC_DATA.directGA[43];
+            const validCur = TRAFFIC_DATA.directValid[43];
+            const dlCur    = TRAFFIC_DATA.directDownloads[43];
             const noiseL1  = allCur - validCur;
             const noiseL1Pct = ((noiseL1/allCur)*100).toFixed(1);
             const noiseL2  = validCur - dlCur;
@@ -3622,7 +3878,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
               <div style={{background:'linear-gradient(135deg,#FEF3C7,#FDE68A)',border:'1px solid #FCD34D',borderRadius:10,padding:'12px 18px',marginBottom:14,display:'flex',alignItems:'center',gap:14}}>
                 <span style={{fontSize:22,flexShrink:0}}>📊</span>
                 <div style={{flex:1}}>
-                  <div style={{fontSize:11,fontWeight:800,color:'#92400E',marginBottom:4}}>Direct Traffic Noise Filter — Oct 21, 2026</div>
+                  <div style={{fontSize:11,fontWeight:800,color:'#92400E',marginBottom:4}}>Direct Traffic Noise Filter — Oct 28, 2026</div>
                   <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:10}}>
                     <div style={{fontSize:10,color:'#78350F',lineHeight:1.5}}>
                       <div style={{fontWeight:800,marginBottom:1}}>Layer 1 — Email / Live-Chat / Nexus</div>
@@ -3648,9 +3904,9 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
               <div>
                 <div style={{display:'flex',alignItems:'center',gap:7,marginBottom:2}}>
                   <span style={{background:'rgba(59,130,246,.1)',color:'#1D4ED8',fontSize:8,fontWeight:800,padding:'1px 5px',borderRadius:3,letterSpacing:'.06em'}}>GA</span>
-                  <span style={{fontSize:12,fontWeight:700,color:'#0F172A'}}>Direct Traffic — 43-Week Trendline</span>
+                  <span style={{fontSize:12,fontWeight:700,color:'#0F172A'}}>Direct Traffic — 44-Week Trendline</span>
                 </div>
-                <div style={{fontSize:10,color:'#94A3B8'}}>All Direct vs Validated Direct · Dec 31, 2025 → Oct 21, 2026</div>
+                <div style={{fontSize:10,color:'#94A3B8'}}>All Direct vs Validated Direct · Dec 31, 2025 → Oct 28, 2026</div>
               </div>
               <div style={{display:'flex',gap:12,alignItems:'center',flexWrap:'wrap'}}>
                 <div style={{display:'flex',alignItems:'center',gap:5}}>
@@ -3788,7 +4044,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             {/* header */}
             <div style={{padding:'16px 20px',borderBottom:'1px solid var(--border)',display:'flex',alignItems:'center',justifyContent:'space-between',flexShrink:0}}>
               <div style={{display:'flex',alignItems:'center',gap:10}}>
-                <span style={{fontSize:15,fontWeight:700,color:'var(--text1)',fontFamily:"'Inter',sans-serif"}}>AIO Keywords — Oct 21, 2026</span>
+                <span style={{fontSize:15,fontWeight:700,color:'var(--text1)',fontFamily:"'Inter',sans-serif"}}>AIO Keywords — Oct 28, 2026</span>
                 <span style={{background:'#4338CA',color:'#fff',fontSize:11,fontWeight:700,borderRadius:20,padding:'2px 10px',fontFamily:"'DM Mono',monospace"}}>{AIO_KEYWORDS.length} Keywords</span>
               </div>
               <div style={{display:'flex',alignItems:'center',gap:14}}>
@@ -3825,7 +4081,7 @@ const baseKws = selectedCat === 'Backlink KWs' ? BACKLINK_KWS : NO_BACKLINK_KWS;
             </div>
             {/* footer */}
             <div style={{padding:'10px 20px',borderTop:'1px solid var(--border)',flexShrink:0,display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-              <span style={{fontSize:10,color:'var(--text3)',fontFamily:"'DM Mono',monospace"}}>Scroll to view all {AIO_KEYWORDS.length} AIO keywords · Oct 14 → Oct 21</span>
+              <span style={{fontSize:10,color:'var(--text3)',fontFamily:"'DM Mono',monospace"}}>Scroll to view all {AIO_KEYWORDS.length} AIO keywords · Oct 21 → Oct 28</span>
               <span style={{fontSize:10,color:'var(--text3)',fontFamily:"'DM Mono',monospace"}}>Click outside to close</span>
             </div>
           </div>
