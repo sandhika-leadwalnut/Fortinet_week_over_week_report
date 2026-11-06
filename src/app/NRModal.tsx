@@ -11,7 +11,7 @@ function Trend({ ranks }: { ranks: (number | null)[]; color?: string }) {
   const mapped = ranks.map(nrOf);
   if (!mapped.some(r => r < NR)) {
     return (
-      <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-label="Never ranked in 44 weeks">
+      <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-label="Never ranked in 45 weeks">
         <line x1={2} x2={W - 2} y1={H / 2} y2={H / 2} stroke="#CBD5E1" strokeWidth="1.5" strokeDasharray="3 3" />
       </svg>
     );
@@ -24,7 +24,7 @@ function Trend({ ranks }: { ranks: (number | null)[]; color?: string }) {
   });
   const last = pts[pts.length - 1];
   return (
-    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-label="44-week rank trend">
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-label="45-week rank trend">
       <polyline points={pts.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(' ')} fill="none" stroke="#1E293B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
       <circle cx={last[0]} cy={last[1]} r="2.5" fill="#1E293B" />
     </svg>
@@ -70,7 +70,7 @@ function Table({ rows, mode }: { rows: NRWeekly[]; mode: 'current' | 'recovered'
           <th style={th('right')}>SV</th>
           <th style={th('right')}>LAST WEEK</th>
           <th style={th('right')}>THIS WEEK</th>
-          <th style={th('center', { paddingRight: 20 })}>44-WK TREND</th>
+          <th style={th('center', { paddingRight: 20 })}>45-WK TREND</th>
         </tr>
       </thead>
       <tbody>{rows.map((r, i) => <Row key={r.cat + r.kw} r={r} i={i} mode={mode} />)}</tbody>
@@ -90,10 +90,10 @@ export default function NRModal({ onClose }: { onClose: () => void }) {
   const still = NR_WEEKLY.filter(r => P(r) == null && L(r) == null).sort(bySv);
 
   const cards = [
-    { label: 'Not Ranking · Last Week', val: lastWk.length, sub: 'Wk43 · Oct 21', bg: 'linear-gradient(135deg,#475569,#1E293B)' },
+    { label: 'Not Ranking · Last Week', val: lastWk.length, sub: 'Wk44 · Oct 28', bg: 'linear-gradient(135deg,#475569,#1E293B)' },
     { label: 'Now Ranking · Recovered', val: recovered.length, sub: 'back on the SERP this week', bg: 'linear-gradient(135deg,#10B981,#047857)' },
     { label: 'Newly Not Ranking', val: newly.length, sub: 'dropped out this week', bg: 'linear-gradient(135deg,#F43F5E,#B91C1C)' },
-    { label: 'Not Ranking · This Week', val: current.length, sub: 'Wk44 · Oct 28', bg: 'linear-gradient(135deg,#FB923C,#C2410C)' },
+    { label: 'Not Ranking · This Week', val: current.length, sub: 'Wk45 · Nov 04', bg: 'linear-gradient(135deg,#FB923C,#C2410C)' },
   ];
 
   const section = (title: string, rows: NRWeekly[], mode: 'recovered' | 'newly' | 'still', color: string) => (
@@ -119,7 +119,7 @@ export default function NRModal({ onClose }: { onClose: () => void }) {
               {view === 'current' ? 'Last Week → This Week' : '← Current List'}
             </button>
             <span style={{ fontSize: 15, fontWeight: 700, color: 'var(--text1)' }}>
-              {view === 'current' ? 'Not Ranking Keywords' : 'Not Ranking · Wk43 vs Wk44'}
+              {view === 'current' ? 'Not Ranking Keywords' : 'Not Ranking · Wk44 vs Wk45'}
             </span>
             <span style={{ background: '#F97316', color: '#fff', fontSize: 11, fontWeight: 700, borderRadius: 20, padding: '2px 10px', fontFamily: mono }}>
               {view === 'current' ? current.length : lastWk.length} Keywords
@@ -154,7 +154,7 @@ export default function NRModal({ onClose }: { onClose: () => void }) {
         </div>
 
         <div style={{ padding: '10px 20px', borderTop: '1px solid var(--border)', flexShrink: 0, display: 'flex', justifyContent: 'space-between' }}>
-          <span style={{ fontSize: 10, color: 'var(--text3)', fontFamily: mono }}>Trendline = 44 weeks, Dec 31 → Oct 28 · line scaled to each keyword's own rank range</span>
+          <span style={{ fontSize: 10, color: 'var(--text3)', fontFamily: mono }}>Trendline = 45 weeks, Dec 31 → Nov 04 · line scaled to each keyword's own rank range</span>
           <span style={{ fontSize: 10, color: 'var(--text3)', fontFamily: mono }}>Click outside to close</span>
         </div>
       </div>
