@@ -1,7 +1,7 @@
 
-  # Week Over Week Final Duplicate
+  # Fortinet Week Over Week Dashboard
 
-  This is a code bundle for Week Over Week Final Duplicate. The original project is available at https://www.figma.com/design/LnFrj1bLAHMlMbmgTTMym7/Week-Over-Week-Final-Duplicate.
+  This is a code bundle for Fortinet Week Over Week Dashboard. The original project is available at https://www.figma.com/design/LnFrj1bLAHMlMbmgTTMym7/Fortinet-Week-Over-Week-Dashboard.
 
   ## Running the code
 
