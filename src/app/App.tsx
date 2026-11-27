@@ -9,7 +9,7 @@ import '../styles/fortinet.css';
 import { KeyInsights, TabHead, HomePage, type InsightItem } from './dashParts';
 import NRModal from './NRModal';
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
-import { fortinetLogoSrc as logoImg } from './fortinetLogoData'
+import fortinetLogo from '../imports/WhatsApp_Image_2026-10-06_at_5.36.40_PM.jpeg';
 
 Chart.register(
   LineController, BarController, DoughnutController,
